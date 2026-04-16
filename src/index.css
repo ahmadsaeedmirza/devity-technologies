@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Devity Technologies — Light Editorial Design System
+   Cream base, mint/teal color blocks, serif display + clean sans.
+   All colors HSL.
+*/
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 42 38% 96%;          /* warm cream #F7F4EC */
+    --background-alt: 42 30% 92%;
+    --foreground: 200 25% 8%;          /* deep ink */
+    --foreground-soft: 200 18% 24%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 8%;
+
+    /* Brand */
+    --mint: 168 56% 54%;               /* #48C9B0 */
+    --mint-soft: 168 60% 88%;
+    --teal: 187 100% 19%;              /* #006064 */
+    --teal-deep: 188 100% 12%;
+    --ink: 200 30% 6%;
+
+    --primary: 187 100% 19%;
+    --primary-foreground: 42 38% 96%;
+
+    --secondary: 168 60% 88%;
+    --secondary-foreground: 187 100% 15%;
+
+    --muted: 42 25% 88%;
+    --muted-foreground: 200 12% 38%;
+
+    --accent: 168 56% 54%;
+    --accent-foreground: 187 100% 15%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 15% 85%;
+    --input: 200 15% 88%;
+    --ring: 187 100% 19%;
+
+    --radius: 0.25rem;
+
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(168 56% 54%) 0%, hsl(187 100% 19%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(168 60% 92%) 0%, hsl(168 60% 96%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 24px -8px hsl(187 100% 19% / 0.15);
+    --shadow-card: 0 30px 60px -30px hsl(187 100% 19% / 0.25);
+    --shadow-deep: 0 40px 80px -20px hsl(200 30% 6% / 0.18);
+
+    /* Type */
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: hsl(var(--mint) / 0.4);
+    color: hsl(var(--ink));
+  }
+}
+
+@layer components {
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-brand { background: var(--gradient-brand); }
+
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: hsl(var(--teal));
+  }
+
+  .display-italic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .grid-bg-light {
+    background-image:
+      linear-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .marquee {
+    display: flex;
+    gap: 4rem;
+    animation: marquee 40s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}

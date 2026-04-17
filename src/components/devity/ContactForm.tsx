@@ -3,6 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 
+const readEnv = (viteKey: string, plainKey: string) => {
+  const env = import.meta.env as unknown as Record<string, string | undefined>;
+  return (env[viteKey] ?? env[plainKey])?.trim();
+};
+
 const ContactForm = () => {
   const [submitting, setSubmitting] = useState(false);
 
@@ -12,24 +17,22 @@ const ContactForm = () => {
     if (submitting) return;
     setSubmitting(true);
 
-    const serviceId = (
-      import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined
-    )?.trim();
-    const publicKey = (
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined
-    )?.trim();
-    const ownerTemplateId = (
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID_OWNER as string | undefined
-    )?.trim();
-    const replyTemplateId = (
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID_REPLY as string | undefined
-    )?.trim();
+    const serviceId = readEnv("VITE_EMAILJS_SERVICE_ID", "EMAILJS_SERVICE_ID");
+    const publicKey = readEnv("VITE_EMAILJS_PUBLIC_KEY", "EMAILJS_PUBLIC_KEY");
+    const ownerTemplateId = readEnv(
+      "VITE_EMAILJS_TEMPLATE_ID_OWNER",
+      "EMAILJS_TEMPLATE_ID_OWNER",
+    );
+    const replyTemplateId = readEnv(
+      "VITE_EMAILJS_TEMPLATE_ID_REPLY",
+      "EMAILJS_TEMPLATE_ID_REPLY",
+    );
 
     if (!serviceId || !publicKey || !ownerTemplateId || !replyTemplateId) {
       setSubmitting(false);
       toast.error("Email is not configured.", {
         description:
-          "Missing EmailJS env vars. Configure VITE_EMAILJS_* (local: .env.local, Vercel: Project Settings → Environment Variables).",
+          "Missing EmailJS env vars. Configure either VITE_EMAILJS_* or EMAILJS_* (local: .env.local, Vercel: Project Settings → Environment Variables).",
       });
       return;
     }
@@ -99,6 +102,18 @@ const ContactForm = () => {
         typeof error === "object" && error !== null
           ? (error as { status?: number; text?: string }).text
           : undefined;
+
+      if (status === 404) {
+        const origin =
+          typeof window !== "undefined" ? window.location.origin : "";
+        toast.error("Could not send message.", {
+          description:
+            `EmailJS error (404): Account not found. This almost always means VITE_EMAILJS_PUBLIC_KEY is wrong, or the env vars are not set for this Vercel environment (Preview vs Production).` +
+            (origin ? ` Origin: ${origin}` : ""),
+        });
+        return;
+      }
+
       toast.error("Could not send message.", {
         description:
           status || text

@@ -13,22 +13,23 @@ const ContactForm = () => {
     setSubmitting(true);
 
     const serviceId = (
-      import.meta.env.EMAILJS_SERVICE_ID as string | undefined
+      import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined
     )?.trim();
     const publicKey = (
-      import.meta.env.EMAILJS_PUBLIC_KEY as string | undefined
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined
     )?.trim();
     const ownerTemplateId = (
-      import.meta.env.EMAILJS_TEMPLATE_ID_OWNER as string | undefined
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID_OWNER as string | undefined
     )?.trim();
     const replyTemplateId = (
-      import.meta.env.EMAILJS_TEMPLATE_ID_REPLY as string | undefined
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID_REPLY as string | undefined
     )?.trim();
 
     if (!serviceId || !publicKey || !ownerTemplateId || !replyTemplateId) {
       setSubmitting(false);
       toast.error("Email is not configured.", {
-        description: "Missing EmailJS env vars. Check .env.local (EMAILJS_*).",
+        description:
+          "Missing EmailJS env vars. Configure VITE_EMAILJS_* (local: .env.local, Vercel: Project Settings → Environment Variables).",
       });
       return;
     }

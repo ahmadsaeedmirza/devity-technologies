@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Devity Technologies Website
 
-TODO: Document your project here
+Vite + React + Tailwind website for Devity Technologies.

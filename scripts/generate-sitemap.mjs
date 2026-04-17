@@ -54,7 +54,7 @@ const getBaseUrl = () => {
 
   // Default to the canonical production domain.
   // This avoids generating sitemaps that point at Vercel preview URLs.
-  return "https://devitytechnologies.com";
+  return "https://www.devitytechnologies.com";
 };
 
 const baseUrl = getBaseUrl();

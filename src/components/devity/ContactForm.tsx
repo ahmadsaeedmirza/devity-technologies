@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
-import emailjs from "@emailjs/browser";
-
-const readEnv = (viteKey: string, plainKey: string) => {
-  const env = import.meta.env as unknown as Record<string, string | undefined>;
-  return (env[viteKey] ?? env[plainKey])?.trim();
-};
 
 const ContactForm = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -17,28 +11,6 @@ const ContactForm = () => {
     if (submitting) return;
     setSubmitting(true);
 
-    const serviceId = readEnv("VITE_EMAILJS_SERVICE_ID", "EMAILJS_SERVICE_ID");
-    const publicKey = readEnv("VITE_EMAILJS_PUBLIC_KEY", "EMAILJS_PUBLIC_KEY");
-    const ownerTemplateId = readEnv(
-      "VITE_EMAILJS_TEMPLATE_ID_OWNER",
-      "EMAILJS_TEMPLATE_ID_OWNER",
-    );
-    const replyTemplateId = readEnv(
-      "VITE_EMAILJS_TEMPLATE_ID_REPLY",
-      "EMAILJS_TEMPLATE_ID_REPLY",
-    );
-
-    if (!serviceId || !publicKey || !ownerTemplateId || !replyTemplateId) {
-      setSubmitting(false);
-      toast.error("Email is not configured.", {
-        description:
-          "Missing EmailJS env vars. Configure either VITE_EMAILJS_* or EMAILJS_* (local: .env.local, Vercel: Project Settings → Environment Variables).",
-      });
-      return;
-    }
-
-    emailjs.init({ publicKey });
-
     const form = e.currentTarget;
     const data = new FormData(form);
 
@@ -48,76 +20,51 @@ const ContactForm = () => {
     const message = String(data.get("message") ?? "").trim();
 
     try {
-      await emailjs.send(
-        serviceId,
-        ownerTemplateId,
-        {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
           name,
           email,
-          from_name: name,
-          from_email: email,
-          project_type: projectType,
+          projectType,
           message,
-          page_url: typeof window !== "undefined" ? window.location.href : "",
-        },
-        { publicKey },
-      );
+          pageUrl: typeof window !== "undefined" ? window.location.href : "",
+        }),
+      });
 
-      try {
-        await emailjs.send(
-          serviceId,
-          replyTemplateId,
-          {
-            name,
-            email,
-            to_name: name || "there",
-            to_email: email,
-            project_type: projectType,
-          },
-          { publicKey },
-        );
+      const json = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        error?: string;
+        details?: string;
+        confirmationSent?: boolean;
+        confirmationError?: string;
+      } | null;
 
+      if (!response.ok) {
+        toast.error("Could not send message.", {
+          description: json?.error || "Please try again in a moment.",
+        });
+        return;
+      }
+
+      if (json?.confirmationSent === false) {
+        toast.success("Message received.", {
+          description: json?.confirmationError
+            ? `Our technical lead will reply within 24 hours. (Confirmation email failed: ${json.confirmationError})`
+            : "Our technical lead will reply within 24 hours. (Confirmation email could not be sent.)",
+        });
+      } else {
         toast.success("Message received.", {
           description: "Our technical lead will reply within 24 hours.",
-        });
-      } catch (error: unknown) {
-        const details =
-          typeof error === "object" && error !== null
-            ? (error as { status?: number; text?: string }).text
-            : undefined;
-        toast.success("Message received.", {
-          description: details
-            ? `Our technical lead will reply within 24 hours. (Confirmation email failed: ${details})`
-            : "Our technical lead will reply within 24 hours. (Confirmation email could not be sent.)",
         });
       }
 
       form.reset();
     } catch (error: unknown) {
-      const status =
-        typeof error === "object" && error !== null
-          ? (error as { status?: number; text?: string }).status
-          : undefined;
-      const text =
-        typeof error === "object" && error !== null
-          ? (error as { status?: number; text?: string }).text
-          : undefined;
-
-      if (status === 404) {
-        const origin =
-          typeof window !== "undefined" ? window.location.origin : "";
-        toast.error("Could not send message.", {
-          description:
-            `EmailJS error (404): Account not found. This almost always means VITE_EMAILJS_PUBLIC_KEY is wrong, or the env vars are not set for this Vercel environment (Preview vs Production).` +
-            (origin ? ` Origin: ${origin}` : ""),
-        });
-        return;
-      }
-
       toast.error("Could not send message.", {
         description:
-          status || text
-            ? `EmailJS error${status ? ` (${status})` : ""}${text ? `: ${text}` : ""}`
+          error instanceof Error
+            ? error.message
             : "Please try again in a moment.",
       });
     } finally {

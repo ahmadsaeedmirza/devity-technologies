@@ -9,8 +9,18 @@ const socialLinks = [
     Icon: Mail,
     placeholder: false,
   },
-  { href: "#", label: "LinkedIn", Icon: Linkedin, placeholder: true },
-  { href: "#", label: "Instagram", Icon: Instagram, placeholder: true },
+  {
+    href: "https://www.linkedin.com/company/devity-technologies/",
+    label: "LinkedIn",
+    Icon: Linkedin,
+    placeholder: true,
+  },
+  {
+    href: "https://www.instagram.com/devity_technologies?utm_source=qr&igsh=czN5MXRqdHc0OWF3",
+    label: "Instagram",
+    Icon: Instagram,
+    placeholder: true,
+  },
 ] as const;
 
 const Footer = () => (

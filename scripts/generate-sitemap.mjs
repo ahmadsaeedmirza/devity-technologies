@@ -52,14 +52,9 @@ const getBaseUrl = () => {
   const explicit = process.env.SITE_URL || process.env.VITE_SITE_URL;
   if (explicit) return normalizeBaseUrl(explicit);
 
-  const vercelUrl = process.env.VERCEL_URL;
-  if (vercelUrl) return `https://${vercelUrl}`;
-
-  const fallback = "https://devitytechnologies.com";
-  console.warn(
-    `[sitemap] SITE_URL not set; falling back to ${fallback}. Set SITE_URL or VITE_SITE_URL in your build environment.`,
-  );
-  return fallback;
+  // Default to the canonical production domain.
+  // This avoids generating sitemaps that point at Vercel preview URLs.
+  return "https://devitytechnologies.com";
 };
 
 const baseUrl = getBaseUrl();

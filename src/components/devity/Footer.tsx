@@ -13,13 +13,13 @@ const socialLinks = [
     href: "https://www.linkedin.com/company/devity-technologies/",
     label: "LinkedIn",
     Icon: Linkedin,
-    placeholder: true,
+    placeholder: false,
   },
   {
     href: "https://www.instagram.com/devity_technologies?utm_source=qr&igsh=czN5MXRqdHc0OWF3",
     label: "Instagram",
     Icon: Instagram,
-    placeholder: true,
+    placeholder: false,
   },
 ] as const;
 

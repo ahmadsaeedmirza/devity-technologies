@@ -45,24 +45,34 @@ const ContactForm = () => {
     const message = String(data.get("message") ?? "").trim();
 
     try {
-      await emailjs.send(serviceId, ownerTemplateId, {
-        name,
-        email,
-        from_name: name,
-        from_email: email,
-        project_type: projectType,
-        message,
-        page_url: typeof window !== "undefined" ? window.location.href : "",
-      });
-
-      try {
-        await emailjs.send(serviceId, replyTemplateId, {
+      await emailjs.send(
+        serviceId,
+        ownerTemplateId,
+        {
           name,
           email,
-          to_name: name || "there",
-          to_email: email,
+          from_name: name,
+          from_email: email,
           project_type: projectType,
-        });
+          message,
+          page_url: typeof window !== "undefined" ? window.location.href : "",
+        },
+        { publicKey },
+      );
+
+      try {
+        await emailjs.send(
+          serviceId,
+          replyTemplateId,
+          {
+            name,
+            email,
+            to_name: name || "there",
+            to_email: email,
+            project_type: projectType,
+          },
+          { publicKey },
+        );
 
         toast.success("Message received.", {
           description: "Our technical lead will reply within 24 hours.",

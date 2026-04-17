@@ -39,8 +39,8 @@ const routes = [
   { loc: "/", changefreq: "weekly", priority: 1.0 },
   { loc: "/services", changefreq: "monthly", priority: 0.9 },
   { loc: "/work", changefreq: "monthly", priority: 0.9 },
-  { loc: "/about", changefreq: "quarterly", priority: 0.8 },
-  { loc: "/process", changefreq: "quarterly", priority: 0.8 },
+  { loc: "/about", changefreq: "yearly", priority: 0.8 },
+  { loc: "/process", changefreq: "yearly", priority: 0.8 },
   { loc: "/contact", changefreq: "yearly", priority: 0.7 },
 ];
 

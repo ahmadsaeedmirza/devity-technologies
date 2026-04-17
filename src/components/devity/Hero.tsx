@@ -5,33 +5,31 @@ const Hero = () => (
   <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
     <div className="absolute inset-0 grid-bg-light pointer-events-none" />
 
-    {/* Floating gear cluster */}
+    {/* Floating gear cluster (md+) */}
     <div
-      className="absolute top-20 right-10 md:right-24 w-[360px] md:w-[520px] aspect-square animate-float-slow pointer-events-none"
+      className="hidden md:block absolute top-20 right-10 md:right-24 w-[520px] aspect-square animate-float-slow pointer-events-none"
       aria-hidden="true"
     >
       <div className="relative w-full h-full">
-        {/* soft glow (no panel background) */}
         <div className="absolute inset-0 rounded-full bg-mint-soft/50 blur-3xl opacity-60" />
 
-        {/* gears */}
         <Cog
-          className="absolute left-[62%] top-[60%] -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] md:w-[320px] md:h-[320px] text-ink/20 mix-blend-multiply animate-spin-slow"
+          className="absolute left-[62%] top-[60%] -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] text-ink/20 mix-blend-multiply animate-spin-slow"
           strokeWidth={1.1}
           style={{ animationDuration: "28s" }}
         />
         <Cog
-          className="absolute left-[38%] top-[52%] -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] md:w-[230px] md:h-[230px] text-teal/24 mix-blend-multiply animate-spin-slow"
+          className="absolute left-[38%] top-[52%] -translate-x-1/2 -translate-y-1/2 w-[230px] h-[230px] text-teal/24 mix-blend-multiply animate-spin-slow"
           strokeWidth={1.1}
           style={{ animationDuration: "22s", animationDirection: "reverse" }}
         />
         <Cog
-          className="absolute left-[74%] top-[34%] -translate-x-1/2 -translate-y-1/2 w-[140px] h-[140px] md:w-[200px] md:h-[200px] text-teal-deep/30 mix-blend-multiply animate-spin-slow"
+          className="absolute left-[74%] top-[34%] -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] text-teal-deep/30 mix-blend-multiply animate-spin-slow"
           strokeWidth={1.15}
           style={{ animationDuration: "18s", animationDirection: "reverse" }}
         />
         <Cog
-          className="absolute left-[54%] top-[34%] -translate-x-1/2 -translate-y-1/2 w-[110px] h-[110px] md:w-[150px] md:h-[150px] text-ink/16 mix-blend-multiply animate-spin-slow"
+          className="absolute left-[54%] top-[34%] -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] text-ink/16 mix-blend-multiply animate-spin-slow"
           strokeWidth={1.2}
           style={{ animationDuration: "14s" }}
         />
@@ -43,7 +41,7 @@ const Hero = () => (
         <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-10 border border-teal/30 bg-mint-soft/40 backdrop-blur-sm animate-fade-in">
           <Sparkles className="w-3 h-3 text-teal" />
           <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-teal">
-            Now booking Q3 engagements
+            Now booking new engagements
           </span>
         </div>
 
@@ -60,13 +58,50 @@ const Hero = () => (
         </h1>
 
         <p
-          className="max-w-xl text-lg md:text-xl text-foreground-soft leading-relaxed mb-12 animate-fade-up"
+          className="max-w-xl text-lg md:text-xl text-foreground-soft leading-relaxed mb-6 md:mb-12 animate-fade-up"
           style={{ animationDelay: "0.25s", opacity: 0 }}
         >
           Devity Technologies builds scalable web applications, mobile
           ecosystems, and AI-driven automation that turn complex challenges into
           seamless growth.
         </p>
+
+        {/* Gear cluster (mobile) */}
+        <div
+          className="md:hidden mt-0 mb-10 mx-auto w-[260px] sm:w-[320px] aspect-square pointer-events-none animate-float-slow"
+          aria-hidden="true"
+        >
+          <div className="relative w-full h-full">
+            <div className="absolute inset-0 rounded-full bg-mint-soft/50 blur-3xl opacity-60" />
+
+            <Cog
+              className="absolute left-[62%] top-[60%] -translate-x-1/2 -translate-y-1/2 w-[170px] h-[170px] sm:w-[220px] sm:h-[220px] text-ink/20 mix-blend-multiply animate-spin-slow"
+              strokeWidth={1.1}
+              style={{ animationDuration: "28s" }}
+            />
+            <Cog
+              className="absolute left-[38%] top-[52%] -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] text-teal/24 mix-blend-multiply animate-spin-slow"
+              strokeWidth={1.1}
+              style={{
+                animationDuration: "22s",
+                animationDirection: "reverse",
+              }}
+            />
+            <Cog
+              className="absolute left-[74%] top-[34%] -translate-x-1/2 -translate-y-1/2 w-[110px] h-[110px] sm:w-[140px] sm:h-[140px] text-teal-deep/30 mix-blend-multiply animate-spin-slow"
+              strokeWidth={1.15}
+              style={{
+                animationDuration: "18s",
+                animationDirection: "reverse",
+              }}
+            />
+            <Cog
+              className="absolute left-[54%] top-[34%] -translate-x-1/2 -translate-y-1/2 w-[90px] h-[90px] sm:w-[110px] sm:h-[110px] text-ink/16 mix-blend-multiply animate-spin-slow"
+              strokeWidth={1.2}
+              style={{ animationDuration: "14s" }}
+            />
+          </div>
+        </div>
 
         <div
           className="flex flex-col sm:flex-row gap-4 animate-fade-up"

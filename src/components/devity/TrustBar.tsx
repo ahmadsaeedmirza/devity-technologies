@@ -1,7 +1,7 @@
 const logos = [
   "FINDSVET",
   "ACME SECURE",
-  "TECHNO INSTRUMENTS",
+  "TECNO INSTRUMENTS",
   "E&R SALONS",
   "SGT CANADA",
   "SPECS WEAR",

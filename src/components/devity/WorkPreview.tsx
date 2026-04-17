@@ -17,7 +17,7 @@ export const cases = [
     tag: "SaaS",
     title: "Custom SaaS Platform",
     desc: "Multi-tenant architecture engineered to scale gracefully with usage spikes.",
-    metric: "100K",
+    metric: "1000",
     metricLabel: "Users Scaled To",
     color: "bg-teal",
   },

@@ -4,7 +4,7 @@ import { ArrowUpRight, Instagram, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
   {
-    href: "mailto:hello@devity.tech",
+    href: "mailto:info@devitytechnologies.com",
     label: "Email",
     Icon: Mail,
     placeholder: false,
@@ -66,10 +66,10 @@ const Footer = () => (
             <ul className="space-y-2 text-background/85">
               <li>
                 <a
-                  href="mailto:hello@devity.tech"
+                  href="mailto:info@devitytechnologies.com"
                   className="hover:text-mint transition-colors"
                 >
-                  hello@devity.tech
+                  info@devitytechnologies.com
                 </a>
               </li>
               <li>

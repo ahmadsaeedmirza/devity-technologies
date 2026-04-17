@@ -94,8 +94,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const safeName = escapeHtml(name);
   const safeEmail = escapeHtml(email);
   const safeProjectType = escapeHtml(projectType);
-  const safeMessage = escapeHtml(message).replaceAll("\n", "<br />");
+  const safeMessage = escapeHtml(message);
   const safePageUrl = pageUrl ? escapeHtml(pageUrl) : "";
+  const safePageUrlDisplay = safePageUrl || "—";
 
   try {
     await resend.emails.send({
@@ -104,16 +105,49 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       replyTo: email,
       subject: `New Project Inquiry from ${name}`,
       html: `
-        <div style="font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6">
-          <h2 style="margin: 0 0 12px">New Message from Devity Website</h2>
-          <p style="margin: 0 0 6px"><strong>Name:</strong> ${safeName}</p>
-          <p style="margin: 0 0 6px"><strong>Email:</strong> ${safeEmail}</p>
-          <p style="margin: 0 0 6px"><strong>Project Type:</strong> ${safeProjectType}</p>
-          ${safePageUrl ? `<p style=\"margin: 0 0 6px\"><strong>Page:</strong> ${safePageUrl}</p>` : ""}
-          <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 16px 0" />
-          <p style="margin: 0"><strong>Message:</strong></p>
-          <p style="margin: 8px 0 0">${safeMessage}</p>
-        </div>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F7F4EC;padding:24px 0;">
+          <tr>
+            <td align="center">
+              <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="width:600px;max-width:92%;border:1px solid #D6DEE2;background:#FFFFFF;">
+                <tr>
+                  <td style="background:#0B1217;padding:18px 22px;">
+                    <img src="https://devitytechnologies.com/devity-logo-white.png" alt="Devity Technologies" height="28" style="display:block;border:0;outline:none;text-decoration:none;">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:22px 22px 10px 22px;font-family:Inter,Arial,sans-serif;color:#0B1217;">
+                    <div style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#006064;font-family:'JetBrains Mono',Consolas,monospace;">
+                      New Contact Submission
+                    </div>
+                    <h1 style="margin:12px 0 0 0;font-size:22px;line-height:1.25;font-weight:600;">
+                      ${safeName}
+                    </h1>
+                    <p style="margin:8px 0 0 0;color:#2E3A3F;font-size:14px;">
+                      <strong>Email:</strong> ${safeEmail}<br>
+                      <strong>Project type:</strong> ${safeProjectType}<br>
+                      <strong>Page:</strong> ${safePageUrlDisplay}
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:0 22px 22px 22px;font-family:Inter,Arial,sans-serif;color:#0B1217;">
+                    <div style="margin-top:14px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#006064;font-family:'JetBrains Mono',Consolas,monospace;">
+                      Message
+                    </div>
+                    <div style="margin-top:10px;padding:14px;border:1px solid #D6DEE2;background:#F7F4EC;color:#2E3A3F;font-size:14px;line-height:1.6;white-space:pre-wrap;">
+                      ${safeMessage}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 22px;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#5A6A70;border-top:1px solid #D6DEE2;">
+                    Devity Technologies
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
       `,
     });
   } catch (error: unknown) {
@@ -138,11 +172,55 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       to: [email],
       subject: "We received your message — Devity Technologies",
       html: `
-        <div style="font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6">
-          <p style="margin: 0 0 10px">Hi ${safeName || "there"},</p>
-          <p style="margin: 0 0 10px">Thanks for reaching out to Devity Technologies. We’ve received your message and our technical lead will reply within 24 hours (Mon–Fri).</p>
-          <p style="margin: 0">— Devity Technologies</p>
-        </div>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F7F4EC;padding:24px 0;">
+          <tr>
+            <td align="center">
+              <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="width:600px;max-width:92%;border:1px solid #D6DEE2;background:#FFFFFF;">
+                <tr>
+                  <td style="background:#0B1217;padding:18px 22px;">
+                    <img src="https://devitytechnologies.com/devity-logo-white.png" alt="Devity Technologies" height="28" style="display:block;border:0;outline:none;text-decoration:none;">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:22px;font-family:Inter,Arial,sans-serif;color:#0B1217;">
+                    <div style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#006064;font-family:'JetBrains Mono',Consolas,monospace;">
+                      Message received
+                    </div>
+
+                    <h1 style="margin:12px 0 0 0;font-size:22px;line-height:1.25;font-weight:600;">
+                      Thanks, ${safeName || "there"}.
+                    </h1>
+
+                    <p style="margin:10px 0 0 0;color:#2E3A3F;font-size:14px;line-height:1.7;">
+                      We’ve received your note about <strong>${safeProjectType}</strong>.
+                      Our technical lead will reply within 24 hours (Mon–Fri).
+                    </p>
+
+                    <div style="margin-top:16px;padding:14px;border:1px solid #D6DEE2;background:#F7F4EC;">
+                      <div style="font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#006064;">
+                        What happens next
+                      </div>
+                      <div style="margin-top:8px;color:#2E3A3F;font-size:14px;line-height:1.7;">
+                        1) We review your requirements<br>
+                        2) We respond with questions / a clear next step<br>
+                        3) If it’s a fit, we’ll propose scope + timeline
+                      </div>
+                    </div>
+
+                    <p style="margin:16px 0 0 0;color:#2E3A3F;font-size:14px;">
+                      — Devity Technologies
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 22px;font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#5A6A70;border-top:1px solid #D6DEE2;">
+                    If you didn’t submit this, ignore this email.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
       `,
     });
   } catch (error: unknown) {

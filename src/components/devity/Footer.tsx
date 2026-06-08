@@ -43,7 +43,7 @@ const Footer = () => (
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
           </Link>
         </div>
-        <div className="lg:col-span-5 grid grid-cols-2 gap-8 lg:pt-4">
+        <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:pt-4">
           <div>
             <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-background/50 mb-4">
               Studio

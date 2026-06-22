@@ -1,11 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
 
 const ContactForm = () => {
   const [submitting, setSubmitting] = useState(false);
+  const [selectedType, setSelectedType] = useState("Web Platform");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get("service");
+      if (service) {
+        const lower = service.toLowerCase();
+        if (lower === "web-platform" || lower === "web-platforms" || lower === "web platform") {
+          setSelectedType("Web Platform");
+        } else if (lower === "saas-applications" || lower === "saas-application" || lower === "saas" || lower === "saas applications") {
+          setSelectedType("SaaS Applications");
+        } else if (lower === "mobile-applications" || lower === "mobile-application" || lower === "mobile" || lower === "mobile application") {
+          setSelectedType("Mobile Application");
+        } else if (lower === "ai-automation" || lower === "ai" || lower === "ai & automation") {
+          setSelectedType("AI & Automation");
+        } else if (lower === "audit" || lower === "consulting" || lower === "audit / consulting") {
+          setSelectedType("Audit / Consulting");
+        }
+
+        setTimeout(() => {
+          formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 150);
+      }
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -75,7 +102,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <Field label="Name" name="name" placeholder="Your full name" required />
         <Field
@@ -93,6 +120,8 @@ const ContactForm = () => {
         </label>
         <select
           name="type"
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)}
           required
           className="w-full bg-background border border-border focus:border-teal outline-none px-4 py-3.5 text-foreground font-body transition-colors"
         >

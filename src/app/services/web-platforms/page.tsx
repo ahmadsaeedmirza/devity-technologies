@@ -167,7 +167,7 @@ export default function Page() {
             Ready to build something that scales?
           </h2>
           <a
-            href="/contact"
+            href="/contact?service=web-platforms"
             className="inline-flex items-center gap-3 px-8 py-5 bg-mint text-ink font-mono text-xs tracking-[0.25em] uppercase hover:bg-background transition-colors group"
           >
             Start a Project

@@ -9,7 +9,7 @@ interface Block {
   num: string;
   tag: string;
   title: React.ReactNode;
-  body: string;
+  body: React.ReactNode;
   image: any;
   alt: string;
   bg: string;
@@ -21,7 +21,14 @@ const blocks: Block[] = [
     num: "01",
     tag: "Web & Ecosystem",
     title: <>High-performance <span className="display-italic">web platforms.</span></>,
-    body: "From enterprise-grade SaaS to lightning-fast landing pages - we focus on speed, security, scalability and SEO that compounds.",
+    body: (
+      <>
+        From enterprise-grade SaaS to lightning-fast landing pages - we focus on speed, security, scalability and SEO that compounds.
+        <span className="block mt-4">
+          We build full-stack web platforms using Next.js, Node.js, and PostgreSQL - architectured to handle real traffic, real data, and real business complexity. From internal tools to customer-facing SaaS products, every system we ship is optimized for performance, maintainability, and long-term growth.
+        </span>
+      </>
+    ),
     image: dashboard,
     alt: "Modern analytics dashboard mockup",
     bg: "bg-mint-soft/50",
@@ -30,7 +37,14 @@ const blocks: Block[] = [
     num: "02",
     tag: "Mobile Solutions",
     title: <>Native-feel <span className="display-italic">mobile apps.</span></>,
-    body: "Cross-platform apps with offline-first capability, smooth 60fps performance and intuitive UX that earns daily-active users.",
+    body: (
+      <>
+        Cross-platform apps with offline-first capability, smooth 60fps performance and intuitive UX that earns daily-active users.
+        <span className="block mt-4">
+          Using React Native, we deliver mobile applications that feel native on both iOS and Android - without the cost of two separate codebases. Our apps are built with offline-first architecture, seamless sync, and performance tuning baked in from day one - not bolted on after launch.
+        </span>
+      </>
+    ),
     image: mobile,
     alt: "Floating smartphone mockup",
     bg: "bg-background-alt",
@@ -40,7 +54,14 @@ const blocks: Block[] = [
     num: "03",
     tag: "AI & Automation",
     title: <>Workflow <span className="display-italic">intelligence.</span></>,
-    body: "We integrate custom AI models and automated pipelines that eliminate manual bottlenecks - and unlock margin you can measure.",
+    body: (
+      <>
+        We integrate custom AI models and automated pipelines that eliminate manual bottlenecks - and unlock margin you can measure.
+        <span className="block mt-4">
+          From custom LLM agents and RAG pipelines to workflow orchestration and forecasting models, we design AI systems that solve specific business problems - not proof-of-concept demos. Every automation we build is tied to a measurable outcome: time saved, cost reduced, or revenue unlocked.
+        </span>
+      </>
+    ),
     image: aiStream,
     alt: "Abstract data stream",
     bg: "bg-mint-soft/50",

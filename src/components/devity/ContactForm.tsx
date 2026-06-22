@@ -96,7 +96,8 @@ const ContactForm = () => {
           required
           className="w-full bg-background border border-border focus:border-teal outline-none px-4 py-3.5 text-foreground font-body transition-colors"
         >
-          <option>Web Platform / SaaS</option>
+          <option>Web Platform</option>
+          <option>SaaS Applications</option>
           <option>Mobile Application</option>
           <option>AI & Automation</option>
           <option>Audit / Consulting</option>

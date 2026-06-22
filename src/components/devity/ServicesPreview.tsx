@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import dashboard from "@/assets/dashboard-light.jpg";
+import web from "@/assets/web-platforms.png";
 import mobile from "@/assets/mobile-light.jpg";
 import aiStream from "@/assets/ai-light.jpg";
 import SectionHeader from "./SectionHeader";
@@ -14,28 +15,48 @@ interface Block {
   alt: string;
   bg: string;
   reverse?: boolean;
+  link: string;
 }
 
 const blocks: Block[] = [
   {
     num: "01",
-    tag: "Web & Ecosystem",
+    tag: "Web Platforms",
     title: <>High-performance <span className="display-italic">web platforms.</span></>,
     body: (
       <>
-        From enterprise-grade SaaS to lightning-fast landing pages - we focus on speed, security, scalability and SEO that compounds.
+        We build full-stack web applications that handle real traffic, real data, and real business complexity - from day one through your next growth milestone.
         <span className="block mt-4">
-          We build full-stack web platforms using Next.js, Node.js, and PostgreSQL - architectured to handle real traffic, real data, and real business complexity. From internal tools to customer-facing SaaS products, every system we ship is optimized for performance, maintainability, and long-term growth.
+          From internal tools and custom dashboards to headless commerce and API integrations, we architect systems for speed, security, and growth. We build with modern stacks optimized for performance, maintainability, and search visibility.
+        </span>
+      </>
+    ),
+    image: web,
+    alt: "Modern analytics dashboard mockup",
+    bg: "bg-mint-soft/50",
+    link: "/services/web-platforms",
+  },
+  {
+    num: "02",
+    tag: "SaaS Applications",
+    title: <>Custom SaaS <span className="display-italic">products.</span></>,
+    body: (
+      <>
+        From zero to launch and beyond - we design and build custom SaaS products from scratch with scalable infrastructure and subscription billing.
+        <span className="block mt-4">
+          We engineer SaaS applications with multi-tenant architecture, secure database isolation, Stripe subscription integration, role-based access control, and onboarding flows designed for user activation and retention.
         </span>
       </>
     ),
     image: dashboard,
-    alt: "Modern analytics dashboard mockup",
-    bg: "bg-mint-soft/50",
+    alt: "Premium SaaS dashboard interface",
+    bg: "bg-background-alt",
+    reverse: true,
+    link: "/services/saas-applications",
   },
   {
-    num: "02",
-    tag: "Mobile Solutions",
+    num: "03",
+    tag: "Mobile Applications",
     title: <>Native-feel <span className="display-italic">mobile apps.</span></>,
     body: (
       <>
@@ -47,11 +68,11 @@ const blocks: Block[] = [
     ),
     image: mobile,
     alt: "Floating smartphone mockup",
-    bg: "bg-background-alt",
-    reverse: true,
+    bg: "bg-mint-soft/50",
+    link: "/services/mobile-applications",
   },
   {
-    num: "03",
+    num: "04",
     tag: "AI & Automation",
     title: <>Workflow <span className="display-italic">intelligence.</span></>,
     body: (
@@ -64,7 +85,9 @@ const blocks: Block[] = [
     ),
     image: aiStream,
     alt: "Abstract data stream",
-    bg: "bg-mint-soft/50",
+    bg: "bg-background-alt",
+    reverse: true,
+    link: "/services/ai-automation",
   },
 ];
 
@@ -74,7 +97,7 @@ const ServicesPreview = () => (
       <SectionHeader
         eyebrow="Services"
         title={<>Solutions, <span className="display-italic text-gradient-brand">engineered.</span></>}
-        description="Three core practices, infinite combinations. We compose them around the outcome you're chasing."
+        description="Four core practices, infinite combinations. We compose them around the outcome you're chasing."
       />
 
       <div className="space-y-6">
@@ -110,7 +133,7 @@ const ServicesPreview = () => (
                 {b.body}
               </p>
               <Link
-                to="/services"
+                to={b.link}
                 className="inline-flex items-center gap-3 font-mono text-xs tracking-[0.25em] uppercase text-ink border-b border-ink pb-1 hover:border-teal hover:text-teal transition-colors group/cta"
               >
                 Explore service

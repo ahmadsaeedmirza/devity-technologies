@@ -43,7 +43,7 @@ const Footer = () => (
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
           </Link>
         </div>
-        <div className="lg:col-span-5 grid grid-cols-2 gap-8 lg:pt-4">
+        <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:pt-4">
           <div>
             <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-background/50 mb-4">
               Studio
@@ -52,6 +52,11 @@ const Footer = () => (
               <li>
                 <Link to="/about" className="hover:text-mint transition-colors">
                   About
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-mint transition-colors">
+                  Services
                 </Link>
               </li>
               <li>
@@ -70,6 +75,33 @@ const Footer = () => (
             </ul>
           </div>
           <div>
+            <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-background/50 mb-4">
+              Capabilities
+            </p>
+            <ul className="space-y-2 text-background/85">
+              <li>
+                <Link to="/services/web-platforms" className="hover:text-mint transition-colors">
+                  Web Platforms
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/saas-applications" className="hover:text-mint transition-colors">
+                  SaaS Applications
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/mobile-applications" className="hover:text-mint transition-colors">
+                  Mobile Apps
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/ai-automation" className="hover:text-mint transition-colors">
+                  AI & Automation
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-span-2 sm:col-span-1">
             <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-background/50 mb-4">
               Contact
             </p>

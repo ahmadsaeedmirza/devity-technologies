@@ -26,7 +26,7 @@ const About = () => {
   useSEO({
     title: "About",
     description:
-      "A small studio of senior engineers and designers building software that quietly does its job — exceptionally well.",
+      "A small studio of senior engineers and designers building software that quietly does its job - exceptionally well.",
     path: "/about",
   });
 
@@ -42,7 +42,7 @@ const About = () => {
             </span>
           </>
         }
-        description="Devity Technologies is a small studio of senior engineers and designers building software that quietly does its job — exceptionally well."
+        description="Devity Technologies is a small studio of senior engineers and designers building software that quietly does its job - exceptionally well."
       />
 
       <section className="py-20">
@@ -88,7 +88,7 @@ const About = () => {
               </p>
               <p>
                 We're small on purpose. Every engagement gets senior attention,
-                deliberate scope, and a team that owns the outcome — not just a
+                deliberate scope, and a team that owns the outcome - not just a
                 ticket queue.
               </p>
             </div>

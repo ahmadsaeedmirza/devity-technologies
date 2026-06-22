@@ -79,7 +79,7 @@ export async function POST(request: Request) {
   const safeProjectType = escapeHtml(projectType);
   const safeMessage = escapeHtml(message);
   const safePageUrl = pageUrl ? escapeHtml(pageUrl) : "";
-  const safePageUrlDisplay = safePageUrl || "—";
+  const safePageUrlDisplay = safePageUrl || "-";
 
   try {
     await resend.emails.send({
@@ -155,7 +155,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: fromEmail,
       to: [email],
-      subject: "We received your message — Devity Technologies",
+      subject: "We received your message - Devity Technologies",
       html: `
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F7F4EC;padding:24px 0;">
           <tr>
@@ -176,7 +176,7 @@ export async function POST(request: Request) {
                     </h1>
                     <p style="margin:10px 0 0 0;color:#2E3A3F;font-size:14px;line-height:1.7;">
                       We’ve received your note about <strong>${safeProjectType}</strong>.
-                      Our technical lead will reply within 24 hours (Mon–Fri).
+                      Our technical lead will reply within 24 hours (Mon-Fri).
                     </p>
                     <div style="margin-top:16px;padding:14px;border:1px solid #D6DEE2;background:#F7F4EC;">
                       <div style="font-family:'JetBrains Mono',Consolas,monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#006064;">
@@ -189,7 +189,7 @@ export async function POST(request: Request) {
                       </div>
                     </div>
                     <p style="margin:16px 0 0 0;color:#2E3A3F;font-size:14px;">
-                      — Devity Technologies
+                      - Devity Technologies
                     </p>
                   </td>
                 </tr>

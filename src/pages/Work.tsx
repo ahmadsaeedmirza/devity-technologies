@@ -44,7 +44,7 @@ const Work = () => {
   useSEO({
     title: "Work",
     description:
-      "Selected case studies across web platforms, SaaS, and AI automation—built for performance, reliability, and measurable impact.",
+      "Selected case studies across web platforms, SaaS, and AI automation - built for performance, reliability, and measurable impact.",
     path: "/work",
   });
 
@@ -60,7 +60,7 @@ const Work = () => {
             </span>
           </>
         }
-        description="A closer look at the engagements that defined the last twelve months — what we built, why it mattered, and what it returned."
+        description="A closer look at the engagements that defined the last twelve months - what we built, why it mattered, and what it returned."
       />
 
       <section className="py-20">
@@ -86,7 +86,7 @@ const Work = () => {
 
               <div className="lg:col-span-5 lg:sticky lg:top-28">
                 <div className="font-mono text-xs tracking-[0.25em] uppercase text-teal mb-4">
-                  Case 0{i + 1} — {c.tag}
+                  Case 0{i + 1} - {c.tag}
                 </div>
                 <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight mb-6">
                   {c.title}

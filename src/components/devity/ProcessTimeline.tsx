@@ -2,7 +2,7 @@ import { Compass, PenTool, Code2, Rocket } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 
 export const steps = [
-  { icon: Compass, title: "Discovery", body: "We define vision, KPIs, audience and constraints — together. The blueprint comes first." },
+  { icon: Compass, title: "Discovery", body: "We define vision, KPIs, audience and constraints - together. The blueprint comes first." },
   { icon: PenTool, title: "Design", body: "Architecting UX, IA and the interaction language. Prototypes you can actually click." },
   { icon: Code2, title: "Development", body: "High-performance agile builds with weekly demos. You see progress, not just timelines." },
   { icon: Rocket, title: "Launch & Scale", body: "Continuous growth optimization, observability and SLAs you can rely on." },
@@ -14,7 +14,7 @@ const ProcessTimeline = () => (
       <SectionHeader
         eyebrow="Process"
         title={<>From idea to <span className="display-italic text-gradient-brand">infrastructure.</span></>}
-        description="Four stages. No surprises, no scope chaos — just a system designed to ship."
+        description="Four stages. No surprises, no scope chaos - just a system designed to ship."
       />
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">

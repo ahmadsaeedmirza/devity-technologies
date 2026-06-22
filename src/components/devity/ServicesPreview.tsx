@@ -21,7 +21,7 @@ const blocks: Block[] = [
     num: "01",
     tag: "Web & Ecosystem",
     title: <>High-performance <span className="display-italic">web platforms.</span></>,
-    body: "From enterprise-grade SaaS to lightning-fast landing pages — we focus on speed, security, scalability and SEO that compounds.",
+    body: "From enterprise-grade SaaS to lightning-fast landing pages - we focus on speed, security, scalability and SEO that compounds.",
     image: dashboard,
     alt: "Modern analytics dashboard mockup",
     bg: "bg-mint-soft/50",
@@ -40,7 +40,7 @@ const blocks: Block[] = [
     num: "03",
     tag: "AI & Automation",
     title: <>Workflow <span className="display-italic">intelligence.</span></>,
-    body: "We integrate custom AI models and automated pipelines that eliminate manual bottlenecks — and unlock margin you can measure.",
+    body: "We integrate custom AI models and automated pipelines that eliminate manual bottlenecks - and unlock margin you can measure.",
     image: aiStream,
     alt: "Abstract data stream",
     bg: "bg-mint-soft/50",
@@ -80,7 +80,7 @@ const ServicesPreview = () => (
 
             <div className="lg:col-span-6">
               <div className="font-mono text-sm text-muted-foreground mb-6">
-                /SERVICE — {b.num}
+                /SERVICE - {b.num}
               </div>
               <h3 className="font-display font-medium text-4xl md:text-5xl leading-[1] mb-6 tracking-tight">
                 {b.title}

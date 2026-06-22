@@ -44,7 +44,7 @@ const Services = () => {
   useSEO({
     title: "Services",
     description:
-      "Web platforms, mobile applications, and AI automation—engineered for speed, reliability, and measurable outcomes.",
+      "Web platforms, mobile applications, and AI automation - engineered for speed, reliability, and measurable outcomes.",
     path: "/services",
   });
 
@@ -60,7 +60,7 @@ const Services = () => {
             </span>
           </>
         }
-        description="Every engagement is custom — but it draws from a sharp, opinionated set of practices we've refined across 40+ shipped systems."
+        description="Every engagement is custom - but it draws from a sharp, opinionated set of practices we've refined across 40+ shipped systems."
       />
 
       <ServicesPreview />

@@ -66,12 +66,12 @@ export const useSEO = ({
     const ogImage =
       siteUrl && image.startsWith("/") ? `${siteUrl}${image}` : image;
 
-    document.title = `${title} — ${SITE_NAME}`;
+    document.title = `${title} - ${SITE_NAME}`;
 
     upsertMetaByName("description", description);
     upsertMetaByName("robots", robots);
 
-    upsertMetaByProperty("og:title", `${title} — ${SITE_NAME}`);
+    upsertMetaByProperty("og:title", `${title} - ${SITE_NAME}`);
     upsertMetaByProperty("og:description", description);
     upsertMetaByProperty("og:type", type);
     if (siteUrl) upsertMetaByProperty("og:url", url);
@@ -79,7 +79,7 @@ export const useSEO = ({
     upsertMetaByProperty("og:image", ogImage);
 
     upsertMetaByName("twitter:card", "summary_large_image");
-    upsertMetaByName("twitter:title", `${title} — ${SITE_NAME}`);
+    upsertMetaByName("twitter:title", `${title} - ${SITE_NAME}`);
     upsertMetaByName("twitter:description", description);
     upsertMetaByName("twitter:image", ogImage);
 

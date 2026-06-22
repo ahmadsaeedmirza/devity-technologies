@@ -5,13 +5,13 @@ const items = [
   {
     icon: Cpu,
     title: "Precision engineering",
-    body: "We don't just write code — we architect systems designed for 99.9% uptime, observability and clean failure modes.",
+    body: "We don't just write code - we architect systems designed for 99.9% uptime, observability and clean failure modes.",
     color: "from-mint-soft to-background",
   },
   {
     icon: Zap,
     title: "Future-ready tech",
-    body: "Modern stacks (MERN, Edge, AI) so your business stays ahead of the curve — not chained to legacy debt.",
+    body: "Modern stacks (MERN, Edge, AI) so your business stays ahead of the curve - not chained to legacy debt.",
     color: "from-background to-mint-soft",
   },
   {
@@ -28,7 +28,7 @@ const WhyDevity = () => (
       <SectionHeader
         eyebrow="Why Devity"
         title={<>Built on <span className="display-italic text-gradient-brand">discipline</span>, not hype.</>}
-        description="Three principles guide every system we ship — from architecture to interface."
+        description="Three principles guide every system we ship - from architecture to interface."
       />
 
       <div className="grid md:grid-cols-3 gap-6">

@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Devity Technologies — Engineering Digital Evolution",
+  title: "Devity Technologies - Engineering Digital Evolution",
   description:
     "Devity Technologies builds scalable web applications, mobile ecosystems, and AI-driven automation that turn complex challenges into seamless growth.",
   authors: [{ name: "Devity Technologies" }],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: "https://www.devitytechnologies.com",
   },
   openGraph: {
-    title: "Devity Technologies — Engineering Digital Evolution",
+    title: "Devity Technologies - Engineering Digital Evolution",
     description:
       "Scalable web applications, mobile solutions, and AI automation engineered for performance.",
     type: "website",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Devity Technologies — Engineering Digital Evolution",
+    title: "Devity Technologies - Engineering Digital Evolution",
     description:
       "Scalable web applications, mobile solutions, and AI automation engineered for performance.",
     images: ["/favicon.png"],

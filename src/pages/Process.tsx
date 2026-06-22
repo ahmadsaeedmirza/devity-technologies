@@ -5,15 +5,15 @@ import { useSEO } from "@/hooks/use-seo";
 
 const detail = [
   [
-    "1–2 weeks",
+    "1-2 weeks",
     "Workshops, audits, KPI alignment, scope mapping. Output: a written brief and a pricing range you can plan against.",
   ],
   [
-    "2–4 weeks",
+    "2-4 weeks",
     "Wireframes, design system, prototypes. We pressure-test the experience before we build the engineering for it.",
   ],
   [
-    "6–14 weeks",
+    "6-14 weeks",
     "Weekly demos, shared backlog, transparent burn-down. You see working software every week, not slide decks.",
   ],
   [
@@ -41,7 +41,7 @@ const Process = () => {
             <span className="display-italic">build.</span>
           </>
         }
-        description="Four stages, no surprises. Here's how an engagement actually unfolds — including what you'll see, when, and what it costs in time."
+        description="Four stages, no surprises. Here's how an engagement actually unfolds - including what you'll see, when, and what it costs in time."
       />
 
       <ProcessTimeline />

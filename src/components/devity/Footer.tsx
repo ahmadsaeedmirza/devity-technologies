@@ -90,7 +90,7 @@ const Footer = () => (
                   Get a quote
                 </Link>
               </li>
-              <li className="text-background/60">Mon – Fri, 9–6 IST</li>
+              <li className="text-background/60">Mon - Fri, 9-6 IST</li>
             </ul>
           </div>
         </div>
@@ -139,7 +139,7 @@ const Footer = () => (
         </div>
 
         <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-background/50">
-          © {new Date().getFullYear()} Devity Technologies — All rights reserved
+          © {new Date().getFullYear()} Devity Technologies - All rights reserved
         </div>
       </div>
     </div>

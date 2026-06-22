@@ -29,7 +29,7 @@ const Contact = () => {
   useSEO({
     title: "Contact",
     description:
-      "Drop us a message and our technical lead will reply within 24 hours (Mon–Fri). Remote-first across IST / GMT.",
+      "Drop us a message and our technical lead will reply within 24 hours (Mon-Fri). Remote-first across IST / GMT.",
     path: "/contact",
   });
 
@@ -74,7 +74,7 @@ const Contact = () => {
                     <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-1">
                       Response
                     </div>
-                    <div className="text-foreground">Within 24h, Mon–Fri</div>
+                    <div className="text-foreground">Within 24h, Mon-Fri</div>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
@@ -96,15 +96,15 @@ const Contact = () => {
               <ul className="space-y-3 font-mono text-sm text-foreground-soft">
                 <li className="flex justify-between">
                   <span>Audit / sprint</span>
-                  <span className="text-foreground">1–2 weeks</span>
+                  <span className="text-foreground">1-2 weeks</span>
                 </li>
                 <li className="flex justify-between">
                   <span>MVP build</span>
-                  <span className="text-foreground">4–8 weeks</span>
+                  <span className="text-foreground">4-8 weeks</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Platform / SaaS</span>
-                  <span className="text-foreground">8–16+ weeks</span>
+                  <span className="text-foreground">8-16+ weeks</span>
                 </li>
               </ul>
             </div>

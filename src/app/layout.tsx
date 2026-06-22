@@ -131,7 +131,7 @@ export default function RootLayout({
                     "name": "What types of businesses do you work with?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "We work with startups, growing businesses, and enterprises looking for premium, engineering-focused software solutions across web, mobile, SaaS, and AI automation."
+                      "text": "We work with startups, growing businesses, and enterprises that need engineering-grade software — not templated solutions. Our clients range from early-stage founders launching their first SaaS product to established companies modernizing legacy systems or automating internal workflows."
                     }
                   },
                   {
@@ -139,7 +139,7 @@ export default function RootLayout({
                     "name": "How long does a typical project take?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Timelines vary by scope — a web platform typically takes 4–8 weeks, while a full SaaS or mobile app can take 8–16 weeks. We share a clear timeline before any project begins."
+                      "text": "Timelines depend on scope and complexity. A marketing site or landing page can be delivered in 1–2 weeks. A full-stack web platform or SaaS product typically takes 6–12 weeks. Mobile apps and AI automation systems range from 8–16 weeks. We define a clear timeline before any work begins."
                     }
                   },
                   {
@@ -147,7 +147,7 @@ export default function RootLayout({
                     "name": "Do you offer post-launch support?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Yes. We offer ongoing maintenance and support packages after launch to ensure your product stays performant and up to date."
+                      "text": "Yes. We offer structured post-launch support and maintenance packages covering bug fixes, performance monitoring, feature updates, and infrastructure scaling — so your product stays reliable as it grows."
                     }
                   },
                   {
@@ -155,7 +155,7 @@ export default function RootLayout({
                     "name": "Can you build both the design and the development?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Yes, we handle end-to-end delivery — from UI/UX design to full-stack development and deployment."
+                      "text": "Yes. We handle end-to-end product delivery — from UX and UI design to full-stack engineering and deployment. You work with one team across the entire lifecycle, which eliminates handoff gaps and keeps quality consistent."
                     }
                   },
                   {
@@ -163,7 +163,7 @@ export default function RootLayout({
                     "name": "What technologies do you use?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "We are technology-agnostic, selecting the best architecture based on your project's specific goals rather than forcing a preset stack. Our team is fluent across modern frontend frameworks, scalable backends, mobile architectures, databases, and cloud infrastructure. We evaluate your product's performance, scalability, and business objectives to deploy the absolute best tools for the job."
+                      "text": "We work across a wide range of modern technologies, selecting the right stack for each project based on goals, scale, and existing infrastructure. We don't push a one-size-fits-all toolkit, we engineer around your outcome."
                     }
                   },
                   {
@@ -171,7 +171,7 @@ export default function RootLayout({
                     "name": "How do I get started?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Simply reach out via our contact page or email us at info@devitytechnologies.com and we'll schedule a free discovery call."
+                      "text": "Reach out via our contact page or email us directly at info@devitytechnologies.com. We will schedule a free discovery call to understand your goals, scope the project, and give you a clear proposal — no commitment required."
                     }
                   }
                 ]

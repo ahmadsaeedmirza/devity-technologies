@@ -33,9 +33,11 @@ export const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
     const pathname = usePathname();
     
     // Normalize path comparison
-    const isActive = end 
-      ? pathname === to 
-      : pathname.startsWith(to) && (pathname[to.length] === "/" || pathname.length === to.length);
+    const isActive = pathname
+      ? (end 
+        ? pathname === to 
+        : pathname.startsWith(to) && (pathname[to.length] === "/" || pathname.length === to.length))
+      : false;
 
     const resolvedClassName = typeof className === "function" 
       ? className({ isActive, isPending: false }) 

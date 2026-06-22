@@ -14,7 +14,7 @@ export interface SeoConfig {
 }
 
 const getSiteUrl = () => {
-  const envUrl = (import.meta.env.VITE_SITE_URL as string | undefined)?.trim();
+  const envUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.VITE_SITE_URL)?.trim();
   if (envUrl) return envUrl.replace(/\/$/, "");
   if (typeof window !== "undefined") return window.location.origin;
   return "";

@@ -38,13 +38,6 @@ const Hero = () => (
 
     <div className="container relative z-10">
       <div className="max-w-5xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-10 border border-teal/30 bg-mint-soft/40 backdrop-blur-sm animate-fade-in">
-          <Sparkles className="w-3 h-3 text-teal" />
-          <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-teal">
-            Now booking new engagements
-          </span>
-        </div>
-
         <h1
           className="font-display font-medium text-[clamp(3rem,9vw,9rem)] leading-[0.9] tracking-tight mb-10 animate-fade-up"
           style={{ animationDelay: "0.1s", opacity: 0 }}

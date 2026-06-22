@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "Devity Technologies builds scalable web applications, mobile ecosystems, and AI-driven automation that turn complex challenges into seamless growth.",
   authors: [{ name: "Devity Technologies" }],
   robots: "index,follow",
+  icons: {
+    icon: "/favicon.png",
+  },
   alternates: {
     canonical: "https://www.devitytechnologies.com",
   },

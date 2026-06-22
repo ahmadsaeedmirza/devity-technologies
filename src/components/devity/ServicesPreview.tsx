@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import dashboard from "@/assets/dashboard-light.jpg";
-import web from "@/assets/web-platforms.png";
+import web from "@/assets/web-platforms.jpg";
 import mobile from "@/assets/mobile-light.jpg";
 import aiStream from "@/assets/ai-light.jpg";
 import SectionHeader from "./SectionHeader";

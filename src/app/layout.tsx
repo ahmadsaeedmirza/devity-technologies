@@ -77,11 +77,22 @@ export default function RootLayout({
                 "name": "Devity Technologies",
                 "url": "https://www.devitytechnologies.com",
                 "logo": "https://www.devitytechnologies.com/logo.png",
-                "email": "info@devitytechnologies.com",
+                "foundingDate": "2021",
+                "areaServed": [
+                  { "@type": "Country", "name": "United Kingdom" },
+                  { "@type": "Country", "name": "Australia" }
+                ],
                 "sameAs": [
                   "https://www.linkedin.com/company/devity-technologies/",
                   "https://www.instagram.com/devity_technologies"
-                ]
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "email": "info@devitytechnologies.com",
+                  "contactType": "customer service",
+                  "areaServed": ["GB", "AU"],
+                  "availableLanguage": "English"
+                }
               },
               {
                 "@context": "https://schema.org",

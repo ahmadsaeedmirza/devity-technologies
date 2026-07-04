@@ -91,6 +91,11 @@ const Work = () => {
                 <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight tracking-tight mb-6">
                   {c.title}
                 </h2>
+                {c.client && (
+                  <p className="font-mono text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">
+                    Client: {c.client}
+                  </p>
+                )}
                 <p className="text-foreground-soft mb-6 leading-relaxed">
                   <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-foreground block mb-2">
                     Challenge
@@ -115,6 +120,11 @@ const Work = () => {
                     </div>
                   ))}
                 </div>
+                {c.testimonial && (
+                  <blockquote className="mt-10 pt-8 border-t border-border italic text-foreground-soft leading-relaxed">
+                    "{c.testimonial}"
+                  </blockquote>
+                )}
               </div>
             </article>
           ))}

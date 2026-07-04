@@ -12,7 +12,7 @@ export const cases = [
     metricLabel: "Lead Conversion Lift",
     color: "bg-mint",
     client: "E&R Salon",
-    testimonial: "Our old site was falling apart — slow, painful to update, costing us conversions every week. Devity rebuilt the whole thing from the ground up. Load times dropped, publishing new content stopped being a headache, and we saw a real jump in conversions almost immediately. Genuinely the best web team we've worked with.",
+    testimonial: "Our old site was falling apart, slow, painful to update, costing us conversions every week. Devity rebuilt the whole thing from the ground up. Load times dropped, publishing new content stopped being a headache, and we saw a real jump in conversions almost immediately. Genuinely the best web team we've worked with.",
   },
   {
     slug: "saas-platform",
@@ -23,7 +23,7 @@ export const cases = [
     metricLabel: "Users Scaled To",
     color: "bg-teal",
     client: "TwentyFour",
-    testimonial: "We needed a platform that could actually handle our growth, not just our launch. Devity built us something that's held up through every traffic spike since — rock solid uptime, no more outages, and it just works. That reliability alone has been worth it.",
+    testimonial: "We needed a platform that could actually handle our growth, not just our launch. Devity built us something that's held up through every traffic spike since, rock solid uptime, no more outages, and it just works. That reliability alone has been worth it.",
   },
   {
     slug: "supply-chain-ai",

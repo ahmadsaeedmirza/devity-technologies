@@ -268,13 +268,53 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "AI Automation",
-            "provider": { "@type": "Organization", "name": "Devity Technologies" },
-            "description": "Custom machine learning and automated internal processes engineered for measurable business outcomes."
-          })
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": "AI Automation",
+              "provider": { "@type": "Organization", "name": "Devity Technologies" },
+              "description": "Custom machine learning and automated internal processes engineered for measurable business outcomes."
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Do you build with our existing data and tools, or do we need to migrate first?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We build around what you already have. Our systems integrate with your existing databases, APIs, and internal tools rather than requiring a migration before we can start."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What if our team doesn't have any AI or ML expertise in-house?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "That's the normal starting point for most of our clients. You bring the business problem, we bring the AI engineering. No in-house expertise required on your side."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do you measure whether an AI automation project actually worked?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We define the success metric before writing any code, hours saved, cost per document processed, forecast accuracy, and we report against that same metric after launch."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is our data safe if we hand it over for an AI system?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Client data is handled under strict confidentiality, and any system we build follows GDPR-aligned data handling practices for clients in the UK and EU."
+                  }
+                }
+              ]
+            }
+          ])
         }}
       />
       <Layout>

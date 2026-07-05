@@ -22,6 +22,25 @@ const detail = [
   ],
 ];
 
+const faqs = [
+  {
+    q: "What if our scope changes partway through the project?",
+    a: "Scope changes are normal. We flag the impact on timeline and cost as soon as a change comes up, so you can decide whether to fold it in now or hold it for a later phase, no surprises at the end.",
+  },
+  {
+    q: "How involved do we need to be during development?",
+    a: "As involved as you want to be. We run weekly demos and keep a shared backlog visible throughout, so you can check in as often or as little as suits your schedule.",
+  },
+  {
+    q: "What happens if we need to pause or extend the timeline?",
+    a: "We build in checkpoints between phases specifically so pausing or extending is a conversation, not a disruption. We will always tell you honestly what a pause or extension means for cost and delivery.",
+  },
+  {
+    q: "Do we own the code and the product once it's built?",
+    a: "Yes. Once the engagement is complete, you own the codebase and the product outright.",
+  },
+];
+
 const Process = () => {
   useSEO({
     title: "Process",
@@ -41,7 +60,7 @@ const Process = () => {
             <span className="display-italic">build.</span>
           </>
         }
-        description="Four stages, no surprises. Here's how an engagement actually unfolds - including what you'll see, when, and what it costs in time."
+        description="Four stages, no surprises. Here's how an engagement actually unfolds, including what you'll see, when, and what it costs in time."
       />
 
       <ProcessTimeline />
@@ -76,6 +95,25 @@ const Process = () => {
                 <div className="md:col-span-8 text-foreground-soft leading-relaxed text-lg">
                   {detail[i][1]}
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32">
+        <div className="container">
+          <div className="max-w-3xl mb-16">
+            <p className="label-mono mb-6">FAQ</p>
+            <h2 className="font-display text-4xl md:text-6xl font-medium leading-[0.98] tracking-tight">
+              Questions, Answered.
+            </h2>
+          </div>
+          <div className="grid gap-px bg-border border border-border">
+            {faqs.map((f) => (
+              <div key={f.q} className="bg-background p-10">
+                <h3 className="font-display text-xl font-medium mb-3">{f.q}</h3>
+                <p className="text-foreground-soft leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>

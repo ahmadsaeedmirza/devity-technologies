@@ -173,7 +173,7 @@ export default function Page() {
             </div>
             <div className="flex flex-col items-center gap-3">
               <ShieldCheck className="w-6 h-6 text-mint" strokeWidth={1.75} />
-              <div className="font-display text-3xl font-medium">40+</div>
+              <div className="font-display text-3xl font-medium">10+</div>
               <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/60">
                 Systems shipped to production
               </p>

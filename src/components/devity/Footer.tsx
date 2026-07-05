@@ -122,7 +122,7 @@ const Footer = () => (
                   Get a quote
                 </Link>
               </li>
-              <li className="text-background/60">Mon - Fri, 9-6 IST</li>
+              <li className="text-background/60">Mon - Fri, 9-6 PKT</li>
             </ul>
           </div>
         </div>

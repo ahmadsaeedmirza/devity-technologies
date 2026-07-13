@@ -16,10 +16,16 @@ export const metadata: Metadata = {
     },
 };
 
+interface FeaturedImage {
+    src: string;
+    alt: string;
+}
+
 interface PostFrontmatter {
     title: string;
     description: string;
     date: string;
+    featuredImage: FeaturedImage;
 }
 
 interface Post extends PostFrontmatter {
@@ -52,17 +58,28 @@ export default function Page() {
                         <Link
                             key={p.slug}
                             href={`/resources/${p.slug}`}
-                            className="bg-background p-10 flex items-center justify-between gap-6 hover:bg-mint-soft/30 transition-colors group"
+                            className="bg-background p-10 flex flex-col md:flex-row items-start md:items-center gap-8 hover:bg-mint-soft/30 transition-colors group"
                         >
-                            <div>
-                                <h2 className="font-display text-2xl font-medium text-foreground mb-2">
-                                    {p.title}
-                                </h2>
-                                <p className="text-foreground-soft text-sm leading-relaxed">
-                                    {p.description}
-                                </p>
+                            {p.featuredImage && (
+                                <img
+                                    src={p.featuredImage.src}
+                                    alt={p.featuredImage.alt}
+                                    width={240}
+                                    height={160}
+                                    className="w-full md:w-60 h-40 object-cover shrink-0 border border-border"
+                                />
+                            )}
+                            <div className="flex-1 flex items-center justify-between gap-6 w-full">
+                                <div>
+                                    <h2 className="font-display text-2xl font-medium text-foreground mb-2">
+                                        {p.title}
+                                    </h2>
+                                    <p className="text-foreground-soft text-sm leading-relaxed">
+                                        {p.description}
+                                    </p>
+                                </div>
+                                <ArrowUpRight className="w-5 h-5 shrink-0 transition-transform group-hover:rotate-45 hidden md:block" />
                             </div>
-                            <ArrowUpRight className="w-5 h-5 shrink-0 transition-transform group-hover:rotate-45" />
                         </Link>
                     ))}
                 </div>

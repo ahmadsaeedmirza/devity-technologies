@@ -9,6 +9,7 @@ const links = [
   { to: "/", label: "Home", end: true },
   { to: "/services", label: "Services" },
   { to: "/work", label: "Work" },
+  { to: "/resources", label: "Resources" },
   { to: "/about", label: "About" },
   { to: "/process", label: "Process" },
 ];
@@ -31,11 +32,10 @@ const Nav = () => {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
+        ? "bg-background/80 backdrop-blur-xl border-b border-border"
+        : "bg-transparent"
+        }`}
     >
       <div className="container flex items-center justify-between h-16">
         <Link
@@ -66,10 +66,9 @@ const Nav = () => {
               to={l.to}
               end={Boolean(l.end)}
               className={({ isActive }: { isActive: boolean }) =>
-                `font-mono text-[11px] tracking-[0.2em] uppercase transition-colors duration-300 relative group ${
-                  isActive
-                    ? "text-teal"
-                    : "text-foreground-soft hover:text-foreground"
+                `font-mono text-[11px] tracking-[0.2em] uppercase transition-colors duration-300 relative group ${isActive
+                  ? "text-teal"
+                  : "text-foreground-soft hover:text-foreground"
                 }`
               }
             >

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import remarkGfm from "remark-gfm";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Layout from "@/components/devity/Layout";
 import FAQAccordion from "@/components/devity/FAQAccordion";
@@ -213,7 +214,15 @@ export default async function Page({
                     )}
 
                     <div className="max-w-none">
-                        <MDXRemote source={content} components={mdxComponents} />
+                        <MDXRemote
+                            source={content}
+                            components={mdxComponents}
+                            options={{
+                                mdxOptions: {
+                                    remarkPlugins: [remarkGfm],
+                                },
+                            }}
+                        />
                     </div>
 
                     {frontmatter.faqs?.length > 0 && (

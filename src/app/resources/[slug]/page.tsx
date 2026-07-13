@@ -152,7 +152,9 @@ export default async function Page({
                             "headline": frontmatter.title,
                             "description": frontmatter.description,
                             "datePublished": frontmatter.date,
-                            "image": frontmatter.featuredImage?.src,
+                            "image": frontmatter.featuredImage?.src
+                                ? [`https://www.devitytechnologies.com${frontmatter.featuredImage.src}`]
+                                : undefined,
                             "author": {
                                 "@type": "Person",
                                 "name": frontmatter.author?.name,

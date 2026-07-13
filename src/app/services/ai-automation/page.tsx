@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import type { Metadata } from "next";
 import Layout from "@/components/devity/Layout";
 import PageHero from "@/components/devity/PageHero";
@@ -13,30 +16,12 @@ export const metadata: Metadata = {
 };
 
 const builds = [
-  {
-    label: "Custom LLM Agents",
-    desc: "AI assistants and autonomous agents built on your data and processes",
-  },
-  {
-    label: "RAG Pipelines",
-    desc: "Retrieval-augmented generation systems that give AI accurate, context-aware answers",
-  },
-  {
-    label: "Workflow Orchestration",
-    desc: "Multi-step automated pipelines that replace manual, repetitive processes",
-  },
-  {
-    label: "Data Extraction & Processing",
-    desc: "Intelligent document parsing, classification, and structured output",
-  },
-  {
-    label: "Forecasting Models",
-    desc: "Predictive systems for demand, churn, revenue, and operational planning",
-  },
-  {
-    label: "Voice & Vision AI",
-    desc: "Speech recognition, image analysis, and multimodal AI integrations",
-  },
+  { label: "Custom LLM Agents", desc: "AI assistants and autonomous agents built on your data and processes" },
+  { label: "RAG Pipelines", desc: "Retrieval-augmented generation systems that give AI accurate, context-aware answers" },
+  { label: "Workflow Orchestration", desc: "Multi-step automated pipelines that replace manual, repetitive processes" },
+  { label: "Data Extraction & Processing", desc: "Intelligent document parsing, classification, and structured output" },
+  { label: "Forecasting Models", desc: "Predictive systems for demand, churn, revenue, and operational planning" },
+  { label: "Voice & Vision AI", desc: "Speech recognition, image analysis, and multimodal AI integrations" },
 ];
 
 const reasons = [
@@ -48,25 +33,42 @@ const reasons = [
 ];
 
 const faqs = [
-  {
-    q: "Do you build with our existing data and tools, or do we need to migrate first?",
-    a: "We build around what you already have. Our systems integrate with your existing databases, APIs, and internal tools rather than requiring a migration before we can start.",
-  },
-  {
-    q: "What if our team doesn't have any AI or ML expertise in-house?",
-    a: "That's the normal starting point for most of our clients. You bring the business problem, we bring the AI engineering. No in-house expertise required on your side.",
-  },
-  {
-    q: "How do you measure whether an AI automation project actually worked?",
-    a: "We define the success metric before writing any code, hours saved, cost per document processed, forecast accuracy, and we report against that same metric after launch.",
-  },
-  {
-    q: "Is our data safe if we hand it over for an AI system?",
-    a: "Yes. Client data is handled under strict confidentiality, and any system we build follows GDPR-aligned data handling practices for clients in the UK and EU.",
-  },
+  { q: "Do you build with our existing data and tools, or do we need to migrate first?", a: "We build around what you already have. Our systems integrate with your existing databases, APIs, and internal tools rather than requiring a migration before we can start." },
+  { q: "What if our team doesn't have any AI or ML expertise in-house?", a: "That's the normal starting point for most of our clients. You bring the business problem, we bring the AI engineering. No in-house expertise required on your side." },
+  { q: "How do you measure whether an AI automation project actually worked?", a: "We define the success metric before writing any code, hours saved, cost per document processed, forecast accuracy, and we report against that same metric after launch." },
+  { q: "Is our data safe if we hand it over for an AI system?", a: "Yes. Client data is handled under strict confidentiality, and any system we build follows GDPR-aligned data handling practices for clients in the UK and EU." },
 ];
 
+interface FeaturedImage {
+  src: string;
+  alt: string;
+}
+
+interface RelatedPost {
+  slug: string;
+  title: string;
+  description: string;
+  featuredImage: FeaturedImage;
+  category?: string;
+}
+
+function getRelatedPosts(category: string, limit: number): RelatedPost[] {
+  const contentDir = path.join(process.cwd(), "content/blog");
+  const files = fs.readdirSync(contentDir);
+
+  return files
+    .map((file) => {
+      const source = fs.readFileSync(path.join(contentDir, file), "utf8");
+      const { data } = matter(source);
+      return { slug: file.replace(/\.mdx$/, ""), ...(data as any) };
+    })
+    .filter((post) => post.category === category)
+    .slice(0, limit);
+}
+
 export default function Page() {
+  const relatedPosts = getRelatedPosts("AI Automation", 3);
+
   return (
     <>
       <script
@@ -84,52 +86,22 @@ export default function Page() {
               "@context": "https://schema.org",
               "@type": "FAQPage",
               "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Do you build with our existing data and tools, or do we need to migrate first?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We build around what you already have. Our systems integrate with your existing databases, APIs, and internal tools rather than requiring a migration before we can start."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What if our team doesn't have any AI or ML expertise in-house?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "That's the normal starting point for most of our clients. You bring the business problem, we bring the AI engineering. No in-house expertise required on your side."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do you measure whether an AI automation project actually worked?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We define the success metric before writing any code, hours saved, cost per document processed, forecast accuracy, and we report against that same metric after launch."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is our data safe if we hand it over for an AI system?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Client data is handled under strict confidentiality, and any system we build follows GDPR-aligned data handling practices for clients in the UK and EU."
-                  }
-                }
+                { "@type": "Question", "name": "Do you build with our existing data and tools, or do we need to migrate first?", "acceptedAnswer": { "@type": "Answer", "text": "We build around what you already have. Our systems integrate with your existing databases, APIs, and internal tools rather than requiring a migration before we can start." } },
+                { "@type": "Question", "name": "What if our team doesn't have any AI or ML expertise in-house?", "acceptedAnswer": { "@type": "Answer", "text": "That's the normal starting point for most of our clients. You bring the business problem, we bring the AI engineering. No in-house expertise required on your side." } },
+                { "@type": "Question", "name": "How do you measure whether an AI automation project actually worked?", "acceptedAnswer": { "@type": "Answer", "text": "We define the success metric before writing any code, hours saved, cost per document processed, forecast accuracy, and we report against that same metric after launch." } },
+                { "@type": "Question", "name": "Is our data safe if we hand it over for an AI system?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Client data is handled under strict confidentiality, and any system we build follows GDPR-aligned data handling practices for clients in the UK and EU." } }
               ]
             }
           ])
         }}
       />
       <Layout>
-        {/* 1. HEADLINE, outcome-framed */}
         <PageHero
           eyebrow="Services / AI Automation"
           title="Cut the Manual Work Without Cutting Corners."
           description="We don't build AI demos. We engineer intelligent systems tied to measurable outcomes, time saved, cost reduced, revenue unlocked."
         />
 
-        {/* 2. PROBLEM */}
         <section className="py-24 border-t border-border">
           <div className="container grid lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 lg:sticky lg:top-28">
@@ -155,34 +127,26 @@ export default function Page() {
           </div>
         </section>
 
-        {/* 3. PROOF, early, before the pitch */}
         <section className="py-16 bg-ink text-background border-t border-border">
           <div className="container grid sm:grid-cols-3 gap-8 text-center">
             <div className="flex flex-col items-center gap-3">
               <Zap className="w-6 h-6 text-mint" strokeWidth={1.75} />
               <div className="font-display text-3xl font-medium">40+</div>
-              <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/60">
-                Systems shipped to production
-              </p>
+              <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/60">Systems shipped to production</p>
             </div>
             <div className="flex flex-col items-center gap-3">
               <Clock className="w-6 h-6 text-mint" strokeWidth={1.75} />
               <div className="font-display text-3xl font-medium">24h</div>
-              <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/60">
-                Response time, Mon-Fri
-              </p>
+              <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/60">Response time, Mon-Fri</p>
             </div>
             <div className="flex flex-col items-center gap-3">
               <ShieldCheck className="w-6 h-6 text-mint" strokeWidth={1.75} />
               <div className="font-display text-3xl font-medium">99.9%</div>
-              <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/60">
-                Uptime SLA
-              </p>
+              <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-background/60">Uptime SLA</p>
             </div>
           </div>
         </section>
 
-        {/* 4. SOLUTION / CAPABILITIES, unchanged from your original */}
         <section className="py-24 bg-background-alt border-t border-border">
           <div className="container">
             <div className="max-w-3xl mb-16">
@@ -197,12 +161,8 @@ export default function Page() {
                 <div key={b.label} className="flex items-start gap-4 text-foreground-soft">
                   <Check className="w-5 h-5 mt-1 text-teal shrink-0" strokeWidth={2.5} />
                   <div>
-                    <h3 className="font-display text-xl font-medium text-foreground mb-2">
-                      {b.label}
-                    </h3>
-                    <p className="leading-relaxed text-sm md:text-base">
-                      {b.desc}
-                    </p>
+                    <h3 className="font-display text-xl font-medium text-foreground mb-2">{b.label}</h3>
+                    <p className="leading-relaxed text-sm md:text-base">{b.desc}</p>
                   </div>
                 </div>
               ))}
@@ -233,7 +193,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* 5. RESULTS / CASE STUDY */}
         <section className="py-24 bg-background-alt border-t border-border">
           <div className="container">
             <div className="max-w-3xl mb-16">
@@ -246,21 +205,15 @@ export default function Page() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               <div className="bg-background border border-border p-10">
                 <div className="font-display text-4xl font-medium text-gradient-brand">−40%</div>
-                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">
-                  Manual workflow
-                </p>
+                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">Manual workflow</p>
               </div>
               <div className="bg-background border border-border p-10">
                 <div className="font-display text-4xl font-medium text-gradient-brand">94%</div>
-                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">
-                  Forecast accuracy
-                </p>
+                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">Forecast accuracy</p>
               </div>
               <div className="bg-background border border-border p-10">
                 <div className="font-display text-4xl font-medium text-gradient-brand">320+</div>
-                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">
-                  Hours saved per week
-                </p>
+                <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">Hours saved per week</p>
               </div>
             </div>
             <p className="text-foreground-soft text-lg leading-relaxed max-w-3xl">
@@ -276,6 +229,45 @@ export default function Page() {
           </div>
         </section>
 
+        {relatedPosts.length > 0 && (
+          <section className="py-24 border-t border-border">
+            <div className="container">
+              <div className="max-w-3xl mb-16">
+                <p className="label-mono mb-6">Read more</p>
+                <h2 className="font-display text-4xl md:text-6xl font-medium leading-[0.98] tracking-tight">
+                  Guides on{" "}
+                  <span className="display-italic text-gradient-brand">AI Automation</span>
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8">
+                {relatedPosts.map((post) => (
+                  <a
+                    key={post.slug}
+                    href={`/resources/${post.slug}`}
+                    className="group block border border-border hover:shadow-card transition-shadow"
+                  >
+                    {post.featuredImage && (
+                      <img
+                        src={post.featuredImage.src}
+                        alt={post.featuredImage.alt}
+                        width={400}
+                        height={260}
+                        className="w-full h-48 object-cover"
+                      />
+                    )}
+                    <div className="p-8">
+                      <h3 className="font-display text-xl font-medium text-foreground mb-3 group-hover:text-teal transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="text-foreground-soft text-sm leading-relaxed">{post.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         <section className="py-24 border-t border-border">
           <div className="container">
             <div className="max-w-3xl mb-16">
@@ -287,64 +279,47 @@ export default function Page() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {reasons.map((r, i) => (
-                <div
-                  key={r}
-                  className="bg-background border border-border p-10 hover:shadow-card transition-shadow flex flex-col justify-between"
-                >
+                <div key={r} className="bg-background border border-border p-10 hover:shadow-card transition-shadow flex flex-col justify-between">
                   <span className="font-mono text-xs text-teal">/ 0{i + 1}</span>
-                  <p className="font-display text-lg text-foreground mt-8 leading-relaxed">
-                    {r}
-                  </p>
+                  <p className="font-display text-lg text-foreground mt-8 leading-relaxed">{r}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 6. TRUST */}
         <section className="py-24 bg-background-alt border-t border-border">
           <div className="container grid md:grid-cols-3 gap-8">
             <div className="flex items-start gap-4">
               <ShieldCheck className="w-6 h-6 mt-1 text-teal shrink-0" strokeWidth={1.75} />
               <div>
                 <h3 className="font-display text-lg font-medium mb-2">GDPR-aligned</h3>
-                <p className="text-foreground-soft text-sm leading-relaxed">
-                  Client data is handled under strict confidentiality and GDPR-aligned practices for UK and EU clients.
-                </p>
+                <p className="text-foreground-soft text-sm leading-relaxed">Client data is handled under strict confidentiality and GDPR-aligned practices for UK and EU clients.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Clock className="w-6 h-6 mt-1 text-teal shrink-0" strokeWidth={1.75} />
               <div>
                 <h3 className="font-display text-lg font-medium mb-2">Timezone overlap</h3>
-                <p className="text-foreground-soft text-sm leading-relaxed">
-                  Remote-first, with working hours that overlap the UK and Australian business day.
-                </p>
+                <p className="text-foreground-soft text-sm leading-relaxed">Remote-first, with working hours that overlap the UK and Australian business day.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Zap className="w-6 h-6 mt-1 text-teal shrink-0" strokeWidth={1.75} />
               <div>
                 <h3 className="font-display text-lg font-medium mb-2">24h response</h3>
-                <p className="text-foreground-soft text-sm leading-relaxed">
-                  Every enquiry gets a reply within 24 hours, Monday through Friday.
-                </p>
+                <p className="text-foreground-soft text-sm leading-relaxed">Every enquiry gets a reply within 24 hours, Monday through Friday.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 7. CTA, unchanged */}
         <section className="py-32 bg-ink text-background border-t border-border text-center relative overflow-hidden">
-          <div
-            className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[450px] h-[450px] opacity-10 blur-3xl pointer-events-none"
-            style={{ background: "var(--gradient-brand)" }}
-          />
+          <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[450px] h-[450px] opacity-10 blur-3xl pointer-events-none" style={{ background: "var(--gradient-brand)" }} />
           <div className="container relative z-10">
             <h2 className="font-display text-4xl md:text-6xl font-medium leading-[1] tracking-tight mb-8 max-w-2xl mx-auto">
               Ready to put AI to work in your business?
             </h2>
-
             <a
               href="/contact?service=ai-automation"
               className="inline-flex items-center gap-3 px-8 py-5 bg-mint text-ink font-mono text-xs tracking-[0.25em] uppercase hover:bg-background transition-colors group"
@@ -353,9 +328,8 @@ export default function Page() {
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
             </a>
           </div>
-        </section>
+        </section >
 
-        {/* 8. FAQ */}
         <section className="py-24 border-t border-border">
           <div className="container">
             <div className="max-w-3xl mb-16">

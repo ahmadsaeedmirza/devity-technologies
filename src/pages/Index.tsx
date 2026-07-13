@@ -6,6 +6,7 @@ import Marquee from "@/components/devity/Marquee";
 import ServicesPreview from "@/components/devity/ServicesPreview";
 import WorkPreview from "@/components/devity/WorkPreview";
 import ProcessTimeline from "@/components/devity/ProcessTimeline";
+import LatestResources from "@/components/devity/LatestResources";
 import { useSEO } from "@/hooks/use-seo";
 
 const Index = () => {
@@ -25,6 +26,7 @@ const Index = () => {
       <ServicesPreview />
       <WorkPreview />
       <ProcessTimeline />
+      <LatestResources />
     </Layout>
   );
 };

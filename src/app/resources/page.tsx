@@ -16,15 +16,26 @@ export const metadata: Metadata = {
     },
 };
 
+interface PostFrontmatter {
+    title: string;
+    description: string;
+    date: string;
+}
+
+interface Post extends PostFrontmatter {
+    slug: string;
+}
+
 const contentDir = path.join(process.cwd(), "content/blog");
 
 export default function Page() {
     const files = fs.readdirSync(contentDir);
-    const posts = files
+    const posts: Post[] = files
         .map((file) => {
             const source = fs.readFileSync(path.join(contentDir, file), "utf8");
             const { data } = matter(source);
-            return { slug: file.replace(/\.mdx$/, ""), ...data };
+            const frontmatter = data as PostFrontmatter;
+            return { slug: file.replace(/\.mdx$/, ""), ...frontmatter };
         })
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

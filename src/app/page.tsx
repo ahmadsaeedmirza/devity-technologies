@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Index from "@/pages/Index";
+import { getLatestPosts } from "@/lib/getLatestPosts";
 
 export const metadata: Metadata = {
   title: "Engineering Digital Evolution | Devity Technologies",
@@ -11,5 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <Index />;
+  const latestPosts = getLatestPosts(3);
+  return <Index latestPosts={latestPosts} />;
 }

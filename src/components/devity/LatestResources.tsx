@@ -1,38 +1,7 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { ArrowUpRight } from "lucide-react";
+import type { Post } from "@/lib/getLatestPosts";
 
-interface FeaturedImage {
-    src: string;
-    alt: string;
-}
-
-interface Post {
-    slug: string;
-    title: string;
-    description: string;
-    date: string;
-    featuredImage: FeaturedImage;
-}
-
-function getLatestPosts(limit: number): Post[] {
-    const contentDir = path.join(process.cwd(), "content/blog");
-    const files = fs.readdirSync(contentDir);
-
-    return files
-        .map((file) => {
-            const source = fs.readFileSync(path.join(contentDir, file), "utf8");
-            const { data } = matter(source);
-            return { slug: file.replace(/\.mdx$/, ""), ...(data as any) };
-        })
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .slice(0, limit);
-}
-
-export default function LatestResources() {
-    const posts = getLatestPosts(3);
-
+export default function LatestResources({ posts }: { posts: Post[] }) {
     if (posts.length === 0) return null;
 
     return (

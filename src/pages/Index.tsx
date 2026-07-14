@@ -8,8 +8,9 @@ import WorkPreview from "@/components/devity/WorkPreview";
 import ProcessTimeline from "@/components/devity/ProcessTimeline";
 import LatestResources from "@/components/devity/LatestResources";
 import { useSEO } from "@/hooks/use-seo";
+import type { Post } from "@/lib/getLatestPosts";
 
-const Index = () => {
+const Index = ({ latestPosts }: { latestPosts: Post[] }) => {
   useSEO({
     title: "Engineering digital evolution",
     description:
@@ -26,7 +27,7 @@ const Index = () => {
       <ServicesPreview />
       <WorkPreview />
       <ProcessTimeline />
-      <LatestResources />
+      <LatestResources posts={latestPosts} />
     </Layout>
   );
 };

@@ -10,7 +10,7 @@ import LatestResources from "@/components/devity/LatestResources";
 import { useSEO } from "@/hooks/use-seo";
 import type { Post } from "@/lib/getLatestPosts";
 
-const Index = ({ latestPosts }: { latestPosts: Post[] }) => {
+const Index = ({ latestPosts = [] }: { latestPosts?: Post[] }) => {
   useSEO({
     title: "Engineering digital evolution",
     description:

@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import type { Metadata } from "next";
 import Layout from "@/components/devity/Layout";
 import PageHero from "@/components/devity/PageHero";
@@ -11,6 +14,32 @@ export const metadata: Metadata = {
     canonical: "https://www.devitytechnologies.com/services/web-platforms",
   },
 };
+interface FeaturedImage {
+  src: string;
+  alt: string;
+}
+
+interface RelatedPost {
+  slug: string;
+  title: string;
+  description: string;
+  featuredImage: FeaturedImage;
+  category?: string;
+}
+
+function getRelatedPosts(category: string, limit: number): RelatedPost[] {
+  const contentDir = path.join(process.cwd(), "content/blog");
+  const files = fs.readdirSync(contentDir);
+
+  return files
+    .map((file) => {
+      const source = fs.readFileSync(path.join(contentDir, file), "utf8");
+      const { data } = matter(source);
+      return { slug: file.replace(/\.mdx$/, ""), ...(data as any) };
+    })
+    .filter((post) => post.category === category)
+    .slice(0, limit);
+}
 
 const builds = [
   {
@@ -67,6 +96,9 @@ const faqs = [
 ];
 
 export default function Page() {
+
+  const relatedPosts = getRelatedPosts("Web Platforms", 3);
+
   return (
     <>
       <script
@@ -278,6 +310,45 @@ export default function Page() {
             </p>
           </div>
         </section>
+
+        {relatedPosts.length > 0 && (
+          <section className="py-24 border-t border-border">
+            <div className="container">
+              <div className="max-w-3xl mb-16">
+                <p className="label-mono mb-6">Read more</p>
+                <h2 className="font-display text-4xl md:text-6xl font-medium leading-[0.98] tracking-tight">
+                  Guides on{" "}
+                  <span className="display-italic text-gradient-brand">Web Platforms</span>
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8">
+                {relatedPosts.map((post) => (
+                  <a
+                    key={post.slug}
+                    href={`/resources/${post.slug}`}
+                    className="group block border border-border hover:shadow-card transition-shadow"
+                  >
+                    {post.featuredImage && (
+                      <img
+                        src={post.featuredImage.src}
+                        alt={post.featuredImage.alt}
+                        width={400}
+                        height={260}
+                        className="w-full h-48 object-cover"
+                      />
+                    )}
+                    <div className="p-8">
+                      <h3 className="font-display text-xl font-medium text-foreground mb-3 group-hover:text-teal transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="text-foreground-soft text-sm leading-relaxed">{post.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="py-24 border-t border-border">
           <div className="container">

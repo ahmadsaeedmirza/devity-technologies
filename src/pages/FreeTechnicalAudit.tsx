@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Layout from "@/components/devity/Layout";
 import PageHero from "@/components/devity/PageHero";
 import ContactForm from "@/components/devity/ContactForm";
@@ -71,17 +72,17 @@ const services = [
 ];
 
 const FreeTechnicalAudit = () => {
-    const [service, setService] = useState("web-platforms");
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const initialParam = searchParams.get("service");
+    const [service, setService] = useState(
+        initialParam && auditContent[initialParam] ? initialParam : "web-platforms"
+    );
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            const params = new URLSearchParams(window.location.search);
-            const param = params.get("service");
-            if (param && auditContent[param]) {
-                setService(param);
-            }
-        }
-    }, []);
+    const handleServiceChange = (key: string) => {
+        setService(key);
+        router.replace(`/free-technical-audit?service=${key}`, { scroll: false });
+    };
 
     useSEO({
         title: "Free Technical Audit",
@@ -107,7 +108,7 @@ const FreeTechnicalAudit = () => {
                             {services.map((s) => (
                                 <button
                                     key={s.key}
-                                    onClick={() => setService(s.key)}
+                                    onClick={() => handleServiceChange(s.key)}
                                     className={`px-5 py-2.5 font-mono text-xs tracking-[0.15em] uppercase border transition-colors ${service === s.key
                                         ? "bg-ink text-background border-ink"
                                         : "border-border text-foreground-soft hover:border-teal hover:text-foreground"

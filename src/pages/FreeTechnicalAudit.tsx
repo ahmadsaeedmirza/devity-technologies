@@ -74,7 +74,7 @@ const services = [
 const FreeTechnicalAudit = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const initialParam = searchParams.get("service");
+    const initialParam = searchParams?.get("service");
     const [service, setService] = useState(
         initialParam && auditContent[initialParam] ? initialParam : "web-platforms"
     );

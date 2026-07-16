@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Layout from "@/components/devity/Layout";
 import PageHero from "@/components/devity/PageHero";
@@ -71,7 +71,7 @@ const services = [
     { key: "ai-automation", label: "AI & Automation" },
 ];
 
-const FreeTechnicalAudit = () => {
+const FreeTechnicalAuditContent = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const initialParam = searchParams?.get("service");
@@ -199,5 +199,11 @@ const FreeTechnicalAudit = () => {
         </Layout>
     );
 };
+
+const FreeTechnicalAudit = () => (
+    <Suspense fallback={null}>
+        <FreeTechnicalAuditContent />
+    </Suspense>
+);
 
 export default FreeTechnicalAudit;

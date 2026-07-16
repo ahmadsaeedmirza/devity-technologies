@@ -341,9 +341,16 @@ export default function Page() {
               href="/contact?service=mobile-applications"
               className="inline-flex items-center gap-3 px-8 py-5 bg-mint text-ink font-mono text-xs tracking-[0.25em] uppercase hover:bg-background transition-colors group"
             >
-              Talk to Our Team
+              Start a Project
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
             </a>
+            <a
+              href="/free-technical-audit?service=mobile-applications"
+              className="block mt-6 text-sm text-background/70 hover:text-mint underline underline-offset-4 transition-colors"
+            >
+              Or get a free technical audit first
+            </a>
+
           </div>
         </section>
 

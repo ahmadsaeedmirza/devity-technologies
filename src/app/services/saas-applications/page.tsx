@@ -354,6 +354,12 @@ export default function Page() {
               Start a Project
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
             </a>
+            <a
+              href="/free-technical-audit?service=saas-applications"
+              className="block mt-6 text-sm text-background/70 hover:text-mint underline underline-offset-4 transition-colors"
+            >
+              Or get a free technical audit first
+            </a>
           </div>
         </section>
 

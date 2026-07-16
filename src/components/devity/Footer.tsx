@@ -119,7 +119,12 @@ const Footer = () => (
                   to="/contact"
                   className="hover:text-mint transition-colors"
                 >
-                  Get a quote
+                  Get a Quote
+                </Link>
+              </li>
+              <li>
+                <Link to="/free-technical-audit" className="hover:text-mint transition-colors">
+                  Free Technical Audit
                 </Link>
               </li>
               <li className="text-background/60">Mon - Fri, 9-6 PKT</li>

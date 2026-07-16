@@ -108,10 +108,10 @@ const Hero = () => (
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
           </Link>
           <Link
-            to="/work"
+            to="/free-technical-audit"
             className="group inline-flex items-center justify-center gap-3 px-8 py-5 font-mono text-xs tracking-[0.25em] uppercase text-foreground border border-foreground/20 hover:border-foreground hover:bg-foreground hover:text-background transition-all duration-500"
           >
-            View our work
+            Get a free audit
           </Link>
         </div>
 

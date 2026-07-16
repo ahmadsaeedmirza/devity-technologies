@@ -4,9 +4,15 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
 
-const ContactForm = () => {
+const ContactForm = ({
+  defaultType = "Web Platform",
+  autoScrollOnService = true,
+}: {
+  defaultType?: string;
+  autoScrollOnService?: boolean;
+}) => {
   const [submitting, setSubmitting] = useState(false);
-  const [selectedType, setSelectedType] = useState("Web Platform");
+  const [selectedType, setSelectedType] = useState(defaultType);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -27,12 +33,14 @@ const ContactForm = () => {
           setSelectedType("Audit / Consulting");
         }
 
-        setTimeout(() => {
-          formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-        }, 150);
+        if (autoScrollOnService) {
+          setTimeout(() => {
+            formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 150);
+        }
       }
     }
-  }, []);
+  }, [autoScrollOnService]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

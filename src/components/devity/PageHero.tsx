@@ -2,10 +2,13 @@ interface Props {
   eyebrow: string;
   title: React.ReactNode;
   description?: string;
+  topContent?: React.ReactNode;
+  className?: string;
 }
 
-const PageHero = ({ eyebrow, title, description }: Props) => (
-  <section className="relative pt-40 pb-24 overflow-hidden">
+const PageHero = ({ eyebrow, title, description, topContent, className }: Props) => (
+  <section className={`relative pt-40 pb-24 overflow-hidden ${className ?? ""}`}>
+
     <div className="absolute inset-0 grid-bg-light pointer-events-none" />
     {/* floating blob */}
     <div
@@ -14,6 +17,7 @@ const PageHero = ({ eyebrow, title, description }: Props) => (
     />
     <div className="container relative z-10">
       <div className="max-w-4xl">
+        {topContent && <div className="mb-10 animate-fade-in">{topContent}</div>}
         <div className="flex items-center gap-3 mb-8 animate-fade-in">
           <span className="w-10 h-px bg-teal" />
           <span className="label-mono">{eyebrow}</span>

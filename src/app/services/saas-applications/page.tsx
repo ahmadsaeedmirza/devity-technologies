@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import type { Metadata } from "next";
 import Layout from "@/components/devity/Layout";
 import PageHero from "@/components/devity/PageHero";
@@ -66,7 +69,36 @@ const faqs = [
   },
 ];
 
+interface FeaturedImage {
+  src: string;
+  alt: string;
+}
+
+interface RelatedPost {
+  slug: string;
+  title: string;
+  description: string;
+  featuredImage: FeaturedImage;
+  category?: string;
+}
+
+function getRelatedPosts(category: string, limit: number): RelatedPost[] {
+  const contentDir = path.join(process.cwd(), "content/blog");
+  const files = fs.readdirSync(contentDir);
+
+  return files
+    .map((file) => {
+      const source = fs.readFileSync(path.join(contentDir, file), "utf8");
+      const { data } = matter(source);
+      return { slug: file.replace(/\.mdx$/, ""), ...(data as any) };
+    })
+    .filter((post) => post.category === category)
+    .slice(0, limit);
+}
+
 export default function Page() {
+  const relatedPosts = getRelatedPosts("SaaS Applications", 3);
+
   return (
     <>
       <script
@@ -76,49 +108,53 @@ export default function Page() {
             {
               "@context": "https://schema.org",
               "@type": "Service",
-              "serviceType": "SaaS Application Development",
-              "provider": { "@type": "Organization", "name": "Devity Technologies" },
-              "description": "Custom full-stack SaaS application development optimized for speed, scalability, and performance."
+              serviceType: "SaaS Application Development",
+              provider: {
+                "@type": "Organization",
+                name: "Devity Technologies",
+              },
+              description:
+                "Custom full-stack SaaS application development optimized for speed, scalability, and performance.",
             },
             {
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": [
+              mainEntity: [
                 {
                   "@type": "Question",
-                  "name": "We only have an idea, not a spec. Can you still help us build it?",
-                  "acceptedAnswer": {
+                  name: "We only have an idea, not a spec. Can you still help us build it?",
+                  acceptedAnswer: {
                     "@type": "Answer",
-                    "text": "Yes. Most of our SaaS clients start with an idea, not a finished spec. We run a discovery phase to define scope, architecture, and success metrics before any code gets written."
-                  }
+                    text: "Yes. Most of our SaaS clients start with an idea, not a finished spec. We run a discovery phase to define scope, architecture, and success metrics before any code gets written.",
+                  },
                 },
                 {
                   "@type": "Question",
-                  "name": "How do you handle billing and subscriptions?",
-                  "acceptedAnswer": {
+                  name: "How do you handle billing and subscriptions?",
+                  acceptedAnswer: {
                     "@type": "Answer",
-                    "text": "We integrate Stripe for subscription billing, including trial flows, usage-based pricing, and dunning logic for failed payments, built into the platform from the start, not bolted on later."
-                  }
+                    text: "We integrate Stripe for subscription billing, including trial flows, usage-based pricing, and dunning logic for failed payments, built into the platform from the start, not bolted on later.",
+                  },
                 },
                 {
                   "@type": "Question",
-                  "name": "What if our user base grows much faster than expected?",
-                  "acceptedAnswer": {
+                  name: "What if our user base grows much faster than expected?",
+                  acceptedAnswer: {
                     "@type": "Answer",
-                    "text": "We architect multi-tenant systems for scale from day one, so a growth spike does not force a rebuild. This is one of the most common reasons SaaS founders come to us after outgrowing an earlier build."
-                  }
+                    text: "We architect multi-tenant systems for scale from day one, so a growth spike does not force a rebuild. This is one of the most common reasons SaaS founders come to us after outgrowing an earlier build.",
+                  },
                 },
                 {
                   "@type": "Question",
-                  "name": "Do you support the product after launch, or just hand it over?",
-                  "acceptedAnswer": {
+                  name: "Do you support the product after launch, or just hand it over?",
+                  acceptedAnswer: {
                     "@type": "Answer",
-                    "text": "We offer structured post-launch support, monitoring, scaling, and iteration, so your platform keeps performing as your user base grows."
-                  }
-                }
-              ]
-            }
-          ])
+                    text: "We offer structured post-launch support, monitoring, scaling, and iteration, so your platform keeps performing as your user base grows.",
+                  },
+                },
+              ],
+            },
+          ]),
         }}
       />
       <Layout>
@@ -195,8 +231,14 @@ export default function Page() {
             </div>
             <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
               {builds.map((b) => (
-                <div key={b.label} className="flex items-start gap-4 text-foreground-soft">
-                  <Check className="w-5 h-5 mt-1 text-teal shrink-0" strokeWidth={2.5} />
+                <div
+                  key={b.label}
+                  className="flex items-start gap-4 text-foreground-soft"
+                >
+                  <Check
+                    className="w-5 h-5 mt-1 text-teal shrink-0"
+                    strokeWidth={2.5}
+                  />
                   <div>
                     <h3 className="font-display text-xl font-medium text-foreground mb-2">
                       {b.label}
@@ -226,9 +268,9 @@ export default function Page() {
                 into the infrastructure, not stitched on afterward.
               </p>
               <p>
-                We design your SaaS architecture around your growth
-                trajectory, so you're not rebuilding core systems every time
-                you hit a new scale milestone.
+                We design your SaaS architecture around your growth trajectory,
+                so you're not rebuilding core systems every time you hit a new
+                scale milestone.
               </p>
             </div>
           </div>
@@ -241,24 +283,32 @@ export default function Page() {
               <p className="label-mono mb-6">In practice</p>
               <h2 className="font-display text-4xl md:text-6xl font-medium leading-[0.98] tracking-tight">
                 Built to Hold{" "}
-                <span className="display-italic text-gradient-brand">Under Real Load</span>
+                <span className="display-italic text-gradient-brand">
+                  Under Real Load
+                </span>
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               <div className="bg-background border border-border p-10">
-                <div className="font-display text-4xl font-medium text-gradient-brand">1000</div>
+                <div className="font-display text-4xl font-medium text-gradient-brand">
+                  1000
+                </div>
                 <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">
                   Concurrent users
                 </p>
               </div>
               <div className="bg-background border border-border p-10">
-                <div className="font-display text-4xl font-medium text-gradient-brand">99.99%</div>
+                <div className="font-display text-4xl font-medium text-gradient-brand">
+                  99.99%
+                </div>
                 <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">
                   Uptime
                 </p>
               </div>
               <div className="bg-background border border-border p-10">
-                <div className="font-display text-4xl font-medium text-gradient-brand">−68%</div>
+                <div className="font-display text-4xl font-medium text-gradient-brand">
+                  −68%
+                </div>
                 <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-4">
                   Latency
                 </p>
@@ -267,16 +317,62 @@ export default function Page() {
             <p className="text-foreground-soft text-lg leading-relaxed max-w-3xl">
               A growing customer base outpacing the original architecture, with
               usage spikes causing daily outages, was rebuilt on a multi-tenant
-              architecture running on a horizontally scalable Node and
-              Postgres core, with isolated workloads and event-driven
-              processing.{" "}
-              <a href="/work#saas-platform" className="text-teal hover:underline">
+              architecture running on a horizontally scalable Node and Postgres
+              core, with isolated workloads and event-driven processing.{" "}
+              <a
+                href="/work#saas-platform"
+                className="text-teal hover:underline"
+              >
                 See the full case study
               </a>
               .
             </p>
           </div>
         </section>
+
+        {/* 5b. RELATED GUIDES, reads from content/blog automatically */}
+        {relatedPosts.length > 0 && (
+          <section className="py-24 border-t border-border">
+            <div className="container">
+              <div className="max-w-3xl mb-16">
+                <p className="label-mono mb-6">Read more</p>
+                <h2 className="font-display text-4xl md:text-6xl font-medium leading-[0.98] tracking-tight">
+                  Guides on{" "}
+                  <span className="display-italic text-gradient-brand">
+                    SaaS
+                  </span>
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8">
+                {relatedPosts.map((post) => (
+                  <a
+                    key={post.slug}
+                    href={`/resources/${post.slug}`}
+                    className="group block border border-border hover:shadow-card transition-shadow"
+                  >
+                    {post.featuredImage && (
+                      <img
+                        src={post.featuredImage.src}
+                        alt={post.featuredImage.alt}
+                        width={400}
+                        height={260}
+                        className="w-full h-48 object-cover"
+                      />
+                    )}
+                    <div className="p-8">
+                      <h3 className="font-display text-xl font-medium text-foreground mb-3 group-hover:text-teal transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="text-foreground-soft text-sm leading-relaxed">
+                        {post.description}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="py-24 border-t border-border">
           <div className="container">
@@ -294,7 +390,9 @@ export default function Page() {
                   key={r}
                   className="bg-background border border-border p-10 hover:shadow-card transition-shadow flex flex-col justify-between"
                 >
-                  <span className="font-mono text-xs text-teal">/ 0{i + 1}</span>
+                  <span className="font-mono text-xs text-teal">
+                    / 0{i + 1}
+                  </span>
                   <p className="font-display text-lg text-foreground mt-8 leading-relaxed">
                     {r}
                   </p>
@@ -308,29 +406,47 @@ export default function Page() {
         <section className="py-24 bg-background-alt border-t border-border">
           <div className="container grid md:grid-cols-3 gap-8">
             <div className="flex items-start gap-4">
-              <ShieldCheck className="w-6 h-6 mt-1 text-teal shrink-0" strokeWidth={1.75} />
+              <ShieldCheck
+                className="w-6 h-6 mt-1 text-teal shrink-0"
+                strokeWidth={1.75}
+              />
               <div>
-                <h3 className="font-display text-lg font-medium mb-2">GDPR-aligned</h3>
+                <h3 className="font-display text-lg font-medium mb-2">
+                  GDPR-aligned
+                </h3>
                 <p className="text-foreground-soft text-sm leading-relaxed">
-                  Tenant and user data is handled under strict confidentiality and GDPR-aligned practices for UK and EU clients.
+                  Tenant and user data is handled under strict confidentiality
+                  and GDPR-aligned practices for UK and EU clients.
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <Clock className="w-6 h-6 mt-1 text-teal shrink-0" strokeWidth={1.75} />
+              <Clock
+                className="w-6 h-6 mt-1 text-teal shrink-0"
+                strokeWidth={1.75}
+              />
               <div>
-                <h3 className="font-display text-lg font-medium mb-2">Timezone overlap</h3>
+                <h3 className="font-display text-lg font-medium mb-2">
+                  Timezone overlap
+                </h3>
                 <p className="text-foreground-soft text-sm leading-relaxed">
-                  Remote-first, with working hours that overlap the UK and Australian business day.
+                  Remote-first, with working hours that overlap the UK and
+                  Australian business day.
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <Zap className="w-6 h-6 mt-1 text-teal shrink-0" strokeWidth={1.75} />
+              <Zap
+                className="w-6 h-6 mt-1 text-teal shrink-0"
+                strokeWidth={1.75}
+              />
               <div>
-                <h3 className="font-display text-lg font-medium mb-2">24h response</h3>
+                <h3 className="font-display text-lg font-medium mb-2">
+                  24h response
+                </h3>
                 <p className="text-foreground-soft text-sm leading-relaxed">
-                  Every enquiry gets a reply within 24 hours, Monday through Friday.
+                  Every enquiry gets a reply within 24 hours, Monday through
+                  Friday.
                 </p>
               </div>
             </div>
@@ -375,14 +491,16 @@ export default function Page() {
             <div className="grid gap-px bg-border border border-border">
               {faqs.map((f) => (
                 <div key={f.q} className="bg-background p-10">
-                  <h3 className="font-display text-xl font-medium mb-3">{f.q}</h3>
+                  <h3 className="font-display text-xl font-medium mb-3">
+                    {f.q}
+                  </h3>
                   <p className="text-foreground-soft leading-relaxed">{f.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
-      </Layout >
+      </Layout>
     </>
   );
 }

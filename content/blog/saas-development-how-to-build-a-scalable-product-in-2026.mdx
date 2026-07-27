@@ -5,7 +5,7 @@ description: "A practical guide to SaaS architecture, multi-tenancy, stack choic
 date: "2026-07-21"
 author:
   name: "Ahmad Saeed"
-  role: "CEO & Co-Founder, Devity Technologies"
+  role: "Full-Stack Engineer, Devity Technologies"
   photo: "/images/authors/ahmad.jpeg"
 featuredImage:
   src: "/images/blog/saas-development-2026-featured.png"
@@ -54,11 +54,11 @@ None of these decisions need to be perfect on day one. What matters is making th
 
 Multi-tenancy is the architecture that lets a single application instance serve many separate customers (tenants) while keeping their data properly isolated. There are three common approaches, and the right one depends on your actual constraints, not a general best practice:
 
-| Approach | How it works | Best for |
-|---|---|---|
-| Shared database, shared schema | All tenants share the same tables, separated by a tenant ID column on every row | Fast to build, lowest infrastructure cost, works well for most early-stage B2B SaaS |
-| Shared database, separate schemas | Each tenant gets their own schema within one database | A middle ground when some tenants need stronger isolation without full infrastructure duplication |
-| Separate databases per tenant | Each tenant gets a fully isolated database | Enterprise customers with strict compliance requirements, or usage patterns that vary too wildly to share resources safely |
+| Approach                          | How it works                                                                    | Best for                                                                                                                   |
+| --------------------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Shared database, shared schema    | All tenants share the same tables, separated by a tenant ID column on every row | Fast to build, lowest infrastructure cost, works well for most early-stage B2B SaaS                                        |
+| Shared database, separate schemas | Each tenant gets their own schema within one database                           | A middle ground when some tenants need stronger isolation without full infrastructure duplication                          |
+| Separate databases per tenant     | Each tenant gets a fully isolated database                                      | Enterprise customers with strict compliance requirements, or usage patterns that vary too wildly to share resources safely |
 
 Most early-stage SaaS products are well served by the shared-schema approach, since it is the cheapest to run and the simplest to reason about. The mistake worth avoiding is choosing full per-tenant database isolation too early, since it multiplies your infrastructure and migration overhead well before you have the customer base to justify it.
 

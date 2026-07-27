@@ -5,7 +5,7 @@ description: "Why Next.js has become the default choice for fast, SEO-friendly b
 date: "2026-07-16"
 author:
   name: "Ahmad Saeed"
-  role: "CEO & Co-Founder, Devity Technologies"
+  role: "Full-Stack Engineer, Devity Technologies"
   photo: "/images/authors/ahmad.jpeg"
 featuredImage:
   src: "/images/blog/nextjs-business-websites-featured.png"
@@ -65,13 +65,13 @@ For a UK studio serving both UK and Australian clients, this detail is not acade
 
 "Next.js vs React" is a slightly misleading comparison, since Next.js is built on React, not a replacement for it. The more useful way to frame it is what Next.js adds on top of plain React, and how that stacks up against building a site without any framework layer at all.
 
-| Consideration | Plain React (client-side only) | WordPress | Next.js |
-|---|---|---|---|
-| SEO out of the box | Weak, content loads after JavaScript runs | Reasonable, but plugin-dependent | Strong, fully rendered HTML on first load |
-| Performance ceiling | Depends heavily on manual optimisation | Often weighed down by plugins and themes | High, with built-in optimisation |
-| Editorial flexibility | Requires custom-built admin tooling | Very high, mature ecosystem | High, when paired with a headless CMS |
-| Scaling to a complex app | Possible, but requires assembling routing, data fetching, and rendering separately | Not designed for this | Built in from the start |
-| Best fit | Highly interactive, logged-in dashboards where SEO is irrelevant | Content-heavy sites with modest technical needs | Marketing sites, SaaS products, and anything in between that needs both content and application logic |
+| Consideration            | Plain React (client-side only)                                                     | WordPress                                       | Next.js                                                                                               |
+| ------------------------ | ---------------------------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| SEO out of the box       | Weak, content loads after JavaScript runs                                          | Reasonable, but plugin-dependent                | Strong, fully rendered HTML on first load                                                             |
+| Performance ceiling      | Depends heavily on manual optimisation                                             | Often weighed down by plugins and themes        | High, with built-in optimisation                                                                      |
+| Editorial flexibility    | Requires custom-built admin tooling                                                | Very high, mature ecosystem                     | High, when paired with a headless CMS                                                                 |
+| Scaling to a complex app | Possible, but requires assembling routing, data fetching, and rendering separately | Not designed for this                           | Built in from the start                                                                               |
+| Best fit                 | Highly interactive, logged-in dashboards where SEO is irrelevant                   | Content-heavy sites with modest technical needs | Marketing sites, SaaS products, and anything in between that needs both content and application logic |
 
 The honest takeaway is that plain React is still the right tool for something like an internal, logged-in dashboard where no search engine will ever see the page anyway. WordPress remains a reasonable choice for a simple content site with no application logic and a team that wants a familiar editorial experience. Next.js earns its reputation specifically where SEO, performance, and genuine application complexity all need to coexist on the same site, which describes most modern business websites and products.
 
@@ -80,12 +80,14 @@ The honest takeaway is that plain React is still the right tool for something li
 Next.js is not the correct default for every project, and being upfront about that builds more trust than pretending it is a universal answer.
 
 **It fits well when:**
+
 - Organic search visibility genuinely matters to the business
 - The site needs to combine marketing content with application functionality, a dashboard behind a login, for example
 - Performance and Core Web Vitals scores have a measurable effect on conversion or ad quality scores
 - The team anticipates growth in complexity over time and wants to avoid a rebuild later
 
 **It fits poorly when:**
+
 - The project is a simple, static brochure site with no plans to grow, where a lighter static site generator might be genuinely simpler
 - The entire application sits behind a login with zero SEO requirement, where the rendering strategy matters far less
 - The team has no JavaScript or React experience at all and the timeline does not allow for the learning curve

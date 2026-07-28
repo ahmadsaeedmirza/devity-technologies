@@ -1,0 +1,90 @@
+---
+title: "Replatforming a Legacy App: When and How to Modernise"
+category: "Web Platforms"
+description: "The real signs a legacy application needs replatforming, how to phase the migration safely using the strangler pattern, and how to think about cost and ROI."
+date: "2026-08-07"
+author:
+  name: "Ahmad Saeed"
+  role: "Full-Stack Engineer & CEO, Devity Technologies"
+  photo: "/images/authors/ahmad.jpeg"
+featuredImage:
+  src: "/images/blog/legacy-app-replatforming-featured.png"
+  alt: "IMG SUGGESTION: A simple before-and-after style diagram showing an old monolithic block gradually being replaced piece by piece with newer modular blocks, connected by a facade layer, in the site's teal/mint/ink brand colors"
+ctaHeading: "Weighing up whether to replatform, and worried about the risk of getting it wrong?"
+ctaText: "Book a Discovery Call"
+ctaLink: "/contact?service=web-platforms"
+faqs:
+  - q: "How do I know if my application actually needs replatforming, or just some optimisation?"
+    a: "If the application still meets your business needs but is genuinely slow, expensive to host, or hard to deploy safely, targeted optimisation may be enough. If the underlying architecture itself is what is blocking new features, scaling, or basic maintainability, that is a stronger signal that replatforming, not just tuning, is what is actually needed."
+  - q: "Is the strangler pattern always safer than a full rewrite?"
+    a: "For a business-critical application still in active use, yes, in the large majority of cases. A full rewrite means the legacy system and the new system both need to be maintained in parallel with no partial value delivered until the rewrite is entirely finished, which is a much larger risk window than a phased strangler approach."
+  - q: "How long does a typical replatforming project take?"
+    a: "This varies enormously with the size and complexity of the legacy system, but a phased strangler approach for a moderately complex business application often runs from four to twelve months, with real value delivered incrementally throughout rather than all at once at the end."
+  - q: "What's the actual ROI case for replatforming, beyond it just feeling overdue?"
+    a: "The strongest ROI cases are usually a specific, quantifiable cost, developer hours lost to a fragile deployment process, hosting costs disproportionate to actual usage, or missed revenue from features that cannot be safely built on the current architecture. A vague sense that the system is old is a weaker business case than one tied to a specific number."
+  - q: "Can replatforming be done without any downtime?"
+    a: "Yes, this is one of the direct benefits of the strangler pattern specifically. A facade layer routes traffic between the legacy and new systems throughout the migration, meaning the application can remain fully operational while functionality is transferred piece by piece."
+---
+
+Every established business with a system built more than a few years ago eventually has the same conversation: the application still works, technically, but every new feature takes longer than it should, hosting costs keep climbing, and the team has started quietly avoiding touching certain parts of the codebase. This guide covers the real signs that a legacy application genuinely needs replatforming rather than just more patching, how to phase that migration safely using the strangler pattern, and how to build an honest cost and ROI case for the work.
+
+## The Real Signs You Need to Replatform
+
+Not every ageing system needs replatforming, and treating "it feels old" as sufficient justification is how modernisation projects lose credibility with the rest of the business. A few signals are worth taking seriously:
+
+**New features consistently take longer than they reasonably should.** If a change that should be straightforward routinely turns into a multi-week effort because of how tangled the underlying architecture has become, that is architecture debt showing up as a direct cost, not a subjective feeling.
+
+**Deployment is risky enough that the team dreads it.** A healthy system supports frequent, low-risk deployments. If releases are treated as rare, high-stakes events requiring extra caution and out-of-hours timing, that is a strong signal the underlying platform is actively working against the team rather than supporting them.
+
+**Hosting and infrastructure costs are disproportionate to actual usage.** Legacy systems built on older architecture patterns frequently carry infrastructure costs that have crept upward over time without a corresponding increase in what the system actually delivers.
+
+**The system cannot support a feature the business genuinely needs.** This is the clearest, most business-relevant signal of all. When the architecture itself, not the team's time or budget, is the reason a needed feature cannot be built, that is architecture actively costing the business revenue or competitive position.
+
+**Key team members are the only people who understand critical parts of the system.** This is a risk signal as much as a technical one. A legacy system understood by only one or two people represents a genuine business continuity risk, independent of how well that system currently performs.
+
+## Risk and Phasing: Why a Big-Bang Rewrite Usually Fails
+
+The instinctive response to a struggling legacy system is often "let's just rebuild it properly." This is rarely the right call for a business-critical application still in active use, and the reasons are worth being explicit about.
+
+A full rewrite means running two systems in parallel, the legacy system continuing to serve real users while an entirely new system is built alongside it, with no value delivered from the new system until it is completely finished. This creates an extended period where the business is paying for two systems, two teams' worth of attention, and carrying the risk of a single, high-stakes cutover at the end, the exact point where things are most likely to go wrong.
+
+A phased approach avoids this by delivering value incrementally and keeping the legacy system in production throughout, rather than betting the entire project on one successful cutover moment.
+
+There is also a less quantifiable but genuinely real cost to the big-bang approach worth naming: team morale and confidence. A rewrite that drags on for many months with no visible progress to show the rest of the business tends to erode both engineering confidence and executive patience, sometimes resulting in the project being cancelled partway through, leaving the business with neither a working legacy system it can fully trust nor a finished replacement. A phased migration, by contrast, produces visible, working progress at regular intervals, which sustains both morale and organisational support for the length of the project.
+
+## The Strangler Pattern, Explained Properly
+
+The strangler pattern, named after the strangler fig, a vine that gradually grows around a host tree until the original is fully replaced, is the standard, proven approach to exactly this kind of migration. Rather than replacing an entire system at once, it replaces it piece by piece, while the legacy system continues operating throughout.
+
+The pattern works through four consistent phases:
+
+1. **Map the existing system and prioritise components.** Identify which parts of the legacy application are highest value or highest risk to migrate first, rather than starting arbitrarily.
+2. **Build the new component alongside the old one.** The replacement for a specific piece of functionality is built and tested independently, without touching the legacy system's existing behaviour.
+3. **Introduce a facade layer that routes traffic.** A proxy sits between users and the two systems, directing requests to either the legacy or the new component depending on what has been migrated so far. This is what allows the application to remain fully operational throughout the entire process, with a clear rollback path if something in the newly migrated piece needs to be reverted.
+4. **Decommission the legacy component once migration is verified.** Once a piece of functionality is confirmed working correctly in the new system, the corresponding legacy code can be safely retired.
+
+This process repeats, component by component, until the legacy system has been fully replaced, at which point it can be decommissioned entirely. The business gets value from each migrated piece as it lands, rather than waiting for the entire project to finish before seeing anything.
+
+The facade layer deserves more attention than it usually gets in a quick summary of this pattern, since it is genuinely the piece that makes the whole approach work safely. A well-built facade does more than simply route requests, it also gives the team a clear, tested rollback path for each migrated piece. If a newly migrated component behaves unexpectedly under real production load, the facade can redirect traffic back to the legacy version of that specific piece without affecting anything else that has already been successfully migrated. This is the mechanism that turns replatforming from a single high-stakes gamble into a series of small, individually reversible steps, which is the entire point of choosing this approach over a full rewrite in the first place.
+
+## Cost and ROI: Building a Real Business Case
+
+A replatforming project justified only by engineering discomfort with the old system is a hard sell to the rest of the business, and reasonably so. A credible ROI case ties the work to specific, quantifiable numbers.
+
+**Developer time recovered.** If new features currently take meaningfully longer than they should due to the legacy architecture, quantify that difference in actual hours or weeks per feature, and project it forward across your typical release cadence.
+
+**Infrastructure cost reduction.** Compare current hosting and infrastructure spend against what a modern, properly architected equivalent would realistically cost at the same usage level. This is often a more concrete, immediately verifiable number than developer time estimates.
+
+**Revenue or opportunity unlocked.** If specific features the business wants are currently blocked by the architecture, estimate the realistic revenue or competitive value of those features becoming buildable, this is often the single largest number in the case, even though it is the hardest to pin down precisely.
+
+**Risk reduction.** Harder to put a precise figure on, but real, the cost of a single significant outage or a key person leaving with critical undocumented system knowledge is a genuine, if less predictable, part of the case.
+
+The strongest business cases combine at least two of these, not just one abstract argument about code quality.
+
+Scoping the first phase carefully also strengthens the business case considerably. Choosing to migrate the highest-value or highest-risk component first, rather than whatever happens to be technically easiest, means the earliest visible result is also the most convincing one to whoever is approving continued investment in the project. A first phase that migrates a low-stakes, rarely used feature might be technically simpler to demonstrate, but it does little to build confidence that the approach will handle the parts of the system that actually matter.
+
+## In Practice
+
+This is exactly the kind of migration reflected in our own work: a legacy web platform with crippling load times and a content pipeline that made updates slow and risky was replatformed onto an edge-rendered Next.js stack with a headless CMS and full analytics instrumentation, delivering a 50% lift in lead conversion and a 70% reduction in publish time. [See the full case study](/work#web-platform-revamp). The same phased discipline applies to more complex systems too, our SaaS platform case study covers a similar migration for an application outgrowing its original architecture entirely, [worth a look](/work#saas-platform) if your system carries more complexity than a marketing site or content platform. If you are weighing up whether to replatform and want an honest read on the risk, phasing, and real cost involved, our [web platform development service](/services/web-platforms) is built around exactly this kind of engagement.
+
+The businesses that get replatforming right are rarely the ones with the most ambitious rewrite plan, they are the ones with the most disciplined phasing, a clear facade-based migration path, and a business case built on real numbers rather than a general sense that the old system has become uncomfortable to work with.

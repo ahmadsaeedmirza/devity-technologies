@@ -29,7 +29,7 @@ const Contact = () => {
   useSEO({
     title: "Contact",
     description:
-      "Drop us a message and our technical lead will reply within 24 hours (Mon-Fri). Remote-first across IST / GMT.",
+      "Drop us a message and our technical lead will reply within 24 hours (Mon-Fri). Remote-first across PKT / GMT.",
     path: "/contact",
   });
 
@@ -84,7 +84,7 @@ const Contact = () => {
                       Where
                     </div>
                     <div className="text-foreground">
-                      Remote-first · IST / GMT
+                      Remote-first · PKT / GMT
                     </div>
                   </div>
                 </div>

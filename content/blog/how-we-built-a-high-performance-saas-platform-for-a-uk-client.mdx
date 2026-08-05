@@ -1,0 +1,79 @@
+---
+title: "How We Built a High Performance SaaS Platform for a UK Client"
+category: "SaaS Applications"
+description: "A real case study: how TwentyFour's SaaS platform was rebuilt to handle real growth, the architecture behind it, and the results after launch."
+date: "2026-09-22"
+author:
+  name: "Ahmad Saeed"
+  role: "Full-Stack Engineer, Devity Technologies"
+  photo: "/images/authors/ahmad.jpeg"
+featuredImage:
+  src: "/images/blog/twentyfour-saas-case-study-featured.png"
+  alt: "TwentyFour SaaS platform case study, results and architecture"
+ctaHeading: "Have a SaaS product that needs to hold up under real growth?"
+ctaText: "Discuss a Similar Project"
+ctaLink: "/contact?service=saas-applications"
+faqs:
+  - q: "What kind of business was TwentyFour before this project?"
+    a: "TwentyFour is a clothing brand whose SaaS platform had outgrown its original architecture, with a growing customer base and usage spikes that were causing daily outages."
+  - q: "What was actually rebuilt, the whole product or specific parts of it?"
+    a: "The core architecture, moving to a multi-tenant model running on a horizontally scalable Node and Postgres core, with isolated workloads and event-driven processing, rather than a full feature rewrite from scratch."
+  - q: "How long did a rebuild of this scale take?"
+    a: "Timelines for this class of project typically run several months from discovery through to a fully migrated, production-verified platform, phased to keep the existing product running throughout rather than a single risky cutover."
+  - q: "What results did TwentyFour actually see after launch?"
+    a: "The platform now supports 1,000 concurrent users, runs at 99.99% uptime, and saw a 68% reduction in latency compared to the original architecture."
+  - q: "Is this the kind of project Devity typically takes on?"
+    a: "Yes, this is representative of our SaaS application work specifically, taking a product that has outgrown its original architecture and rebuilding the core so it can handle real, ongoing growth rather than needing another rebuild at the next scale milestone."
+---
+
+Most case studies in this industry are written to sound impressive rather than to actually explain what happened. This one is neither, it is a straightforward account of a real project, the problem TwentyFour was facing, what we actually built, and the results since launch, with a genuine quote from the client, not a marketing paraphrase of one.
+
+## Client and Sector
+
+TwentyFour is a clothing brand running a custom SaaS platform to manage a significant part of its operations. Like many growing SaaS products, the platform that served the business well in its early stages had started to buckle under its own success, more customers, more usage, and more strain on an architecture that was never designed for the scale it was now being asked to handle.
+
+## The Challenge
+
+TwentyFour's growing customer base had outpaced the platform's original architecture. Usage spikes, periods of genuinely high demand that should have been good news for the business, were instead causing daily outages, the exact moments the platform needed to perform reliably were the moments it was failing.
+
+This is a common pattern for SaaS products that grow faster than their founding architecture anticipated, the system was not badly built for its original scale, it was built for a scale the business had since outgrown. The fix was not a cosmetic patch or a temporary scaling workaround, it required rethinking the core architecture the platform actually ran on.
+
+The specific symptoms were the kind that erode customer trust quietly over time rather than all at once, a spike in demand from one part of the platform would degrade performance for unrelated functionality, since the original system had no real isolation between different workloads. An outage on a busy day was not just a technical inconvenience, it was exactly the moment customers were relying on the platform most, which made each incident more costly to the business than the same outage would have been on a quiet day.
+
+## The Build and Stack
+
+The rebuild centred on multi-tenant architecture running on a horizontally scalable Node and Postgres core, with isolated workloads and event-driven processing replacing the tightly coupled, harder-to-scale structure of the original build.
+
+Isolating workloads meant that a spike in demand from one part of the system no longer risked taking down unrelated functionality, a common failure pattern in systems where everything shares the same processing path with no separation. Event-driven processing meant the platform could handle bursts of activity by queuing and processing work efficiently, rather than attempting to handle every request synchronously and buckling under concurrent load. Horizontal scalability meant the platform could add capacity by running more instances of the same well-isolated components, rather than requiring an increasingly complex, harder-to-maintain single system to somehow do more with the same resources.
+
+![TwentyFour SaaS platform architecture showing multi-tenant isolation and event-driven processing](/images/blog/twentyfour-saas-architecture-diagram.png)
+
+This is the same approach covered in more general terms in our [guide to SaaS development](/resources/saas-development-how-to-build-a-scalable-product-in-2026), applied here to a real, specific product under real, specific pressure, not a hypothetical scenario.
+
+## Keeping the Business Running Throughout
+
+A rebuild of this scale carries real risk if handled as a single, all-at-once cutover, and TwentyFour's platform needed to keep serving real, paying customers throughout the entire process. The migration was phased deliberately, moving the highest-risk, highest-impact components first, with the existing system continuing to operate alongside the new architecture until each piece was verified working correctly under real conditions. This meant TwentyFour's business never had to choose between fixing the outages and keeping the platform available, both happened in parallel, which is a large part of why the transition succeeded without disrupting the customers the rebuild was ultimately meant to serve better.
+
+## The Results
+
+| Metric                     | Result |
+| -------------------------- | ------ |
+| Concurrent users supported | 1,000  |
+| Uptime                     | 99.99% |
+| Latency                    | −68%   |
+
+These numbers reflect what the platform can now handle reliably, not a peak figure reached once under ideal conditions. The uptime figure in particular reflects the actual point of the project, the daily outages that originally drove the rebuild are no longer happening, and the platform now handles real usage spikes as normal operation rather than a failure event.
+
+The latency reduction matters beyond the number itself, a 68% drop translates directly into a platform that feels noticeably faster to every single user on every interaction, not just during peak load. For a SaaS product, that kind of consistent, everyday responsiveness compounds into retention and satisfaction in a way that is harder to measure directly than uptime, but is felt by customers just as clearly.
+
+![TwentyFour SaaS platform results showing 1000 concurrent users, 99.99 percent uptime, and 68 percent latency reduction](/images/blog/twentyfour-saas-results-metrics.png)
+
+## In Their Words
+
+> "We needed a platform that could actually handle our growth, not just our launch. Devity built us something that's held up through every traffic spike since, rock solid uptime, no more outages, and it just works. That reliability alone has been worth it."
+
+## In Practice
+
+This project reflects the same discipline we bring to every SaaS engagement, treating multi-tenancy, scalability, and reliability as core architecture decisions made deliberately, not features bolted on after something has already broken. You can see this case study alongside our other real client work on our [work page](/work), or if you have a SaaS product facing similar growing pains, our [SaaS application development service](/services/saas-applications) is a good place to start that conversation directly.
+
+The businesses that get the most value from a rebuild like this are not the ones who wait until an outage becomes a crisis, they are the ones who recognise the pattern early, a product that worked well at one scale starting to strain at the next, and invest in the architecture before the daily outages TwentyFour was experiencing become the norm rather than the exception.

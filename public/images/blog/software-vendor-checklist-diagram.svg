@@ -1,0 +1,66 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="500" fill="#F7F4EC"/>
+
+  <!-- background band -->
+  <rect x="0" y="120" width="1200" height="280" fill="#2DD4BF" opacity="0.05"/>
+
+  <!-- Five columns -->
+  <!-- Process -->
+  <g transform="translate(140,260)">
+    <rect x="-95" y="-140" width="190" height="280" rx="16" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <rect x="-95" y="-140" width="190" height="46" rx="16" fill="#0B1217"/>
+    <rect x="-95" y="-118" width="190" height="24" fill="#0B1217"/>
+    <text x="0" y="-108" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#F7F4EC">PROCESS</text>
+    <circle cx="0" cy="-40" r="26" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -10 -40 L -3 -32 L 12 -50" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="-60" y1="20" x2="60" y2="20" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+    <line x1="-60" y1="55" x2="60" y2="55" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+    <line x1="-60" y1="90" x2="40" y2="90" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+
+  <!-- Team, hero -->
+  <g transform="translate(370,260)">
+    <rect x="-95" y="-150" width="190" height="300" rx="16" fill="#0B1217"/>
+    <text x="0" y="-108" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#F7F4EC">TEAM</text>
+    <circle cx="0" cy="-40" r="26" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -10 -40 L -3 -32 L 12 -50" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="-60" y1="20" x2="60" y2="20" stroke="#F7F4EC" stroke-width="1.5" opacity="0.35"/>
+    <line x1="-60" y1="55" x2="60" y2="55" stroke="#F7F4EC" stroke-width="1.5" opacity="0.35"/>
+    <line x1="-60" y1="90" x2="40" y2="90" stroke="#F7F4EC" stroke-width="1.5" opacity="0.35"/>
+  </g>
+
+  <!-- Pricing -->
+  <g transform="translate(600,260)">
+    <rect x="-95" y="-140" width="190" height="280" rx="16" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <rect x="-95" y="-140" width="190" height="46" rx="16" fill="#0B1217"/>
+    <rect x="-95" y="-118" width="190" height="24" fill="#0B1217"/>
+    <text x="0" y="-108" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#F7F4EC">PRICING</text>
+    <circle cx="0" cy="-40" r="26" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -10 -40 L -3 -32 L 12 -50" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="-60" y1="20" x2="60" y2="20" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+    <line x1="-60" y1="55" x2="40" y2="55" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+
+  <!-- Ownership -->
+  <g transform="translate(830,260)">
+    <rect x="-95" y="-140" width="190" height="280" rx="16" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <rect x="-95" y="-140" width="190" height="46" rx="16" fill="#0B1217"/>
+    <rect x="-95" y="-118" width="190" height="24" fill="#0B1217"/>
+    <text x="0" y="-108" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#F7F4EC">OWNERSHIP</text>
+    <circle cx="0" cy="-40" r="26" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -10 -40 L -3 -32 L 12 -50" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="-60" y1="20" x2="60" y2="20" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+
+  <!-- Support -->
+  <g transform="translate(1060,260)">
+    <rect x="-95" y="-140" width="190" height="280" rx="16" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <rect x="-95" y="-140" width="190" height="46" rx="16" fill="#0B1217"/>
+    <rect x="-95" y="-118" width="190" height="24" fill="#0B1217"/>
+    <text x="0" y="-108" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#F7F4EC">SUPPORT</text>
+    <circle cx="0" cy="-40" r="26" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -10 -40 L -3 -32 L 12 -50" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="-60" y1="20" x2="60" y2="20" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+    <line x1="-60" y1="55" x2="40" y2="55" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+</svg>

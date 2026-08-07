@@ -1,0 +1,66 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F4EC"/>
+
+  <!-- Decorative dot grid -->
+  <g fill="#0B1217" opacity="0.06">
+    <circle cx="80" cy="90" r="3"/><circle cx="130" cy="90" r="3"/><circle cx="180" cy="90" r="3"/>
+    <circle cx="80" cy="130" r="3"/><circle cx="130" cy="130" r="3"/><circle cx="180" cy="130" r="3"/>
+    <circle cx="1020" cy="500" r="3"/><circle cx="1070" cy="500" r="3"/><circle cx="1120" cy="500" r="3"/>
+    <circle cx="1020" cy="540" r="3"/><circle cx="1070" cy="540" r="3"/><circle cx="1120" cy="540" r="3"/>
+  </g>
+
+  <!-- soft background -->
+  <circle cx="420" cy="315" r="230" fill="#2DD4BF" opacity="0.06"/>
+
+  <!-- Clipboard, dark hero element -->
+  <g transform="translate(420,315)">
+    <rect x="-110" y="-150" width="220" height="300" rx="18" fill="#0B1217"/>
+    <rect x="-40" y="-168" width="80" height="36" rx="8" fill="#0B1217"/>
+    <rect x="-40" y="-168" width="80" height="36" rx="8" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+
+    <!-- checklist lines -->
+    <g stroke="#F7F4EC" stroke-width="2.5" opacity="0.9">
+      <rect x="-80" y="-100" width="22" height="22" rx="4" fill="none" stroke="#2DD4BF"/>
+      <path d="M -75 -89 L -71 -84 L -62 -96" stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-46" y1="-89" x2="70" y2="-89"/>
+
+      <rect x="-80" y="-52" width="22" height="22" rx="4" fill="none" stroke="#2DD4BF"/>
+      <path d="M -75 -41 L -71 -36 L -62 -48" stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-46" y1="-41" x2="70" y2="-41"/>
+
+      <rect x="-80" y="-4" width="22" height="22" rx="4" fill="none" stroke="#F7F4EC" opacity="0.4"/>
+      <line x1="-46" y1="7" x2="70" y2="7" opacity="0.4"/>
+
+      <rect x="-80" y="44" width="22" height="22" rx="4" fill="none" stroke="#F7F4EC" opacity="0.4"/>
+      <line x1="-46" y1="55" x2="70" y2="55" opacity="0.4"/>
+
+      <rect x="-80" y="92" width="22" height="22" rx="4" fill="none" stroke="#F7F4EC" opacity="0.4"/>
+      <line x1="-46" y1="103" x2="70" y2="103" opacity="0.4"/>
+    </g>
+  </g>
+
+  <!-- Five category tags branching to the right -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0B1217">
+    <line x1="530" y1="220" x2="680" y2="150" stroke="#2DD4BF" stroke-width="2"/>
+    <rect x="680" y="122" width="150" height="56" rx="28" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="755" y="157" text-anchor="middle">Process</text>
+
+    <line x1="530" y1="270" x2="680" y2="240" stroke="#2DD4BF" stroke-width="2"/>
+    <rect x="680" y="212" width="150" height="56" rx="28" fill="#0B1217"/>
+    <text x="755" y="247" text-anchor="middle" fill="#F7F4EC">Team</text>
+
+    <line x1="530" y1="315" x2="700" y2="315" stroke="#2DD4BF" stroke-width="2"/>
+    <rect x="700" y="287" width="150" height="56" rx="28" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="775" y="322" text-anchor="middle">Pricing</text>
+
+    <line x1="530" y1="360" x2="680" y2="390" stroke="#2DD4BF" stroke-width="2"/>
+    <rect x="680" y="362" width="150" height="56" rx="28" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="755" y="397" text-anchor="middle">Ownership</text>
+
+    <line x1="530" y1="410" x2="680" y2="480" stroke="#2DD4BF" stroke-width="2"/>
+    <rect x="680" y="452" width="150" height="56" rx="28" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="755" y="487" text-anchor="middle">Support</text>
+  </g>
+
+  <text x="600" y="585" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">15 QUESTIONS TO ASK</text>
+</svg>

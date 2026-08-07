@@ -1,0 +1,32 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="500" fill="#F7F4EC"/>
+
+  <!-- Ascending baseline -->
+  <line x1="120" y1="420" x2="1080" y2="420" stroke="#0B1217" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- Automation, shortest -->
+  <g transform="translate(260,420)">
+    <rect x="-90" y="-120" width="180" height="120" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <rect x="-30" y="-80" width="60" height="50" rx="6" fill="none" stroke="#0B1217" stroke-width="2.5"/>
+    <line x1="-30" y1="-60" x2="30" y2="-60" stroke="#0B1217" stroke-width="1.5"/>
+    <text x="0" y="-138" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0B1217">Automation</text>
+    <text x="0" y="-160" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B1217" opacity="0.6">FIXED RULES</text>
+  </g>
+
+  <!-- Chatbot, middle -->
+  <g transform="translate(600,420)">
+    <rect x="-95" y="-230" width="190" height="230" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <path d="M -30 -160 C -30 -180, 30 -180, 30 -160 C 30 -140, 15 -125, -5 -125 L -15 -110 L -12 -128 C -25 -132, -30 -145, -30 -160 Z" fill="none" stroke="#0B1217" stroke-width="2.5" stroke-linejoin="round"/>
+    <text x="0" y="-248" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0B1217">Chatbot</text>
+    <text x="0" y="-270" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B1217" opacity="0.6">REACTIVE</text>
+  </g>
+
+  <!-- AI Agent, tallest, dark hero -->
+  <g transform="translate(940,420)">
+    <rect x="-105" y="-340" width="210" height="340" rx="14" fill="#0B1217"/>
+    <circle cx="0" cy="-260" r="26" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -34 -220 L -12 -244 L 6 -226 L 34 -258" fill="none" stroke="#2DD4BF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="-358" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#0B1217">AI Agent</text>
+    <text x="0" y="-380" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B6E56" font-weight="600">REASONS AND ACTS</text>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="500" fill="#F7F4EC"/>
+
+  <!-- background band -->
+  <rect x="0" y="120" width="1200" height="260" fill="#2DD4BF" opacity="0.05"/>
+
+  <!-- arrows -->
+  <path d="M 300 250 L 420 250" stroke="#2DD4BF" stroke-width="2.5" fill="none" marker-end="url(#a7)"/>
+  <path d="M 720 250 L 840 250" stroke="#2DD4BF" stroke-width="2.5" fill="none" marker-end="url(#a7)"/>
+  <defs>
+    <marker id="a7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Query -->
+  <g transform="translate(180,250)">
+    <rect x="-115" y="-80" width="230" height="160" rx="16" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <circle cx="0" cy="-15" r="26" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <line x1="18" y1="3" x2="34" y2="19" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round"/>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0B1217">Query</text>
+  </g>
+
+  <!-- Vector DB retrieval, dark hero -->
+  <g transform="translate(580,250)">
+    <rect x="-140" y="-100" width="280" height="200" rx="20" fill="#0B1217"/>
+    <ellipse cx="0" cy="-40" rx="40" ry="14" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -40 -40 L -40 20 A 40 14 0 0 0 40 20 L 40 -40" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <ellipse cx="0" cy="-10" rx="40" ry="14" fill="none" stroke="#2DD4BF" stroke-width="1.5" opacity="0.6"/>
+    <text x="0" y="72" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#F7F4EC">Retrieval</text>
+    <text x="0" y="92" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#F7F4EC" opacity="0.6">vector database</text>
+  </g>
+
+  <!-- Generation -->
+  <g transform="translate(980,250)">
+    <rect x="-115" y="-80" width="230" height="160" rx="16" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <circle cx="-18" cy="-10" r="14" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <circle cx="18" cy="-10" r="14" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <line x1="-5" y1="-2" x2="5" y2="-2" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0B1217">Generation</text>
+  </g>
+</svg>

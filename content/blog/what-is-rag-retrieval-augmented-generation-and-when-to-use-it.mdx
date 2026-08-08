@@ -1,0 +1,101 @@
+---
+title: "What Is RAG (Retrieval Augmented Generation) and When to Use It"
+category: "AI Automation"
+description: "What retrieval-augmented generation actually is, how the architecture works, when it beats fine-tuning, and the build pitfalls that cause most RAG systems to fail in production."
+date: "2026-10-20"
+author:
+  name: "Mohid Bhatti"
+  role: "AI Systems Engineer, Devity Technologies"
+  photo: "/images/authors/mohid.jpg"
+featuredImage:
+  src: "/images/blog/what-is-rag-featured.svg"
+  alt: "What is retrieval augmented generation, RAG pipeline explained"
+ctaHeading: "Want to know whether RAG, fine-tuning, or something simpler fits your data?"
+ctaText: "Talk to an Engineer"
+ctaLink: "/contact?service=ai-automation"
+faqs:
+  - q: "What does RAG stand for and what does it do, in one sentence?"
+    a: "RAG stands for retrieval-augmented generation, a technique that retrieves relevant information from an external knowledge source at the moment a question is asked, and feeds that information to a language model as context before it generates an answer."
+  - q: "Is RAG better than fine-tuning?"
+    a: "Neither is universally better, they solve different problems. RAG handles knowledge that changes over time, since it retrieves current information rather than baking it into the model. Fine-tuning handles behaviour, tone, and format that should stay consistent. Most production systems now use both together."
+  - q: "Why do RAG systems fail in production even when they seem to work in testing?"
+    a: "The most common cause is the retrieval step surfacing the wrong or incomplete information, the language model then generates a fluent, confident answer grounded in the wrong source material. Naive RAG pipelines fail at retrieval a significant portion of the time, which is why retrieval quality, not the language model itself, is usually the actual bottleneck in a production RAG system."
+  - q: "Does RAG eliminate AI hallucination?"
+    a: "It significantly reduces it by grounding answers in retrieved, real source material rather than the model's general training alone, but it does not eliminate it entirely. If the retrieval step surfaces the wrong document, the model can still generate a fluent, incorrect answer based on that wrong source."
+  - q: "What does a RAG system actually cost to run?"
+    a: "It scales with query volume and architecture complexity. A simple RAG pipeline costs a small fraction of a penny per query, while a more advanced setup using hybrid search and reranking costs more per query but delivers meaningfully better accuracy, the right choice depends on how much accuracy your specific use case actually requires."
+---
+
+Retrieval-augmented generation, RAG, is one of the most important architectural patterns in production AI today, and also one of the most frequently misunderstood. RAG is a technique that retrieves relevant information from an external knowledge source at the moment a question is asked, and feeds that information to a language model as context before it generates a response. This guide explains it simply, covers the real architecture, when it genuinely beats fine-tuning, what actually drives accuracy, and the specific pitfalls that cause most RAG systems to fail once they leave the demo stage.
+
+## RAG, Explained Simply
+
+A language model on its own answers purely from what it learned during training, a fixed snapshot of information that becomes outdated the moment anything changes, and includes no knowledge of your specific business, documents, or data at all.
+
+RAG solves this by giving the model a way to look things up before answering. Rather than relying solely on what the model already knows, the system retrieves the most relevant passages from your own documents, database, or knowledge base, and includes that retrieved material directly in the prompt sent to the model. The model then generates its answer grounded in that specific, current, relevant information, rather than guessing from general training alone.
+
+This is why RAG has become the default pattern for any AI application that needs to answer questions using private, current, or frequently changing information, customer support grounded in your actual documentation, an internal tool answering questions against your real data, or a research assistant working from a specific document set, rather than the internet in general.
+
+## The Architecture
+
+A RAG system operates in two distinct phases, and understanding both is essential to understanding why RAG systems succeed or fail.
+
+**Retrieval.** When a question comes in, the system searches a knowledge base, typically indexed in a vector database, for the passages most relevant to that specific query. This can use dense retrieval, comparing meaning through embeddings rather than exact keyword matches, sparse retrieval based on traditional keyword search, or increasingly, a hybrid of both combined with a reranking step that reorders the initial results for relevance before they reach the model.
+
+**Generation.** The retrieved passages are combined with the original question and passed to the language model, which generates a response conditioned on both. The model is not answering from memory alone, it is answering with the specific retrieved material sitting directly in front of it.
+
+![RAG pipeline showing query, retrieval from vector database, and generation grounded in retrieved context](/images/blog/rag-pipeline-architecture-diagram.svg)
+
+The critical, often underappreciated detail is that the retrieval step, not the language model, is usually where a RAG system's quality actually lives or dies. A model given the wrong retrieved passages will still generate a fluent, confident-sounding answer, grounded faithfully in incorrect source material. This is the single most important thing to understand about how RAG systems actually fail in practice.
+
+## When RAG Beats Fine-Tuning
+
+RAG and fine-tuning solve genuinely different problems, and the choice between them should follow directly from what kind of problem you actually have.
+
+**Choose RAG when the answer depends on information that changes over time**, policies, prices, product specifications, current documentation, support tickets. Fine-tuning bakes information into a model's fixed weights, which goes stale the moment the underlying data changes, and requires retraining to update. RAG simply retrieves from an updated source, no retraining required.
+
+**Choose fine-tuning when you need consistent behaviour, tone, or output format** that prompting alone struggles to hold reliably, or when you need to distil a larger, more expensive model into a smaller, faster, cheaper one for a well-defined, narrow task.
+
+**Choose both when you need current knowledge and specific behaviour together**, an increasingly common pattern where a lightly fine-tuned model, adjusted for tone and output structure, still relies on RAG for the actual facts it presents. For most enterprise AI applications built in 2026, RAG is the correct starting point, since it lets you change source data without retraining, cite exactly which documents an answer came from, and switch the underlying model without losing your knowledge base.
+
+The citation advantage deserves specific mention, since RAG retrieves information from an identifiable external source, it is possible to show exactly which document grounded a given answer. This matters for trust generally, and matters specifically as regulatory frameworks increasingly expect AI systems to demonstrate how an answer was actually produced.
+
+|                        | RAG                                              | Fine-tuning                                              |
+| ---------------------- | ------------------------------------------------ | -------------------------------------------------------- |
+| What it changes        | What the model sees, not the model itself        | The model's actual weights                               |
+| Best for               | Knowledge that changes over time                 | Behaviour, tone, and format that should stay fixed       |
+| Updating information   | Update the source, no retraining needed          | Requires retraining to reflect new information           |
+| Answer traceability    | Can cite the exact source document               | Cannot show where an answer came from                    |
+| Typical starting point | Default for most 2026 enterprise AI applications | Used as an optimisation once RAG has proven the use case |
+
+## Data and Accuracy
+
+RAG's accuracy is fundamentally a function of retrieval quality, not model quality, and this has direct, practical implications for how a RAG system should actually be built.
+
+**Chunking strategy** determines how source documents are broken into retrievable pieces. Chunks that are too large dilute relevance, chunks that are too small lose necessary context, getting this right for your specific content type is a genuine engineering decision, not an afterthought.
+
+**Embedding model choice** determines how well the system understands semantic similarity between a question and the passages that could answer it, a mismatch here means relevant information exists in your knowledge base but never actually gets retrieved.
+
+**Hybrid search and reranking** meaningfully improve accuracy over basic vector search alone, combining semantic and keyword-based retrieval, then reordering results by genuine relevance before they reach the model, at the cost of additional engineering complexity and a higher per-query cost.
+
+Cost scales directly with this complexity, worth planning for honestly rather than discovering after launch. A simple vector-search-only pipeline costs a small fraction of a penny per query. A hybrid search setup with reranking costs meaningfully more per query but delivers noticeably better accuracy. A more advanced agentic RAG pattern, where the system can reformulate its own queries or retrieve iteratively, costs more again. At real production query volumes, the difference between these tiers translates into a genuine monthly cost range, and the right tier depends entirely on how much accuracy your specific use case actually demands, a customer-facing product answering questions about pricing or compliance justifies a higher-accuracy, higher-cost tier far more than an internal tool with low stakes if occasionally wrong.
+
+## Build Pitfalls
+
+This is where the gap between a RAG demo and a genuinely production-grade RAG system becomes clearest.
+
+**Naive RAG pipelines fail at retrieval a significant portion of the time**, a widely cited figure in production RAG work puts this failure rate at roughly forty percent for the most basic implementations. This is not a language model problem, it is a retrieval engineering problem, and it is the reason a RAG system that looked impressive in a demo can perform poorly once real users start asking real, varied questions against real, messy source data.
+
+**Treating retrieval as a solved problem after initial setup** is a common mistake. Retrieval quality needs ongoing evaluation against real queries, not a one-time check during development, since source data changes, user questions evolve, and a retrieval configuration that worked well at launch can quietly degrade as the knowledge base grows.
+
+**Ignoring source data quality** undermines everything built on top of it, a RAG system retrieving from disorganised, outdated, or contradictory source documents will confidently surface disorganised, outdated, or contradictory answers, no amount of downstream engineering fixes a poor knowledge base.
+
+**Underestimating the evaluation problem** rounds out the most common failure pattern, without a genuine way to measure whether the system is retrieving and answering correctly against real, representative questions, teams often ship a RAG system on the strength of a handful of manually checked examples, then discover its real accuracy only once users start relying on it.
+
+![Naive RAG pipeline failure point at retrieval, causing confident but incorrect answers](/images/blog/rag-retrieval-failure-diagram.svg)
+
+## In Practice
+
+RAG is a core part of how we build [custom AI agents](/resources/custom-ai-agents-explained-what-they-are-and-what-they-can-do) that need to reason with specific, current, private knowledge rather than a language model's general training alone, and the retrieval-quality discipline covered here is exactly what separates a system that works reliably in production from one that only worked in a demo. Our [AI automation service](/services/ai-automation) covers this kind of build directly, with the evaluation and monitoring discipline that a genuinely production-grade RAG system actually requires.
+
+The organisations getting real value from RAG in 2026 are not the ones with the most sophisticated language model, they are the ones who treated retrieval as the genuine engineering problem it is, invested in chunking, search quality, and ongoing evaluation, and understood from the start that a fluent answer and a correct one are not automatically the same thing.

@@ -1,0 +1,37 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="420" fill="#F7F4EC"/>
+
+  <!-- timeline line -->
+  <line x1="120" y1="210" x2="1080" y2="210" stroke="#0B1217" stroke-width="2" opacity="0.25"/>
+
+  <!-- point 1 -->
+  <g transform="translate(220,210)">
+    <circle cx="0" cy="0" r="14" fill="#0B1217"/>
+    <rect x="-115" y="-140" width="230" height="110" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="-105" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#2DD4BF">FEB 2026</text>
+    <text x="0" y="-80" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#0B1217">Articles 22A-22D</text>
+    <text x="0" y="-58" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.6">Automated decisions</text>
+    <line x1="0" y1="-30" x2="0" y2="-14" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+
+  <!-- point 2, dark hero -->
+  <g transform="translate(600,210)">
+    <circle cx="0" cy="0" r="18" fill="#2DD4BF"/>
+    <rect x="-125" y="30" width="250" height="120" rx="12" fill="#0B1217"/>
+    <text x="0" y="65" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#2DD4BF">AUG 2026</text>
+    <text x="0" y="90" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#F7F4EC">EU AI Act</text>
+    <text x="0" y="112" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#F7F4EC" opacity="0.7">Transparency duties begin</text>
+    <text x="0" y="132" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#F7F4EC" opacity="0.7">for EU-facing services</text>
+    <line x1="0" y1="14" x2="0" y2="30" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+
+  <!-- point 3 -->
+  <g transform="translate(980,210)">
+    <circle cx="0" cy="0" r="14" fill="#0B1217"/>
+    <rect x="-115" y="-140" width="230" height="110" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="-105" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#2DD4BF">DEC 2027 / AUG 2028</text>
+    <text x="0" y="-80" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#0B1217">EU AI Act</text>
+    <text x="0" y="-58" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.6">High-risk deadlines</text>
+    <line x1="0" y1="-30" x2="0" y2="-14" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+</svg>

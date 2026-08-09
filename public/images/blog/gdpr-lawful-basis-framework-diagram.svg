@@ -1,0 +1,44 @@
+<svg width="1100" height="500" viewBox="0 0 1100 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="500" fill="#F7F4EC"/>
+
+  <!-- background band -->
+  <rect x="0" y="130" width="1100" height="270" fill="#2DD4BF" opacity="0.05"/>
+
+  <!-- Central question node -->
+  <g transform="translate(550,130)">
+    <rect x="-160" y="-50" width="320" height="90" rx="16" fill="#0B1217"/>
+    <text x="0" y="-8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#F7F4EC">What is the processing</text>
+    <text x="0" y="16" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#F7F4EC">actually for?</text>
+  </g>
+
+  <!-- Three branches -->
+  <line x1="440" y1="175" x2="230" y2="290" stroke="#2DD4BF" stroke-width="2.5"/>
+  <line x1="550" y1="180" x2="550" y2="290" stroke="#2DD4BF" stroke-width="2.5"/>
+  <line x1="660" y1="175" x2="870" y2="290" stroke="#2DD4BF" stroke-width="2.5"/>
+
+  <!-- Legitimate interests -->
+  <g transform="translate(230,360)">
+    <rect x="-135" y="-70" width="270" height="140" rx="14" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <circle cx="0" cy="-25" r="24" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <path d="M -10 -25 L -3 -17 L 12 -35" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B1217">Legitimate</text>
+    <text x="0" y="50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B1217">interests</text>
+  </g>
+
+  <!-- Consent -->
+  <g transform="translate(550,360)">
+    <rect x="-135" y="-70" width="270" height="140" rx="14" fill="#0B1217"/>
+    <circle cx="0" cy="-25" r="24" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <path d="M -10 -25 L -3 -17 L 12 -35" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="40" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#F7F4EC">Consent</text>
+  </g>
+
+  <!-- Contractual necessity -->
+  <g transform="translate(870,360)">
+    <rect x="-135" y="-70" width="270" height="140" rx="14" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <circle cx="0" cy="-25" r="24" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <path d="M -10 -25 L -3 -17 L 12 -35" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B1217">Contractual</text>
+    <text x="0" y="50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B1217">necessity</text>
+  </g>
+</svg>

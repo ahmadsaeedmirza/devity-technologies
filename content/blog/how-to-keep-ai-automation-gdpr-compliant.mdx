@@ -1,0 +1,91 @@
+---
+title: "How to Keep AI Automation GDPR Compliant"
+category: "AI Automation"
+description: "A practical guide to data handling, lawful basis, vendor and model choices, and audit logging for GDPR-compliant AI automation, including the UK-specific rules in effect now."
+date: "2026-10-23"
+author:
+  name: "Mohid Bhatti"
+  role: "AI Systems Engineer, Devity Technologies"
+  photo: "/images/authors/mohid.jpg"
+featuredImage:
+  src: "/images/blog/gdpr-compliant-ai-automation-featured.svg"
+  alt: "GDPR compliant AI automation, data handling and audit logging"
+ctaHeading: "Want an honest read on what compliance actually requires for your specific automation?"
+ctaText: "Book a Discovery Call"
+ctaLink: "/contact?service=ai-automation"
+faqs:
+  - q: "Is AI automation automatically GDPR compliant if the underlying AI model is compliant?"
+    a: "No. The AI model is one part of the system. Compliance depends on the whole picture, what personal data the automation touches, the lawful basis for processing it, how it is stored and for how long, and whether the system logs its decisions in a way that can be audited, not just which model sits underneath."
+  - q: "What is the lawful basis for using AI automation to process personal data?"
+    a: "It depends on the specific processing, but legitimate interests is commonly used for AI automation, provided a proper assessment has been carried out weighing the business purpose against the impact on individuals. Consent, contractual necessity, or another lawful basis may apply depending on the specific use case, this is worth confirming for your specific situation rather than assuming."
+  - q: "Do I need a Data Protection Impact Assessment for AI automation?"
+    a: "Very likely, if the automation involves profiling, automated decision-making, or processing personal data at meaningful scale. A DPIA is a structured assessment of the risk the processing poses to individuals, and is a genuine legal requirement for higher-risk processing under UK GDPR, not an optional best practice."
+  - q: "What are UK GDPR Articles 22A to 22D?"
+    a: "These are updated UK GDPR rules on automated decision-making that took effect in February 2026, governing when a decision can be made about a person by an automated system alone, and what safeguards, including the right to human review, must be available when it does."
+  - q: "Does using a well-known AI provider like OpenAI or Anthropic automatically make my automation compliant?"
+    a: "No. It means the provider's own infrastructure has likely addressed baseline data handling, but your automation's compliance still depends on how you use it, what personal data you send, what lawful basis applies, how long you retain data, and whether you have a proper data processing agreement with that vendor covering your specific use."
+---
+
+Compliance keeps coming up in AI automation conversations for a good reason, it is a genuine, recurring concern for UK buyers, and increasingly a real differentiator between vendors who have actually thought it through and those treating it as an afterthought. This guide covers data handling, lawful basis, vendor and model choices, audit and logging, and the specific UK GDPR rules currently in effect. One honest note before starting: this is general guidance, not formal legal advice, your specific situation, particularly in a regulated sector, is worth confirming with your own legal counsel or data protection officer.
+
+## Data Handling
+
+**Data minimisation** is the starting principle worth applying before anything else, an automation should only process the personal data genuinely necessary for its specific task, not the broadest dataset available simply because it happens to be accessible. An automation reading customer enquiries to route them correctly does not need access to a customer's full purchase history unless that history is actually relevant to the routing decision.
+
+**Storage and retention** need clear, deliberate limits. Personal data processed by an automation should have a defined retention period tied to a genuine business purpose, not retained indefinitely by default because deleting it was never explicitly considered.
+
+**Data residency** matters directly for UK businesses, knowing where data is actually processed and stored, and confirming that location aligns with UK GDPR requirements, is a basic but frequently overlooked check, particularly when a system depends on third-party AI infrastructure that may process data outside the UK or EU.
+
+**Anonymisation and pseudonymisation claims deserve genuine scrutiny**, not automatic trust. It is tempting to assume that stripping obvious identifiers from data removes it from GDPR's scope entirely, but modern language models can sometimes infer identity from context even when explicit names or details have been removed. True anonymisation is a higher technical bar than it sounds, and a system relying on this as its compliance strategy should have that claim properly tested, not simply assumed.
+
+## Lawful Basis
+
+Every instance of personal data processing needs a lawful basis, and for AI automation specifically, this deserves deliberate thought rather than a default assumption.
+
+**Legitimate interests** is commonly used for AI automation, provided a genuine assessment has been carried out weighing the business purpose against the actual impact on the individuals affected, not just asserted without documentation. **Consent** may be the right basis for certain use cases, particularly where processing goes beyond what a person would reasonably expect. **Contractual necessity** can apply where the automation is directly part of delivering a service the individual has agreed to.
+
+The basis that applies depends on the specific processing, not the technology used to do it, an automation and a manual process performing the same task are usually held to the same lawful basis requirements, the fact that AI is involved does not create a separate, lighter standard.
+
+![GDPR lawful basis decision framework for AI automation](/images/blog/gdpr-lawful-basis-framework-diagram.svg)
+
+## Vendor and Model Choices
+
+The AI model or platform underlying an automation is one link in a longer chain of responsibility, and vendor due diligence deserves the same rigour as any other data processor your business relies on.
+
+**Check for a proper Data Processing Agreement (DPA)** with any AI vendor whose infrastructure touches personal data, this is a standard, expected document from any established, compliant provider, and its absence is a genuine warning sign.
+
+**Understand the vendor's own data retention and training policies.** Some AI providers use submitted data to train future models by default unless a specific plan or setting opts out, sending personal data through a service with this default active can create real compliance exposure, confirming this explicitly, not assuming it, is essential.
+
+**Confirm where the vendor actually processes data.** A vendor's infrastructure location affects whether your automation's data flows align with UK GDPR requirements, particularly relevant if a provider processes data outside the UK or EU without appropriate safeguards in place.
+
+**Look for published certifications and transparent documentation**, established, compliant AI vendors typically make their security and compliance posture genuinely easy to verify, rather than requiring a lengthy back-and-forth just to confirm basic data handling practices. A vendor reluctant to share this information plainly is worth treating with real caution.
+
+## Audit and Logging
+
+A compliant automation needs to be able to demonstrate what it did, not just that it worked correctly on the occasions someone happened to check.
+
+**Decision logging** should capture what data was used, what the automation decided or did, and when, in a way that can be reviewed after the fact, this is what actually allows a business to answer a genuine query or complaint about how a specific automated decision was reached.
+
+**Human oversight and override capability** matter directly for automated decisions with real consequences for an individual, having a clear, working path for a human to review or intervene, not just in theory but as an actual, exercised process.
+
+**Regular review**, not a one-time compliance check at launch, since the underlying data, the automation's behaviour, and the regulatory landscape itself all continue to change after go-live.
+
+**A named, accountable owner** for the automation's compliance, rather than an assumption that responsibility sits diffusely across whoever happened to be involved in building it. Businesses that handle this well tend to have a specific person who can answer, clearly and immediately, exactly what a given automation does with personal data and why.
+
+## UK GDPR Specifics Worth Knowing Right Now
+
+A few points genuinely specific to the current UK regulatory picture, current as of this writing, and worth confirming against the latest guidance given how quickly this area continues to move.
+
+**Updated automated decision-making rules took effect in February 2026**, refining the rights individuals have when a decision with legal or similarly significant effect on them is made by an automated system alone, including the right to obtain human review. Any automation involved in decisions like credit assessments, hiring screening, or similarly consequential outcomes should be checked directly against these current requirements.
+
+**A Data Protection Impact Assessment (DPIA) is very likely required** for automation involving profiling, automated decision-making, or personal data processing at meaningful scale, this is a genuine legal requirement for higher-risk processing under UK GDPR, not an optional best practice to skip if time is tight.
+
+**The UK does not currently have a single, standalone AI law**, compliance instead comes from a combination of existing UK GDPR obligations and sector-specific regulator guidance, from the ICO and others depending on your industry. For businesses also serving EU customers, the EU AI Act's own transparency and high-risk system requirements apply on a separate, overlapping timeline, worth checking specifically if any part of your customer base sits in the EU.
+
+![UK GDPR automated decision-making rules and compliance requirements timeline](/images/blog/uk-gdpr-ai-compliance-timeline-diagram.svg)
+
+## In Practice
+
+Compliance is built into how we architect [AI automation systems](/services/ai-automation) from the start, data handling, lawful basis, and audit logging treated as core engineering requirements rather than a checklist applied after the system is already built. You can read more about how we approach this on our [about page](/about), or reach out directly to talk through what compliance actually requires for your specific automation.
+
+The businesses that navigate this well are not the ones with the most polished compliance page, they are the ones treating data handling, lawful basis, and audit logging as genuine engineering requirements from the very first design decision, not paperwork addressed after the system is already built and running.

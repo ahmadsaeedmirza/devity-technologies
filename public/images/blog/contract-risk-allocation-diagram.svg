@@ -1,0 +1,34 @@
+<svg width="1100" height="480" viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="480" fill="#F7F4EC"/>
+
+  <!-- background band -->
+  <rect x="0" y="90" width="1100" height="300" fill="#2DD4BF" opacity="0.05"/>
+
+  <!-- Fixed price column, dark hero -->
+  <g transform="translate(300,240)">
+    <rect x="-190" y="-140" width="380" height="280" rx="20" fill="#0B1217"/>
+    <text x="0" y="-95" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#F7F4EC">Fixed price</text>
+    <line x1="-140" y1="-70" x2="140" y2="-70" stroke="#2DD4BF" stroke-width="1.5" opacity="0.4"/>
+    <circle cx="-120" cy="-30" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="-25" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#F7F4EC">Developer carries</text>
+    <text x="-100" y="-5" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#F7F4EC">estimation risk</text>
+    <circle cx="-120" cy="35" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="40" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#F7F4EC">Includes risk buffer</text>
+    <circle cx="-120" cy="80" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="85" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#F7F4EC">Scope change = renegotiate</text>
+  </g>
+
+  <!-- Time and materials column -->
+  <g transform="translate(800,240)">
+    <rect x="-190" y="-140" width="380" height="280" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="-95" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#0B1217">Time and materials</text>
+    <line x1="-140" y1="-70" x2="140" y2="-70" stroke="#0B1217" stroke-width="1.5" opacity="0.2"/>
+    <circle cx="-120" cy="-30" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="-25" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#0B1217">You carry timeline</text>
+    <text x="-100" y="-5" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#0B1217">risk</text>
+    <circle cx="-120" cy="35" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="40" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#0B1217">No built-in buffer</text>
+    <circle cx="-120" cy="80" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="85" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#0B1217">Scope change absorbed fluidly</text>
+  </g>
+</svg>

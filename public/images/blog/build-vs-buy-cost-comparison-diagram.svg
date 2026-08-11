@@ -1,0 +1,25 @@
+<svg width="1100" height="550" viewBox="0 0 1100 550" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="550" fill="#F7F4EC"/>
+
+  <!-- axes -->
+  <line x1="120" y1="460" x2="1020" y2="460" stroke="#0B1217" stroke-width="2" opacity="0.3"/>
+  <line x1="120" y1="460" x2="120" y2="80" stroke="#0B1217" stroke-width="2" opacity="0.3"/>
+  <text x="70" y="270" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#0B1217" opacity="0.6" transform="rotate(-90 70 270)">Total cost</text>
+  <text x="570" y="510" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#0B1217" opacity="0.6">Time / usage</text>
+
+  <!-- off the shelf line, steep rising -->
+  <path d="M 120 420 C 350 380, 600 220, 1000 100" fill="none" stroke="#0B1217" stroke-width="3.5"/>
+  <circle cx="1000" cy="100" r="7" fill="#0B1217"/>
+  <rect x="850" y="60" width="170" height="34" rx="8" fill="#0B1217"/>
+  <text x="935" y="83" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#F7F4EC">Off the shelf</text>
+
+  <!-- custom build line, higher start, flatter growth, dark hero color -->
+  <path d="M 120 300 C 350 290, 600 260, 1000 220" fill="none" stroke="#2DD4BF" stroke-width="4.5"/>
+  <circle cx="1000" cy="220" r="8" fill="#2DD4BF"/>
+  <rect x="820" y="230" width="200" height="34" rx="8" fill="#2DD4BF"/>
+  <text x="920" y="253" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#0B1217">Custom build</text>
+
+  <!-- crossover marker -->
+  <line x1="560" y1="80" x2="560" y2="460" stroke="#0B1217" stroke-width="1" stroke-dasharray="4 6" opacity="0.3"/>
+  <text x="560" y="490" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.5">crossover point varies by usage</text>
+</svg>

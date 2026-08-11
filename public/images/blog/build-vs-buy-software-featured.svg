@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F4EC"/>
+
+  <!-- Decorative dots -->
+  <g fill="#0B1217" opacity="0.06">
+    <circle cx="90" cy="90" r="3"/><circle cx="140" cy="90" r="3"/><circle cx="190" cy="90" r="3"/>
+    <circle cx="90" cy="130" r="3"/><circle cx="140" cy="130" r="3"/><circle cx="190" cy="130" r="3"/>
+    <circle cx="1010" cy="510" r="3"/><circle cx="1060" cy="510" r="3"/><circle cx="1110" cy="510" r="3"/>
+    <circle cx="1010" cy="550" r="3"/><circle cx="1060" cy="550" r="3"/><circle cx="1110" cy="550" r="3"/>
+  </g>
+
+  <!-- soft background -->
+  <circle cx="600" cy="330" r="240" fill="#2DD4BF" opacity="0.06"/>
+
+  <!-- fork lines -->
+  <path d="M 600 200 L 600 280 L 320 420" stroke="#2DD4BF" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 600 280 L 880 420" stroke="#2DD4BF" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Starting node -->
+  <g transform="translate(600,180)">
+    <circle cx="0" cy="0" r="46" fill="#0B1217"/>
+    <text x="0" y="7" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#F7F4EC">?</text>
+  </g>
+
+  <!-- Build node, dark hero -->
+  <g transform="translate(320,480)">
+    <rect x="-140" y="-90" width="280" height="180" rx="20" fill="#0B1217"/>
+    <rect x="-30" y="-40" width="24" height="60" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <rect x="4" y="-55" width="24" height="75" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <text x="0" y="60" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#F7F4EC">Build</text>
+  </g>
+
+  <!-- Buy node -->
+  <g transform="translate(880,480)">
+    <rect x="-140" y="-90" width="280" height="180" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <path d="M -30 -30 L -20 -30 L -14 20 L 22 20 L 30 -10 L -16 -10" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="-8" cy="32" r="5" fill="#2DD4BF"/>
+    <circle cx="18" cy="32" r="5" fill="#2DD4BF"/>
+    <text x="0" y="60" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#0B1217">Buy</text>
+  </g>
+
+  <text x="600" y="600" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">BUILD VS BUY</text>
+</svg>

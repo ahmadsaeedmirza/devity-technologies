@@ -1,0 +1,32 @@
+<svg width="1100" height="480" viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="480" fill="#F7F4EC"/>
+
+  <!-- background band -->
+  <rect x="0" y="80" width="1100" height="320" fill="#2DD4BF" opacity="0.05"/>
+
+  <!-- Buy column -->
+  <g transform="translate(280,240)">
+    <rect x="-190" y="-140" width="380" height="280" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="-95" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#0B1217">Buy</text>
+    <circle cx="-120" cy="-30" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="-25" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#0B1217">Standard, shared need</text>
+    <circle cx="-120" cy="15" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="20" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#0B1217">Low, stable usage</text>
+    <circle cx="-120" cy="60" r="6" fill="#2DD4BF"/>
+    <text x="-100" y="65" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#0B1217">No real differentiation</text>
+  </g>
+
+  <!-- Build column, dark hero -->
+  <g transform="translate(800,240)">
+    <rect x="-200" y="-150" width="400" height="300" rx="20" fill="#0B1217"/>
+    <text x="0" y="-100" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#F7F4EC">Build</text>
+    <circle cx="-130" cy="-35" r="6" fill="#2DD4BF"/>
+    <text x="-108" y="-30" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#F7F4EC">Workflow no tool fits well</text>
+    <circle cx="-130" cy="10" r="6" fill="#2DD4BF"/>
+    <text x="-108" y="15" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#F7F4EC">Paying for an unused bundle</text>
+    <circle cx="-130" cy="55" r="6" fill="#2DD4BF"/>
+    <text x="-108" y="60" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#F7F4EC">Tool is a competitive limit</text>
+    <circle cx="-130" cy="100" r="6" fill="#2DD4BF"/>
+    <text x="-108" y="105" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#F7F4EC">Scale changes the economics</text>
+  </g>
+</svg>

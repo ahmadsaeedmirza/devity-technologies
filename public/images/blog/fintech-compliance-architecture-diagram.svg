@@ -1,0 +1,47 @@
+<svg width="1100" height="500" viewBox="0 0 1100 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="500" fill="#F7F4EC"/>
+
+  <!-- background band -->
+  <rect x="0" y="90" width="1100" height="320" fill="#2DD4BF" opacity="0.05"/>
+
+  <!-- Central product node, dark hero -->
+  <g transform="translate(550,250)">
+    <rect x="-110" y="-70" width="220" height="140" rx="16" fill="#0B1217"/>
+    <rect x="-50" y="-30" width="100" height="60" rx="6" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#F7F4EC">FinTech product</text>
+  </g>
+
+  <!-- Three requirement nodes -->
+  <g stroke="#2DD4BF" stroke-width="2.5">
+    <line x1="440" y1="200" x2="230" y2="130"/>
+    <line x1="550" y1="180" x2="550" y2="120"/>
+    <line x1="660" y1="200" x2="870" y2="130"/>
+  </g>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B1217">
+    <rect x="130" y="80" width="200" height="60" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="230" y="105" text-anchor="middle">FCA</text>
+    <text x="230" y="124" text-anchor="middle" font-size="12" opacity="0.6">Consumer Duty</text>
+
+    <rect x="450" y="60" width="200" height="60" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="550" y="85" text-anchor="middle">GDPR</text>
+    <text x="550" y="104" text-anchor="middle" font-size="12" opacity="0.6">Data protection</text>
+
+    <rect x="770" y="80" width="200" height="60" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="870" y="105" text-anchor="middle">EU AI Act</text>
+    <text x="870" y="124" text-anchor="middle" font-size="12" opacity="0.6">High-risk AI, Aug 2026</text>
+  </g>
+
+  <!-- foundation label -->
+  <line x1="440" y1="300" x2="230" y2="370" stroke="#2DD4BF" stroke-width="2.5"/>
+  <line x1="660" y1="300" x2="870" y2="370" stroke="#2DD4BF" stroke-width="2.5"/>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B1217">
+    <rect x="130" y="370" width="200" height="60" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="230" y="395" text-anchor="middle">PCI DSS</text>
+    <text x="230" y="414" text-anchor="middle" font-size="12" opacity="0.6">Card data</text>
+
+    <rect x="770" y="370" width="200" height="60" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="870" y="395" text-anchor="middle">KYC / AML</text>
+    <text x="870" y="414" text-anchor="middle" font-size="12" opacity="0.6">Real-time monitoring</text>
+  </g>
+</svg>

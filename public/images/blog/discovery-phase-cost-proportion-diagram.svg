@@ -1,0 +1,22 @@
+<svg width="1000" height="450" viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="450" fill="#F7F4EC"/>
+
+  <!-- Total project bar -->
+  <g transform="translate(500,180)">
+    <rect x="-380" y="-50" width="760" height="100" rx="14" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <!-- discovery slice, dark hero -->
+    <rect x="-380" y="-50" width="90" height="100" rx="14" fill="#0B1217"/>
+    <rect x="-320" y="-50" width="30" height="100" fill="#0B1217"/>
+    <text x="-335" y="8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#2DD4BF">Discovery</text>
+    <text x="150" y="8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#0B1217">Full build</text>
+  </g>
+
+  <!-- labels below -->
+  <text x="500" y="290" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#0B1217">A small fraction of total investment</text>
+  <text x="500" y="320" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#0B1217" opacity="0.6">that de-risks everything that follows</text>
+
+  <!-- small icons -->
+  <g transform="translate(335,180)">
+    <path d="M -8 -16 L 8 -16 L 8 8 L 0 16 L -8 8 Z" fill="#2DD4BF"/>
+  </g>
+</svg>

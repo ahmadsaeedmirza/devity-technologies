@@ -1,0 +1,32 @@
+<svg width="1100" height="480" viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="480" fill="#F7F4EC"/>
+
+  <!-- background band -->
+  <rect x="0" y="100" width="1100" height="280" fill="#2DD4BF" opacity="0.05"/>
+
+  <!-- Central discovery node, dark hero -->
+  <g transform="translate(550,240)">
+    <rect x="-110" y="-70" width="220" height="140" rx="18" fill="#0B1217"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="600" fill="#F7F4EC">Discovery</text>
+  </g>
+
+  <!-- Four spokes -->
+  <line x1="440" y1="200" x2="230" y2="130" stroke="#2DD4BF" stroke-width="2.5"/>
+  <line x1="440" y1="280" x2="230" y2="350" stroke="#2DD4BF" stroke-width="2.5"/>
+  <line x1="660" y1="200" x2="870" y2="130" stroke="#2DD4BF" stroke-width="2.5"/>
+  <line x1="660" y1="280" x2="870" y2="350" stroke="#2DD4BF" stroke-width="2.5"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#0B1217">
+    <rect x="130" y="90" width="200" height="70" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="230" y="130" text-anchor="middle">The real problem</text>
+
+    <rect x="130" y="320" width="200" height="70" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="230" y="360" text-anchor="middle">Actual scope</text>
+
+    <rect x="770" y="90" width="200" height="70" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="870" y="130" text-anchor="middle">Technical decisions</text>
+
+    <rect x="770" y="320" width="200" height="70" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="870" y="360" text-anchor="middle">Priorities</text>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="1000" height="500" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="500" fill="#F7F4EC"/>
+
+  <!-- soft background -->
+  <circle cx="500" cy="250" r="220" fill="#2DD4BF" opacity="0.06"/>
+
+  <!-- Speech bubble, dark hero -->
+  <g transform="translate(500,240)">
+    <path d="M -220 -120 L 220 -120 C 240 -120, 255 -105, 255 -85 L 255 60 C 255 80, 240 95, 220 95 L -60 95 L -110 150 L -100 95 L -220 95 C -240 95, -255 80, -255 60 L -255 -85 C -255 -105, -240 -120, -220 -120 Z" fill="#0B1217"/>
+    <text x="0" y="-60" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#2DD4BF">Core Web Vitals approach?</text>
+    <text x="0" y="-15" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#F7F4EC">SEO during migration?</text>
+    <text x="0" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#2DD4BF">Your own PageSpeed score?</text>
+  </g>
+</svg>

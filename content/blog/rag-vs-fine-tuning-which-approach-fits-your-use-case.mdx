@@ -1,0 +1,84 @@
+---
+title: "RAG vs Fine Tuning: Which Approach Fits Your Use Case"
+category: "AI Automation"
+description: "A technically deep comparison of RAG and fine-tuning, the real cost and maintenance differences, accuracy and freshness trade-offs, and when production systems genuinely combine both."
+date: "2026-11-24"
+author:
+  name: "Mohid Bhatti"
+  role: "AI Systems Engineer, Devity Technologies"
+  photo: "/images/authors/mohid.jpg"
+featuredImage:
+  src: "/images/blog/rag-vs-fine-tuning-featured.svg"
+  alt: "RAG versus fine tuning, which approach fits your use case"
+ctaHeading: "Want a specific, scoped recommendation for your actual use case?"
+ctaText: "Talk to an Engineer"
+ctaLink: "/contact?service=ai-automation"
+faqs:
+  - q: "Is fine-tuning still worth it in 2026 given how good RAG has become?"
+    a: "Yes, but for a narrower set of problems than most people assume. Fine-tuning earns its place for shaping behaviour, tone, and structured output, and for distilling a smaller, cheaper model to match a larger one's performance on a narrow task, not for injecting knowledge that changes over time."
+  - q: "What is LoRA and why does it matter for fine-tuning cost?"
+    a: "LoRA (Low-Rank Adaptation) freezes the base model and trains a small set of additional parameters, an adapter, rather than updating the entire model. This cuts training cost and time dramatically compared to full fine-tuning, and is the default approach for the large majority of teams fine-tuning in 2026."
+  - q: "What's the real ongoing cost of maintaining a fine-tuned model?"
+    a: "Beyond the initial training cost, expect an ongoing operational tax, adapter versioning, periodic revalidation as base models update underneath you, and dataset maintenance. A reasonable budget allocates several times the original training cost toward this lifecycle ownership over the following year."
+  - q: "What is the right sequence for deciding between prompting, RAG, and fine-tuning?"
+    a: "Start with prompt engineering, since it is free and instant. Move to RAG when the gap is about knowledge, missing or outdated facts. Only consider fine-tuning once both have been genuinely tried and a specific gap remains around behaviour, consistency, or cost at scale that neither prompting nor retrieval solves."
+  - q: "Can RAG and fine-tuning be used together?"
+    a: "Yes, and this is now the standard pattern for mature production systems, fine-tuning a model for consistent behaviour, tone, or structured output, while RAG continues to supply the current, factual knowledge the model reasons over. Each technique is solving a genuinely different problem."
+---
+
+RAG versus fine-tuning gets treated as a single either-or decision more often than the underlying technology actually supports, and getting this wrong wastes real engineering time and budget in both directions, over-engineering a knowledge problem with an expensive training pipeline, or under-engineering a behaviour problem with an ever-more-elaborate prompt. This is a genuinely technical comparison, the real differences, cost and maintenance specifics, accuracy and freshness trade-offs, and exactly when mature systems combine both.
+
+## The Short Comparison, Then the Detail
+
+|                      | RAG                                       | Fine-tuning (LoRA / QLoRA)                            |
+| -------------------- | ----------------------------------------- | ----------------------------------------------------- |
+| What it changes      | What the model sees at query time         | The model's own behaviour                             |
+| Solves               | Knowledge gaps, outdated or missing facts | Behaviour, tone, structured output, cost at scale     |
+| Updating information | Update the source, no retraining          | Requires retraining or a new adapter                  |
+| Upfront cost         | Lower, mostly infrastructure              | Low with LoRA/QLoRA, higher for full fine-tuning      |
+| Ongoing cost         | Scales with query volume                  | Lifecycle maintenance, versioning, revalidation       |
+| 2026 default         | Yes, for most LLM applications            | For distillation and locked-in behaviour specifically |
+
+## The Core Difference
+
+RAG retrieves relevant, current information from an external source at the moment a question is asked, and feeds it to the model as context. It changes what the model sees, not the model itself. Fine-tuning changes the model itself, adjusting its weights so it behaves differently by default, without needing that behaviour spelled out in every prompt.
+
+The clearest way to hold this distinction: **RAG supplies knowledge, fine-tuning shapes behaviour.** A model that needs to know your current product catalogue needs RAG. A model that needs to consistently respond in a specific tone, follow a rigid output schema, or handle a narrow, specialised task the same way every time is a genuine fine-tuning candidate, provided prompting alone has already been tried and found wanting.
+
+## Cost and Maintenance, in Real Detail
+
+This is where genuine technical depth actually matters, and where most comparison content stays too vague to be useful.
+
+**Fine-tuning cost has collapsed in 2026**, primarily due to LoRA and QLoRA, parameter-efficient methods that train a small adapter on top of a frozen base model rather than updating every weight. A modest LoRA fine-tuning run on a mid-sized open-source model can now cost a low, sometimes double-digit, sum on rented GPU hardware, a dramatic drop from the tens of thousands full fine-tuning of a large model still requires. QLoRA adds 4-bit quantisation of the base model on top of this, making it possible to fine-tune meaningfully large models on a single consumer-grade GPU, at some cost to fidelity.
+
+**The real cost is not training, it is lifecycle ownership.** This is the detail almost every surface-level comparison skips. A fine-tuned adapter requires ongoing maintenance, versioning as your dataset or requirements evolve, periodic revalidation since a hosted provider's base model can update underneath your adapter and silently degrade its performance, and a genuine retraining cadence rather than a one-time effort. A reasonable operational budget allocates several times the original training cost toward this lifecycle ownership over the following year, a cost most teams evaluating fine-tuning on the training price alone do not see coming.
+
+**RAG's costs run differently**, weighted toward retrieval infrastructure and ongoing query-time cost rather than an upfront training investment. Every query triggers a retrieval step against your knowledge base, which scales with traffic in a way training cost does not. At very high query volumes, this recurring cost can meaningfully exceed what a comparable fine-tuning approach would have cost over the same period, the crossover point depends on your actual volume, not a fixed rule of thumb.
+
+A real-shaped example illustrates how these costs actually interact in practice. A team extracting terms from loan agreement documents started with prompt engineering alone, which handled the large majority of straightforward cases well. For the remaining harder cases, unusual clauses, non-standard language, they built a RAG pipeline indexing a large archive of historical agreements, which lifted accuracy further. Only for the final, narrow gap did they fine-tune a smaller model on a modest set of hand-annotated examples, reaching a level of accuracy neither prompting nor retrieval alone had achieved. The total cost split across a one-time build investment and a modest recurring inference cost, and critically, they validated each cheaper step before committing to the more expensive one, rather than jumping straight to fine-tuning and potentially spending far more without first confirming prompting and retrieval could not get most of the way there on their own.
+
+![RAG versus fine tuning cost structure, upfront training cost against recurring retrieval cost](/images/blog/rag-vs-fine-tuning-cost-diagram.svg)
+
+## Accuracy and Freshness
+
+**RAG wins decisively on freshness.** Since it retrieves from a live source at query time, updating the underlying data updates every future answer immediately, no retraining required. This makes it the correct default for anything involving information that changes, pricing, policies, current documentation, support content.
+
+**Fine-tuning wins on consistency and specialised behaviour.** A model fine-tuned for a narrow, well-defined task can outperform a general model prompted for the same task, in both accuracy on that specific task and cost per query, particularly when a smaller, fine-tuned model matches a larger frontier model's performance on the narrow task at a fraction of the inference cost. This distillation pattern, using a frontier model to generate high-quality training examples, then fine-tuning a smaller model on them, is one of the strongest genuine cases for fine-tuning in 2026, and one most teams overlook in favour of simply calling the larger, more expensive model directly for everything.
+
+**Neither technique is a hallucination cure on its own.** RAG grounds answers in retrieved material, but a bad retrieval still produces a fluent, confidently wrong answer, covered in more depth in our [guide to RAG](/resources/what-is-rag-retrieval-augmented-generation-and-when-to-use-it). Fine-tuning shapes how a model responds, but does not reliably teach it new facts, attempting to fine-tune knowledge into a model rather than retrieving it is a common, expensive misapplication of the technique.
+
+## When to Combine Both
+
+The honest, current answer for most mature production systems is not RAG or fine-tuning, it is both, applied to the specific problem each one actually solves.
+
+**The right sequence to work through is prompting, then RAG, then fine-tuning, then distillation**, in that order, not because fine-tuning is inferior, but because each earlier step is cheaper and faster to validate, and the honest answer to "should we fine-tune" is very often "not yet" until prompting and retrieval have genuinely been tried and found insufficient.
+
+**A hybrid architecture** fine-tunes a model for consistent tone, output structure, and specialised task behaviour, while RAG continues to supply the current, factual knowledge that model reasons over, whether inside a single application or as part of a broader [custom AI agent](/resources/custom-ai-agents-explained-what-they-are-and-what-they-can-do) that needs both reliable behaviour and access to current information. This is not a compromise between two competing techniques, it reflects that they were never actually solving the same problem in the first place.
+
+![Hybrid architecture combining fine tuning for behavior and RAG for current knowledge](/images/blog/rag-fine-tuning-hybrid-architecture-diagram.svg)
+
+## In Practice
+
+This level of technical specificity, not just knowing that RAG and fine-tuning exist, but understanding the real cost mechanics, the lifecycle maintenance most teams underestimate, and exactly when a hybrid approach genuinely earns its added complexity, is what separates engineered AI systems from a no-code implementation with an LLM bolted on. Our [AI automation service](/services/ai-automation) is built around making this decision properly for your specific use case, not defaulting to whichever technique is easiest to demo.
+
+The teams that get real value from either technique are not the ones with the most sophisticated pipeline, they are the ones who correctly diagnosed whether their actual problem was a knowledge gap or a behaviour gap before spending a single pound building the solution to the wrong one.

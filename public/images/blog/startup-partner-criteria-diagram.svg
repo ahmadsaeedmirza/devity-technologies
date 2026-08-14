@@ -1,0 +1,35 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="500" fill="#F7F4EC"/>
+
+  <circle cx="600" cy="270" r="260" fill="#2DD4BF" opacity="0.04"/>
+
+  <text x="600" y="60" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#0B1217">What actually predicts a good fit</text>
+
+  <!-- three criteria cards -->
+  <g transform="translate(240,300)">
+    <rect x="-160" y="-140" width="320" height="280" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <circle cx="0" cy="-70" r="34" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <path d="M -14 -10 L -4 0 L 16 -22" stroke="#2DD4BF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,-60)"/>
+    <text x="0" y="20" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#0B1217">Product thinking</text>
+    <text x="0" y="48" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B1217" opacity="0.55">Asks why, not just what</text>
+  </g>
+
+  <!-- Center, dark hero -->
+  <g transform="translate(600,300)">
+    <rect x="-170" y="-150" width="340" height="300" rx="22" fill="#0B1217"/>
+    <circle cx="0" cy="-70" r="36" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <path d="M -12 -80 L -12 -60 M -12 -50 L -12 -48" stroke="#2DD4BF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 8 -80 L 8 -60 M 8 -50 L 8 -48" stroke="#2DD4BF" stroke-width="4" stroke-linecap="round"/>
+    <text x="0" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F7F4EC">Comfort with</text>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F7F4EC">ambiguity</text>
+    <text x="0" y="85" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#2DD4BF">Specs evolve as you learn</text>
+  </g>
+
+  <g transform="translate(960,300)">
+    <rect x="-160" y="-140" width="320" height="280" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <circle cx="0" cy="-70" r="34" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <path d="M -16 -80 C -16 -95, 16 -95, 16 -80 C 16 -65, 0 -60, 0 -50" stroke="#2DD4BF" stroke-width="3" fill="none" stroke-linecap="round" transform="translate(0,10)"/>
+    <text x="0" y="20" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#0B1217">Real curiosity</text>
+    <text x="0" y="48" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B1217" opacity="0.55">About the actual business</text>
+  </g>
+</svg>

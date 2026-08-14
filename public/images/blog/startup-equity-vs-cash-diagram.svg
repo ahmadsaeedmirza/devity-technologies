@@ -1,0 +1,35 @@
+<svg width="1200" height="480" viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="480" fill="#F7F4EC"/>
+
+  <circle cx="600" cy="260" r="250" fill="#2DD4BF" opacity="0.04"/>
+
+  <!-- Full cash -->
+  <g transform="translate(200,260)">
+    <rect x="-150" y="-120" width="300" height="240" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <circle cx="0" cy="-45" r="32" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <text x="0" y="-38" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0B1217">£</text>
+    <text x="0" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#0B1217">Full cash</text>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.55">No cap table impact</text>
+  </g>
+
+  <!-- Blended, dark hero, center -->
+  <g transform="translate(600,260)">
+    <rect x="-170" y="-140" width="340" height="280" rx="22" fill="#0B1217"/>
+    <circle cx="-25" cy="-55" r="30" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <text x="-25" y="-48" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#2DD4BF">£</text>
+    <circle cx="30" cy="-30" r="26" fill="none" stroke="#F7F4EC" stroke-width="2.5" opacity="0.7"/>
+    <path d="M 20 -30 L 27 -22 L 42 -40" stroke="#F7F4EC" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <text x="0" y="40" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F7F4EC">Blended</text>
+    <text x="0" y="65" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#2DD4BF">Reduced cash + equity</text>
+    <text x="0" y="90" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#F7F4EC" opacity="0.6">Most balanced structure</text>
+  </g>
+
+  <!-- Pure equity -->
+  <g transform="translate(1000,260)">
+    <rect x="-150" y="-120" width="300" height="240" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="3" stroke-dasharray="6 6"/>
+    <circle cx="0" cy="-45" r="32" fill="none" stroke="#0B1217" stroke-width="2.5" opacity="0.5"/>
+    <path d="M -12 -45 L -4 -37 L 14 -55" stroke="#0B1217" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+    <text x="0" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#0B1217" opacity="0.7">Pure equity</text>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.5">Scrutinise the ask</text>
+  </g>
+</svg>

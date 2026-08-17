@@ -1,0 +1,44 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F4EC"/>
+
+  <!-- layered depth -->
+  <circle cx="350" cy="220" r="170" fill="#2DD4BF" opacity="0.05"/>
+  <circle cx="850" cy="420" r="190" fill="#2DD4BF" opacity="0.05"/>
+  <circle cx="600" cy="315" r="270" fill="#2DD4BF" opacity="0.04"/>
+
+  <!-- decorative dots -->
+  <g fill="#0B1217" opacity="0.07">
+    <circle cx="70" cy="70" r="3"/><circle cx="110" cy="70" r="3"/><circle cx="150" cy="70" r="3"/>
+    <circle cx="70" cy="110" r="3"/><circle cx="110" cy="110" r="3"/><circle cx="150" cy="110" r="3"/>
+    <circle cx="1050" cy="560" r="3"/><circle cx="1090" cy="560" r="3"/><circle cx="1130" cy="560" r="3"/>
+    <circle cx="1050" cy="600" r="3"/><circle cx="1090" cy="600" r="3"/><circle cx="1130" cy="600" r="3"/>
+  </g>
+
+  <!-- Search bar -->
+  <g transform="translate(600,180)">
+    <rect x="-220" y="-30" width="440" height="60" rx="30" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <circle cx="-180" cy="0" r="14" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <line x1="-170" y1="10" x2="-162" y2="18" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round"/>
+    <text x="0" y="7" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#0B1217" opacity="0.5">task management app</text>
+  </g>
+
+  <!-- App result card, dark hero -->
+  <g transform="translate(600,380)">
+    <rect x="-260" y="-100" width="520" height="200" rx="24" fill="#0B1217"/>
+    <rect x="-210" y="-60" width="90" height="90" rx="20" fill="#2DD4BF"/>
+    <path d="M -185 -15 L -175 -5 L -155 -35" fill="none" stroke="#0B1217" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="-90" y="-25" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F7F4EC">Flow Tasks</text>
+    <text x="-90" y="0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#F7F4EC" opacity="0.6">Productivity</text>
+    <!-- stars -->
+    <g transform="translate(-90,25)" fill="#2DD4BF">
+      <path d="M0 0 L2 6 L8 6 L3 10 L5 16 L0 12 L-5 16 L-3 10 L-8 6 L-2 6 Z"/>
+      <path d="M20 0 L22 6 L28 6 L23 10 L25 16 L20 12 L15 16 L17 10 L12 6 L18 6 Z"/>
+      <path d="M40 0 L42 6 L48 6 L43 10 L45 16 L40 12 L35 16 L37 10 L32 6 L38 6 Z"/>
+      <path d="M60 0 L62 6 L68 6 L63 10 L65 16 L60 12 L55 16 L57 10 L52 6 L58 6 Z"/>
+      <path d="M80 0 L82 6 L88 6 L83 10 L85 16 L80 12 L75 16 L77 10 L72 6 L78 6 Z"/>
+    </g>
+    <text x="180" y="-25" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#2DD4BF">GET</text>
+  </g>
+
+  <text x="600" y="590" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">APP STORE OPTIMISATION</text>
+</svg>

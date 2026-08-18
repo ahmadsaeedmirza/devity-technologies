@@ -55,7 +55,10 @@ const Footer = () => (
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-mint transition-colors">
+                <Link
+                  to="/services"
+                  className="hover:text-mint transition-colors"
+                >
                   Services
                 </Link>
               </li>
@@ -72,6 +75,19 @@ const Footer = () => (
                   Work
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/resources"
+                  className="hover:text-mint transition-colors"
+                >
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link to="/tools" className="hover:text-mint transition-colors">
+                  Tools
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -80,22 +96,34 @@ const Footer = () => (
             </p>
             <ul className="space-y-2 text-background/85">
               <li>
-                <Link to="/services/web-platforms" className="hover:text-mint transition-colors">
+                <Link
+                  to="/services/web-platforms"
+                  className="hover:text-mint transition-colors"
+                >
                   Web Platforms
                 </Link>
               </li>
               <li>
-                <Link to="/services/saas-applications" className="hover:text-mint transition-colors">
+                <Link
+                  to="/services/saas-applications"
+                  className="hover:text-mint transition-colors"
+                >
                   SaaS Applications
                 </Link>
               </li>
               <li>
-                <Link to="/services/mobile-applications" className="hover:text-mint transition-colors">
+                <Link
+                  to="/services/mobile-applications"
+                  className="hover:text-mint transition-colors"
+                >
                   Mobile Apps
                 </Link>
               </li>
               <li>
-                <Link to="/services/ai-automation" className="hover:text-mint transition-colors">
+                <Link
+                  to="/services/ai-automation"
+                  className="hover:text-mint transition-colors"
+                >
                   AI & Automation
                 </Link>
               </li>
@@ -123,7 +151,10 @@ const Footer = () => (
                 </Link>
               </li>
               <li>
-                <Link to="/free-technical-audit" className="hover:text-mint transition-colors">
+                <Link
+                  to="/free-technical-audit"
+                  className="hover:text-mint transition-colors"
+                >
                   Free Technical Audit
                 </Link>
               </li>

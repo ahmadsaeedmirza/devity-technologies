@@ -1,0 +1,61 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F4EC"/>
+
+  <circle cx="600" cy="315" r="280" fill="#2DD4BF" opacity="0.04"/>
+
+  <g fill="#0B1217" opacity="0.07">
+    <circle cx="70" cy="70" r="3"/><circle cx="110" cy="70" r="3"/><circle cx="150" cy="70" r="3"/>
+    <circle cx="70" cy="110" r="3"/><circle cx="110" cy="110" r="3"/><circle cx="150" cy="110" r="3"/>
+    <circle cx="1050" cy="560" r="3"/><circle cx="1090" cy="560" r="3"/><circle cx="1130" cy="560" r="3"/>
+    <circle cx="1050" cy="600" r="3"/><circle cx="1090" cy="600" r="3"/><circle cx="1130" cy="600" r="3"/>
+  </g>
+
+  <!-- 2 rows x 5 numbered tiles, one dark hero (the featured #1) -->
+  <g font-family="Helvetica, Arial, sans-serif" font-weight="700">
+    <!-- row 1 -->
+    <g transform="translate(170,220)">
+      <rect x="-70" y="-70" width="140" height="140" rx="20" fill="#0B1217"/>
+      <text x="0" y="14" text-anchor="middle" font-size="42" fill="#2DD4BF">1</text>
+    </g>
+    <g transform="translate(370,220)">
+      <rect x="-65" y="-65" width="130" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="36" fill="#0B1217">2</text>
+    </g>
+    <g transform="translate(560,220)">
+      <rect x="-65" y="-65" width="130" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="36" fill="#0B1217">3</text>
+    </g>
+    <g transform="translate(750,220)">
+      <rect x="-65" y="-65" width="130" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="36" fill="#0B1217">4</text>
+    </g>
+    <g transform="translate(950,220)">
+      <rect x="-65" y="-65" width="130" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="36" fill="#0B1217">5</text>
+    </g>
+
+    <!-- row 2 -->
+    <g transform="translate(170,400)">
+      <rect x="-65" y="-65" width="130" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="36" fill="#0B1217">6</text>
+    </g>
+    <g transform="translate(370,400)">
+      <rect x="-65" y="-65" width="130" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="36" fill="#0B1217">7</text>
+    </g>
+    <g transform="translate(560,400)">
+      <rect x="-65" y="-65" width="130" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="36" fill="#0B1217">8</text>
+    </g>
+    <g transform="translate(750,400)">
+      <rect x="-65" y="-65" width="130" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="36" fill="#0B1217">9</text>
+    </g>
+    <g transform="translate(950,400)">
+      <rect x="-70" y="-65" width="140" height="130" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+      <text x="0" y="14" text-anchor="middle" font-size="30" fill="#0B1217">10</text>
+    </g>
+  </g>
+
+  <text x="600" y="580" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">10 HIGH ROI AUTOMATIONS FOR SMEs</text>
+</svg>

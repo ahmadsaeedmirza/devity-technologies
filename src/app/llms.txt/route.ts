@@ -28,6 +28,23 @@ export async function GET() {
     )
     .join("\n");
 
+  const toolsDir = path.join(process.cwd(), "content/tools");
+  const toolFiles = fs.existsSync(toolsDir) ? fs.readdirSync(toolsDir) : [];
+
+  const tools = toolFiles.map((file) => {
+    const source = fs.readFileSync(path.join(toolsDir, file), "utf8");
+    const { data } = matter(source);
+    return {
+      slug: file.replace(/\.mdx$/, ""),
+      title: data.title,
+      description: data.description,
+    };
+  });
+
+  const toolLines = tools
+    .map((t) => `- [${t.title}](${baseUrl}/tools/${t.slug}): ${t.description}`)
+    .join("\n");
+
   const content = `# Devity Technologies
 
 > Devity Technologies is a software development studio based in Pakistan, remote-first, serving clients across the UK, US, and Australia. We build custom web platforms, SaaS products, mobile applications, and AI automation systems, engineered for measurable business outcomes rather than templated solutions.
@@ -46,6 +63,10 @@ export async function GET() {
 - [Process](${baseUrl}/process): How an engagement unfolds, from discovery to launch and scale.
 - [Free Technical Audit](${baseUrl}/free-technical-audit): A free, no-obligation technical and SEO audit.
 - [Contact](${baseUrl}/contact): Get in touch to start a project.
+
+## Tools
+
+${toolLines}
 
 ## Resources (Guides and Articles)
 

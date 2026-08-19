@@ -1,0 +1,23 @@
+<svg width="1100" height="450" viewBox="0 0 1100 450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="450" fill="#F7F4EC"/>
+
+  <circle cx="550" cy="240" r="240" fill="#2DD4BF" opacity="0.04"/>
+
+  <!-- Good debt, dark hero, left -->
+  <g transform="translate(300,240)">
+    <rect x="-170" y="-150" width="340" height="300" rx="22" fill="#0B1217"/>
+    <circle cx="0" cy="-70" r="34" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <path d="M -14 -70 L -4 -60 L 16 -84" stroke="#2DD4BF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="15" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#F7F4EC">Good debt</text>
+    <text x="0" y="45" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#2DD4BF">Deliberate, tracked</text>
+  </g>
+
+  <!-- Bad debt, right, faded warning -->
+  <g transform="translate(800,240)">
+    <rect x="-160" y="-140" width="320" height="280" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5" stroke-dasharray="6 6"/>
+    <path d="M 0 -95 L 30 -35 L -30 -35 Z" fill="none" stroke="#0B1217" stroke-width="2.5" stroke-linejoin="round" opacity="0.5"/>
+    <line x1="0" y1="-80" x2="0" y2="-55" stroke="#0B1217" stroke-width="2.5" opacity="0.5"/>
+    <text x="0" y="15" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#0B1217" opacity="0.7">Bad debt</text>
+    <text x="0" y="42" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.5">Accidental, untracked</text>
+  </g>
+</svg>

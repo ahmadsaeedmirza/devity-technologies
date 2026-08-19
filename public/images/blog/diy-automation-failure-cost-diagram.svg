@@ -1,0 +1,24 @@
+<svg width="1100" height="500" viewBox="0 0 1100 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="500" fill="#F7F4EC"/>
+
+  <circle cx="550" cy="270" r="250" fill="#2DD4BF" opacity="0.04"/>
+
+  <text x="550" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0B1217">The cost most businesses never see coming</text>
+
+  <!-- ascending bars showing compounding cost -->
+  <g transform="translate(0,300)">
+    <rect x="150" y="-40" width="90" height="40" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="195" y="-55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#0B1217" opacity="0.6">Visible</text>
+
+    <rect x="290" y="-90" width="90" height="90" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="335" y="-105" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#0B1217" opacity="0.6">Workarounds</text>
+
+    <!-- dark hero, tallest -->
+    <rect x="430" y="-190" width="110" height="190" fill="#0B1217"/>
+    <text x="485" y="-205" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#2DD4BF">Uncaught failure</text>
+
+    <line x1="130" y1="0" x2="960" y2="0" stroke="#0B1217" stroke-width="2" opacity="0.2"/>
+  </g>
+
+  <text x="550" y="450" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#0B1217" opacity="0.55">Cost compounds the longer it goes unnoticed</text>
+</svg>

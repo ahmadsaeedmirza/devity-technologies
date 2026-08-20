@@ -1,0 +1,29 @@
+<svg width="1100" height="480" viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="480" fill="#F7F4EC"/>
+
+  <circle cx="550" cy="260" r="250" fill="#2DD4BF" opacity="0.04"/>
+
+  <text x="550" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0B1217">Real, not dramatic, and it compounds</text>
+
+  <!-- Without edge -->
+  <g transform="translate(280,280)">
+    <rect x="-170" y="-130" width="340" height="260" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="3"/>
+    <text x="0" y="-90" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#0B1217" opacity="0.6">WITHOUT EDGE</text>
+    <rect x="-80" y="-50" width="160" height="30" rx="6" fill="#0B1217" opacity="0.5"/>
+    <text x="0" y="20" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#0B1217">250ms</text>
+    <text x="0" y="50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B1217" opacity="0.55">TTFB, distant visitor</text>
+  </g>
+
+  <!-- arrow -->
+  <line x1="450" y1="280" x2="530" y2="280" stroke="#2DD4BF" stroke-width="3"/>
+  <path d="M 515 268 L 530 280 L 515 292" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- With edge, dark hero -->
+  <g transform="translate(820,280)">
+    <rect x="-180" y="-140" width="360" height="280" rx="22" fill="#0B1217"/>
+    <text x="0" y="-98" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#2DD4BF">WITH EDGE</text>
+    <rect x="-90" y="-55" width="180" height="34" rx="8" fill="#2DD4BF"/>
+    <text x="0" y="20" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#F7F4EC">50ms</text>
+    <text x="0" y="52" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#F7F4EC" opacity="0.65">TTFB, same visitor</text>
+  </g>
+</svg>

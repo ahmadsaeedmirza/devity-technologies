@@ -1,0 +1,18 @@
+<svg width="1000" height="450" viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="450" fill="#F7F4EC"/>
+  <text x="500" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#0B1217">Fixed cost versus cost tied to real work</text>
+
+  <!-- in-house, flat fixed line -->
+  <g transform="translate(300,270)">
+    <line x1="-150" y1="-60" x2="150" y2="-60" stroke="#0B1217" stroke-width="4" stroke-linecap="round"/>
+    <text x="0" y="-80" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217" opacity="0.6">In-house, fixed</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.5">Same cost, quiet or busy</text>
+  </g>
+
+  <!-- agency, dark hero, variable line -->
+  <g transform="translate(700,270)">
+    <path d="M -150 20 Q -75 -80, 0 -30 T 150 -70" stroke="#2DD4BF" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <text x="0" y="-100" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217">Agency, tied to work</text>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.5">Scales with actual need</text>
+  </g>
+</svg>

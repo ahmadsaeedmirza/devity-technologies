@@ -1,0 +1,16 @@
+<svg width="1100" height="420" viewBox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="420" fill="#F7F4EC"/>
+  <circle cx="550" cy="220" r="220" fill="#2DD4BF" opacity="0.04"/>
+  <g transform="translate(260,220)">
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#0B1217">New client</text>
+  </g>
+  <line x1="350" y1="220" x2="460" y2="220" stroke="#2DD4BF" stroke-width="3"/>
+  <path d="M 445 208 L 460 220 L 445 232" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(700,220)">
+    <rect x="-170" y="-130" width="340" height="260" rx="20" fill="#0B1217"/>
+    <rect x="-100" y="-70" width="200" height="16" rx="4" fill="#2DD4BF"/>
+    <rect x="-100" y="-35" width="150" height="16" rx="4" fill="#F7F4EC" opacity="0.3"/>
+    <text x="0" y="50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F7F4EC">Automated intake</text>
+  </g>
+</svg>

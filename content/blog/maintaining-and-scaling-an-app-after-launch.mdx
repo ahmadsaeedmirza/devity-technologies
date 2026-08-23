@@ -1,0 +1,96 @@
+---
+title: "Maintaining and Scaling an App After Launch"
+category: "Mobile Applications"
+description: "What app maintenance actually costs and covers, real monitoring, the ongoing update cycle, scaling considerations, and how technical debt accumulates if left unmanaged."
+date: "2027-02-02"
+author:
+  name: "Prem Kumar"
+  role: "Mobile Engineer, Devity Technologies"
+  photo: "/images/authors/prem.jpg"
+featuredImage:
+  src: "/images/blog/app-maintenance-scaling-featured.svg"
+  alt: "Maintaining and scaling an app after launch"
+ctaHeading: "Want a realistic maintenance plan for your specific app, not a generic support package?"
+ctaText: "Book a Discovery Call"
+ctaLink: "/contact?service=mobile-applications"
+faqs:
+  - q: "How much does app maintenance actually cost per year?"
+    a: "A commonly used industry benchmark is roughly 15 to 20% of the original build cost annually, though the real figure depends heavily on how actively the app is being developed versus simply kept stable, and how much genuine complexity the app carries."
+  - q: "What does app maintenance actually include?"
+    a: "OS compatibility updates as Apple and Google release new versions, dependency and security patching, bug fixes surfaced through real usage, monitoring and crash response, and typically some ongoing feature development, though the split between these varies by app and by month."
+  - q: "Why does an app need maintenance if nothing about it is changing?"
+    a: "Because the platforms underneath it keep changing even when the app's own features don't, new OS versions, deprecated APIs, updated app store requirements. An app that stops receiving updates entirely will eventually break, not from anything the original team did wrong, but from the platform moving on around it."
+  - q: "What is technical debt, in simple terms, and why does it matter for an app?"
+    a: "It's the accumulated cost of shortcuts and quick fixes made during development, each individually reasonable, that compound over time into code that is harder and slower to change safely. Left unmanaged, it eventually makes even simple changes disproportionately expensive and risky."
+  - q: "When should an app's architecture actually be reconsidered for scale?"
+    a: "When real usage data, not a guess, shows the current architecture genuinely straining, slow performance under real load, a specific bottleneck showing up repeatedly. Scaling proactively before any real evidence of strain is usually premature optimisation and wasted engineering effort."
+---
+
+The build is often treated as the finish line, when it is actually the start of an app's real lifecycle. Maintenance and scaling are not optional extras, they are the ongoing work that determines whether an app remains reliable, secure, and genuinely usable years after launch, or quietly decays until a costly rebuild becomes the only option. This guide sets realistic expectations, maintenance scope and cost, real monitoring, the ongoing update cycle, scaling, and how technical debt accumulates if left unmanaged.
+
+| Area              | Cadence                              | What happens if neglected                          |
+| ----------------- | ------------------------------------ | -------------------------------------------------- |
+| OS compatibility  | Roughly annual, per major OS release | Compatibility issues, eventual App Store rejection |
+| Security patching | Ongoing, as vulnerabilities surface  | Real, avoidable security exposure                  |
+| Monitoring        | Continuous                           | Problems discovered by users, not by the team      |
+| Technical debt    | Regular, deliberate refactoring      | Simple changes become disproportionately expensive |
+
+## Maintenance Scope and Cost
+
+A commonly used industry benchmark puts annual maintenance cost at roughly 15 to 20% of the original build cost, though the real figure depends heavily on how actively the app continues evolving versus simply being kept stable and secure.
+
+**What maintenance actually covers**, OS compatibility updates as Apple and Google release new versions, dependency and security patching, bug fixes surfaced through real usage, monitoring and incident response, and typically some ongoing feature development, with the split between these shifting month to month depending on what the app actually needs at that point.
+
+**Why this cost exists even when nothing about the app's own features is changing**, the platforms underneath an app keep evolving regardless of what the app itself does, new OS versions, deprecated APIs, updated app store review requirements. An app that receives no updates at all will eventually break, not from anything the original team did wrong, but from the platform moving on around it while the app stands still.
+
+![App maintenance cost breakdown, OS updates, security patching, bug fixes, and features](/images/blog/app-maintenance-cost-breakdown-diagram.svg)
+
+## Monitoring
+
+Real monitoring is what separates a maintained app from one that is merely occasionally checked on, and it matters directly for how quickly a genuine problem actually gets caught and fixed.
+
+**Crash reporting and error tracking** should surface issues automatically, with enough context to diagnose the actual cause quickly, rather than relying on user reviews as the primary signal something has gone wrong, by which point real users have already had a bad experience.
+
+**Performance monitoring** catches a gradual slowdown or a specific bottleneck before it becomes severe enough that users start actively complaining, the difference between catching a performance regression early and discovering it only once it has meaningfully hurt retention.
+
+**Uptime and dependency monitoring**, particularly for any app relying on third-party services or APIs, flags an external outage or a breaking change on a service's side immediately, rather than the first sign of trouble being confused users reporting a feature has silently stopped working.
+
+## Updates
+
+The ongoing update cycle is genuinely continuous work, not a scheduled event that happens occasionally when something breaks.
+
+**OS-driven updates** need attention on a real cadence, both Apple and Google release major OS updates roughly annually, and an app that hasn't been tested and updated against a new OS version risks compatibility issues the moment users start updating their devices.
+
+**App store policy compliance** shifts periodically too, both platforms update their review guidelines, and an app that falls behind on compliance risks rejection or removal at the exact moment a routine update is submitted, an unwelcome surprise if maintenance has been neglected.
+
+**Dependency updates**, the third-party libraries and packages an app relies on, need regular attention specifically for security reasons, an outdated dependency with a known vulnerability is a real, avoidable risk that accumulates the longer it goes unaddressed.
+
+![Ongoing app update cycle, OS compatibility, app store policy, and dependency security](/images/blog/app-update-cycle-diagram.svg)
+
+## Scaling
+
+Scaling decisions are best made from real usage data, not anticipated in advance based on ambition alone.
+
+**Wait for genuine evidence of strain** before making significant architectural changes, slow performance under real, measured load, a specific bottleneck showing up repeatedly in monitoring, rather than scaling proactively based on a guess about future growth that may never materialise in the way anticipated.
+
+**Database and backend architecture** typically need the most attention as real usage grows, a data model or query pattern that performed fine at a small scale can become a genuine bottleneck at a larger one, worth addressing with real data in hand, not preemptively.
+
+**Infrastructure scaling** should be planned for, but not necessarily built out fully in advance, cloud infrastructure that can scale on demand as real usage grows is generally the more capital-efficient approach than over-provisioning for a scale the app may not reach for a long while, if ever.
+
+## Technical Debt
+
+This is the part of app maintenance most often neglected, precisely because its cost is invisible until it suddenly isn't.
+
+**Technical debt accumulates from reasonable shortcuts**, a quick fix shipped under a deadline, a feature added without fully refactoring the code around it, each individually defensible in the moment, but compounding over time into code that becomes progressively harder and riskier to change safely.
+
+**Left unmanaged, technical debt eventually makes even simple changes disproportionately expensive**, what should be a small, quick feature addition instead requires untangling layers of accumulated shortcuts first, a cost that was avoidable with regular, deliberate attention but becomes very real once ignored for long enough.
+
+**Regular, deliberate refactoring**, not a single, dramatic rewrite attempted once things have already become unmanageable, keeps this cost genuinely manageable, treating code quality as an ongoing maintenance responsibility rather than a problem to be dealt with only once it has become impossible to ignore.
+
+A concrete illustration of how this compounds: an app that shipped a quick, hardcoded solution for handling a specific payment edge case under launch pressure might carry that shortcut without issue for months. Once a second, related payment feature needs to be added, the team discovers the original shortcut doesn't generalise, and now has to untangle and properly rebuild that section before the new feature can be added safely, turning what should have been a straightforward addition into a considerably larger piece of work, entirely because the original debt was never addressed while it was still small and cheap to fix.
+
+## In Practice
+
+We build maintenance and monitoring into how we think about a mobile project from the start, covered as part of the same discipline in our [complete guide to mobile app development](/resources/mobile-app-development-in-the-uk-the-complete-guide), not a separate conversation that only happens once an app is already live and something has started to go wrong. Our [mobile application development service](/services/mobile-applications) includes genuine post-launch support as a real, planned part of the engagement, not an afterthought.
+
+The apps that stay reliable and genuinely scale well are rarely the ones with the most ambitious original architecture, they are the ones where maintenance, monitoring, and technical debt were treated as ongoing, real responsibilities from launch onward, not deferred until a problem had already become expensive to fix.

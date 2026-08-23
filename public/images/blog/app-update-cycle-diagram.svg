@@ -1,0 +1,29 @@
+<svg width="1200" height="480" viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="480" fill="#F7F4EC"/>
+
+  <circle cx="600" cy="260" r="260" fill="#2DD4BF" opacity="0.04"/>
+
+  <g transform="translate(210,260)">
+    <rect x="-150" y="-100" width="300" height="200" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <circle cx="0" cy="-35" r="28" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <path d="M -12 -35 L -3 -25 L 16 -48" fill="none" stroke="#2DD4BF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#0B1217">OS compatibility</text>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.55">Annual major releases</text>
+  </g>
+
+  <!-- App store policy, dark hero -->
+  <g transform="translate(600,260)">
+    <rect x="-160" y="-110" width="320" height="220" rx="22" fill="#0B1217"/>
+    <rect x="-30" y="-45" width="60" height="60" rx="10" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <line x1="-15" y1="-25" x2="15" y2="-25" stroke="#2DD4BF" stroke-width="2"/>
+    <line x1="-15" y1="-10" x2="8" y2="-10" stroke="#2DD4BF" stroke-width="2"/>
+    <text x="0" y="45" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#F7F4EC">App store policy</text>
+  </g>
+
+  <g transform="translate(990,260)">
+    <rect x="-150" y="-100" width="300" height="200" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <path d="M 0 -55 L 0 -20 M -14 -35 L 0 -20 L 14 -35" stroke="#2DD4BF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#0B1217">Dependencies</text>
+    <text x="0" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B1217" opacity="0.55">Security patching</text>
+  </g>
+</svg>

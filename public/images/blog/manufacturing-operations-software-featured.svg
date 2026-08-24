@@ -27,5 +27,5 @@
     <circle cx="0" cy="0" r="20" fill="#2DD4BF"/>
   </g>
 
-  <text x="600" y="590" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">MANUFACTURING & OPERATIONS</text>
+  <text x="600" y="590" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">MANUFACTURING &amp; OPERATIONS</text>
 </svg>

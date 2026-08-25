@@ -1,0 +1,22 @@
+<svg width="1200" height="380" viewBox="0 0 1200 380" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="380" fill="#F7F4EC"/>
+  <line x1="100" y1="200" x2="1100" y2="200" stroke="#0B1217" stroke-width="2" opacity="0.2"/>
+  <g transform="translate(220,200)">
+    <circle cx="0" cy="0" r="14" fill="#0B1217"/>
+    <rect x="-95" y="-110" width="190" height="80" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="-70" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217">Open app</text>
+    <line x1="0" y1="-30" x2="0" y2="-14" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+  <g transform="translate(600,200)">
+    <circle cx="0" cy="0" r="14" fill="#0B1217"/>
+    <rect x="-100" y="30" width="200" height="80" rx="12" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="65" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217">Minimal setup</text>
+    <line x1="0" y1="14" x2="0" y2="30" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+  <g transform="translate(980,200)">
+    <circle cx="0" cy="0" r="18" fill="#2DD4BF"/>
+    <rect x="-115" y="-140" width="230" height="110" rx="14" fill="#0B1217"/>
+    <text x="0" y="-90" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#2DD4BF">Aha moment</text>
+    <line x1="0" y1="-30" x2="0" y2="-18" stroke="#0B1217" stroke-width="1.5" opacity="0.3"/>
+  </g>
+</svg>

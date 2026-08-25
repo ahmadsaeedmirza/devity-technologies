@@ -1,0 +1,17 @@
+<svg width="1100" height="420" viewBox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="420" fill="#F7F4EC"/>
+  <circle cx="550" cy="220" r="220" fill="#2DD4BF" opacity="0.04"/>
+  <g transform="translate(300,220)" opacity="0.5">
+    <rect x="-90" y="-130" width="180" height="260" rx="14" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5" stroke-dasharray="4 6"/>
+    <rect x="-60" y="-90" width="120" height="20" rx="4" fill="#0B1217" opacity="0.2"/>
+    <rect x="-60" y="-55" width="120" height="20" rx="4" fill="#0B1217" opacity="0.2"/>
+    <rect x="-60" y="-20" width="120" height="20" rx="4" fill="#0B1217" opacity="0.2"/>
+    <rect x="-60" y="15" width="120" height="20" rx="4" fill="#0B1217" opacity="0.2"/>
+    <text x="0" y="90" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217">Buried options</text>
+  </g>
+  <g transform="translate(800,220)">
+    <rect x="-140" y="-150" width="280" height="300" rx="18" fill="#0B1217"/>
+    <rect x="-80" y="-40" width="160" height="70" rx="14" fill="#2DD4BF"/>
+    <text x="0" y="100" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#F7F4EC">Core action, one tap away</text>
+  </g>
+</svg>

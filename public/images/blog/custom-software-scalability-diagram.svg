@@ -1,0 +1,19 @@
+<svg width="1100" height="500" viewBox="0 0 1100 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="500" fill="#F7F4EC"/>
+
+  <text x="550" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0B1217">Cost as you grow</text>
+
+  <line x1="120" y1="430" x2="1000" y2="430" stroke="#0B1217" stroke-width="2" opacity="0.25"/>
+  <line x1="120" y1="430" x2="120" y2="100" stroke="#0B1217" stroke-width="2" opacity="0.25"/>
+  <text x="560" y="470" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B1217" opacity="0.55">Users / usage</text>
+
+  <!-- off the shelf, steep -->
+  <path d="M 120 380 C 350 340, 600 180, 950 110" fill="none" stroke="#0B1217" stroke-width="3.5"/>
+  <rect x="780" y="80" width="180" height="34" rx="8" fill="#0B1217"/>
+  <text x="870" y="103" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#F7F4EC">Off the shelf</text>
+
+  <!-- custom, dark hero color, flatter -->
+  <path d="M 120 320 C 350 300, 600 260, 950 220" fill="none" stroke="#2DD4BF" stroke-width="4.5"/>
+  <rect x="780" y="230" width="180" height="34" rx="8" fill="#2DD4BF"/>
+  <text x="870" y="253" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#0B1217">Custom software</text>
+</svg>

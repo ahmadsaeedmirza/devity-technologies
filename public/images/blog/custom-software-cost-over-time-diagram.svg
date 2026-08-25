@@ -1,0 +1,23 @@
+<svg width="1100" height="480" viewBox="0 0 1100 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="480" fill="#F7F4EC"/>
+
+  <circle cx="550" cy="260" r="250" fill="#2DD4BF" opacity="0.04"/>
+
+  <text x="550" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0B1217">Total cost depends on the horizon</text>
+
+  <!-- Off the shelf -->
+  <g transform="translate(280,270)">
+    <rect x="-170" y="-130" width="340" height="260" rx="20" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <circle cx="0" cy="-55" r="30" fill="none" stroke="#2DD4BF" stroke-width="2.5"/>
+    <text x="0" y="15" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#0B1217">Off the shelf</text>
+    <text x="0" y="42" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B1217" opacity="0.55">Low start, recurring growth</text>
+  </g>
+
+  <!-- Custom, dark hero -->
+  <g transform="translate(820,270)">
+    <rect x="-180" y="-140" width="360" height="280" rx="22" fill="#0B1217"/>
+    <circle cx="0" cy="-60" r="34" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+    <text x="0" y="20" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#F7F4EC">Custom</text>
+    <text x="0" y="48" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#2DD4BF">Higher start, flatter growth</text>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F4EC"/>
+
+  <circle cx="600" cy="315" r="270" fill="#2DD4BF" opacity="0.05"/>
+
+  <g fill="#0B1217" opacity="0.07">
+    <circle cx="70" cy="70" r="3"/><circle cx="110" cy="70" r="3"/><circle cx="150" cy="70" r="3"/>
+    <circle cx="70" cy="110" r="3"/><circle cx="110" cy="110" r="3"/><circle cx="150" cy="110" r="3"/>
+    <circle cx="1050" cy="560" r="3"/><circle cx="1090" cy="560" r="3"/><circle cx="1130" cy="560" r="3"/>
+    <circle cx="1050" cy="600" r="3"/><circle cx="1090" cy="600" r="3"/><circle cx="1130" cy="600" r="3"/>
+  </g>
+
+  <!-- Lightbulb, dark hero -->
+  <g transform="translate(600,300)">
+    <circle cx="0" cy="-40" r="100" fill="#0B1217"/>
+    <path d="M -35 -60 C -35 -95, 35 -95, 35 -60 C 35 -35, 15 -25, 12 -5 L -12 -5 C -15 -25, -35 -35, -35 -60 Z" fill="none" stroke="#2DD4BF" stroke-width="4" stroke-linejoin="round"/>
+    <line x1="-14" y1="8" x2="14" y2="8" stroke="#2DD4BF" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-10" y1="20" x2="10" y2="20" stroke="#2DD4BF" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- speech bubbles around it representing conversations -->
+  <g transform="translate(340,260)">
+    <path d="M -60 -30 L 60 -30 C 68 -30, 74 -24, 74 -16 L 74 20 C 74 28, 68 34, 60 34 L 0 34 L -18 54 L -14 34 L -60 34 C -68 34, -74 28, -74 20 L -74 -16 C -74 -24, -68 -30, -60 -30 Z" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <line x1="-45" y1="-8" x2="30" y2="-8" stroke="#0B1217" stroke-width="2" opacity="0.4"/>
+    <line x1="-45" y1="12" x2="10" y2="12" stroke="#0B1217" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <g transform="translate(870,420)">
+    <path d="M -50 -25 L 50 -25 C 58 -25, 63 -20, 63 -12 L 63 15 C 63 23, 58 28, 50 28 L 0 28 L -15 45 L -12 28 L -50 28 C -58 28, -63 23, -63 15 L -63 -12 C -63 -20, -58 -25, -50 -25 Z" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <line x1="-38" y1="-8" x2="25" y2="-8" stroke="#0B1217" stroke-width="2" opacity="0.4"/>
+    <line x1="-38" y1="8" x2="8" y2="8" stroke="#0B1217" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <text x="600" y="580" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">VALIDATE BEFORE YOU BUILD</text>
+</svg>

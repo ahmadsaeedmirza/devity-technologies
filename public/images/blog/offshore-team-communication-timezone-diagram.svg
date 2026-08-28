@@ -1,0 +1,22 @@
+<svg width="1100" height="450" viewBox="0 0 1100 450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="450" fill="#F7F4EC"/>
+
+  <circle cx="550" cy="240" r="240" fill="#2DD4BF" opacity="0.04"/>
+
+  <text x="550" y="60" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0B1217">Real overlap, real-time answers</text>
+
+  <!-- two timeline bars -->
+  <g transform="translate(550,260)">
+    <!-- client hours -->
+    <rect x="-380" y="-90" width="500" height="50" rx="10" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="-380" y="-105" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217" opacity="0.6">CLIENT HOURS</text>
+
+    <!-- team hours -->
+    <rect x="-120" y="20" width="500" height="50" rx="10" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="-120" y="5" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217" opacity="0.6">TEAM HOURS</text>
+
+    <!-- overlap, dark hero -->
+    <rect x="-120" y="-90" width="240" height="160" rx="14" fill="#0B1217" opacity="0.92"/>
+    <text x="0" y="-5" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#2DD4BF">OVERLAP</text>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg width="1000" height="450" viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="450" fill="#F7F4EC"/>
+  <text x="500" y="55" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0B1217">Base quote, plus real contingency</text>
+  <g transform="translate(500,270)">
+    <rect x="-140" y="-140" width="280" height="140" fill="#0B1217"/>
+    <text x="0" y="-75" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#F7F4EC">Base quote</text>
+    <rect x="-140" y="-190" width="280" height="50" fill="#2DD4BF"/>
+    <text x="0" y="-160" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217">15-20% contingency</text>
+    <line x1="-140" y1="0" x2="140" y2="0" stroke="#0B1217" stroke-width="2" opacity="0.2"/>
+  </g>
+</svg>

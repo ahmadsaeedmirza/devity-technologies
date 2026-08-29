@@ -1,0 +1,16 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F4EC"/>
+  <circle cx="600" cy="315" r="270" fill="#2DD4BF" opacity="0.05"/>
+  <g fill="#0B1217" opacity="0.07">
+    <circle cx="70" cy="70" r="3"/><circle cx="110" cy="70" r="3"/><circle cx="150" cy="70" r="3"/>
+    <circle cx="1050" cy="560" r="3"/><circle cx="1090" cy="560" r="3"/><circle cx="1130" cy="560" r="3"/>
+  </g>
+  <g transform="translate(600,320)">
+    <rect x="-160" y="-100" width="320" height="200" rx="20" fill="#0B1217"/>
+    <text x="0" y="-40" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#2DD4BF">BUDGET</text>
+    <rect x="-100" y="-15" width="200" height="24" rx="4" fill="#2DD4BF" opacity="0.9"/>
+    <rect x="-100" y="20" width="150" height="20" rx="4" fill="#2DD4BF" opacity="0.4"/>
+    <text x="0" y="65" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#F7F4EC" opacity="0.7">quote + contingency</text>
+  </g>
+  <text x="600" y="590" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">BUDGETING A SOFTWARE PROJECT</text>
+</svg>

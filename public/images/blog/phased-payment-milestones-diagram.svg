@@ -1,0 +1,19 @@
+<svg width="1200" height="380" viewBox="0 0 1200 380" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="380" fill="#F7F4EC"/>
+  <line x1="100" y1="200" x2="1100" y2="200" stroke="#0B1217" stroke-width="2" opacity="0.2"/>
+  <g transform="translate(230,200)">
+    <circle cx="0" cy="0" r="14" fill="#0B1217"/>
+    <rect x="-90" y="30" width="180" height="70" rx="10" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217">Phase 1 paid</text>
+  </g>
+  <g transform="translate(600,200)">
+    <circle cx="0" cy="0" r="18" fill="#2DD4BF"/>
+    <rect x="-100" y="-120" width="200" height="90" rx="12" fill="#0B1217"/>
+    <text x="0" y="-70" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#2DD4BF">Milestone reached</text>
+  </g>
+  <g transform="translate(970,200)">
+    <circle cx="0" cy="0" r="14" fill="#0B1217"/>
+    <rect x="-90" y="30" width="180" height="70" rx="10" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <text x="0" y="70" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0B1217">Phase 2 paid</text>
+  </g>
+</svg>

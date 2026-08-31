@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F4EC"/>
+  <circle cx="600" cy="315" r="270" fill="#2DD4BF" opacity="0.05"/>
+  <g fill="#0B1217" opacity="0.07">
+    <circle cx="70" cy="70" r="3"/><circle cx="110" cy="70" r="3"/><circle cx="150" cy="70" r="3"/>
+    <circle cx="1050" cy="560" r="3"/><circle cx="1090" cy="560" r="3"/><circle cx="1130" cy="560" r="3"/>
+  </g>
+  <!-- browser window, faded -->
+  <g transform="translate(370,320)" opacity="0.5">
+    <rect x="-110" y="-100" width="220" height="200" rx="10" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5"/>
+    <rect x="-110" y="-100" width="220" height="30" rx="10" fill="#0B1217" opacity="0.15"/>
+    <circle cx="-90" cy="-85" r="4" fill="#0B1217"/>
+    <circle cx="-75" cy="-85" r="4" fill="#0B1217"/>
+  </g>
+  <!-- phone, dark hero -->
+  <g transform="translate(820,320)">
+    <rect x="-90" y="-160" width="180" height="320" rx="26" fill="#0B1217"/>
+    <rect x="-65" y="-130" width="130" height="250" rx="5" fill="#F7F4EC"/>
+    <rect x="-30" y="-90" width="60" height="60" rx="14" fill="#2DD4BF"/>
+    <circle cx="0" cy="140" r="8" fill="none" stroke="#0B1217" stroke-width="2"/>
+  </g>
+  <text x="600" y="590" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="4" fill="#0B1217" opacity="0.55">PWA VS NATIVE</text>
+</svg>

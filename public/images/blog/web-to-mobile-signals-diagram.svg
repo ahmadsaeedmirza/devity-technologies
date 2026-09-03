@@ -1,0 +1,14 @@
+<svg width="1100" height="420" viewBox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1100" height="420" fill="#F7F4EC"/>
+  <circle cx="550" cy="220" r="220" fill="#2DD4BF" opacity="0.04"/>
+  <g transform="translate(300,220)" opacity="0.5">
+    <rect x="-150" y="-110" width="300" height="220" rx="18" fill="#F7F4EC" stroke="#0B1217" stroke-width="2.5" stroke-dasharray="5 5"/>
+    <text x="0" y="0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#0B1217">Assumed next step</text>
+  </g>
+  <line x1="460" y1="220" x2="580" y2="220" stroke="#2DD4BF" stroke-width="3"/>
+  <path d="M 565 208 L 580 220 L 565 232" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(830,220)">
+    <rect x="-170" y="-130" width="340" height="260" rx="20" fill="#0B1217"/>
+    <text x="0" y="0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#2DD4BF">Real user demand</text>
+  </g>
+</svg>
